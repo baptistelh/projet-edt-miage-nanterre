@@ -5,7 +5,7 @@
 	<artifactId>projetedt</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>Emploi Du Temps</name>
+	<name>Emploi Du Temps M1A</name>
 	<description>Gestion de l'emploi du temps de la Miage</description>
 	<organization>
 		<name>Miage de l'université Paris Ouest</name>
