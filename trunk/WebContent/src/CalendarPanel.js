@@ -27,7 +27,7 @@ Ext.define('Ext.calendar.CalendarPanel', {
      * @cfg {Boolean} showDayView
      * True to include the day view (and toolbar button), false to hide them (defaults to true).
      */
-    showDayView: true,
+    showDayView: false,
     /**
      * @cfg {Boolean} showWeekView
      * True to include the week view (and toolbar button), false to hide them (defaults to true).
@@ -39,7 +39,7 @@ Ext.define('Ext.calendar.CalendarPanel', {
      * If the day and week views are both hidden, the month view will show by default even if
      * this config is false.
      */
-    showMonthView: true,
+    showMonthView: false,
     /**
      * @cfg {Boolean} showNavBar
      * True to display the calendar navigation toolbar, false to hide it (defaults to true). Note that
@@ -50,7 +50,7 @@ Ext.define('Ext.calendar.CalendarPanel', {
      * @cfg {String} todayText
      * Alternate text to use for the 'Today' nav bar button.
      */
-    todayText: 'Today',
+    todayText: 'Aujourd\'hui',
     /**
      * @cfg {Boolean} showTodayText
      * True to show the value of {@link #todayText} instead of today's date in the calendar's current day box,
@@ -67,17 +67,17 @@ Ext.define('Ext.calendar.CalendarPanel', {
      * @cfg {String} dayText
      * Alternate text to use for the 'Day' nav bar button.
      */
-    dayText: 'Day',
+    dayText: 'Jour',
     /**
      * @cfg {String} weekText
      * Alternate text to use for the 'Week' nav bar button.
      */
-    weekText: 'Week',
+    weekText: 'Semaine',
     /**
      * @cfg {String} monthText
      * Alternate text to use for the 'Month' nav bar button.
      */
-    monthText: 'Month',
+    monthText: 'Mois',
 
     // private
     layoutConfig: {
