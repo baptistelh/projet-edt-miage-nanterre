@@ -6,9 +6,9 @@ import javax.jws.WebService;
 public class HelloWS implements Hello {
 
 	@Override
-	public String sayHello(String name) {
+	public String sayHello() {
 		// TODO Auto-generated method stub
-		return ("Hello "+name);
+		return ("Hello ");
 	}
 	
 }
