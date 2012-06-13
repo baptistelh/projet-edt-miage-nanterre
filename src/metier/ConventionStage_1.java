@@ -3,16 +3,16 @@ package metier;
 import java.util.GregorianCalendar;
 
 
-public class ConventionStage {
+public class ConventionStage_1 {
     private int NumeroConvention;
     private GregorianCalendar DateSignatureC;
     private int DureeC;
 	
-    public ConventionStage(){
+    public ConventionStage_1(){
     	
     }
     
-    public ConventionStage(int numeroConvention, GregorianCalendar dateSignatureC, int dureeC) {
+    public ConventionStage_1(int numeroConvention, GregorianCalendar dateSignatureC, int dureeC) {
 		NumeroConvention = numeroConvention;
 		DateSignatureC = dateSignatureC;
 		DureeC = dureeC;

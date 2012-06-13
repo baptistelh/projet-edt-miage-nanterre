@@ -3,14 +3,14 @@ package metier;
 import java.util.GregorianCalendar;
 
 
-public class Creneau {
+public class Creneau_1 {
     private GregorianCalendar Horaire;
     private int Duree;
 	
-    public Creneau() {
+    public Creneau_1() {
 	}
 
-	public Creneau(GregorianCalendar horaire, int duree) {
+	public Creneau_1(GregorianCalendar horaire, int duree) {
 		Horaire = horaire;
 		Duree = duree;
 	}

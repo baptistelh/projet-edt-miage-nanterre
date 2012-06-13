@@ -2,17 +2,17 @@ package metier;
 
 import java.util.GregorianCalendar;
 
-public class ContratApprentissage {
+public class ContratApprentissage_1 {
 	private int NumeroContrat;
 	private GregorianCalendar DateSignatureA;
 	private Double Salaire;
 	private int Duree;
 	
-	public ContratApprentissage() {
+	public ContratApprentissage_1() {
 	
 	}
 
-	public ContratApprentissage(int numeroContrat,
+	public ContratApprentissage_1(int numeroContrat,
 			GregorianCalendar dateSignatureA, Double salaire, int duree) {
 		NumeroContrat = numeroContrat;
 		DateSignatureA = dateSignatureA;
