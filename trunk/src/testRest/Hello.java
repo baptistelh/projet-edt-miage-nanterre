@@ -1,5 +1,9 @@
 package testRest;
 
+import java.util.ArrayList;
+import java.util.GregorianCalendar;
+import java.util.List;
+
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -26,10 +30,15 @@ public class Hello {
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public Event sayJsonHello() {
-		Event e1 = new Event("flo","bat");
+	public List<Event> sayJsonHello() {
+		Event e1 = new Event(new GregorianCalendar(2011,11,15,13,12));
+		Event e2 = new Event(new GregorianCalendar(2012,5,14,1,00));
+		List<Event> listEvt = new ArrayList<Event>();
 		
-		return e1;
+		listEvt.add(e1);
+		listEvt.add(e2);
+		
+		return listEvt;
 	}
 
 //	// This method is called if XML is request
