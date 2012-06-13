@@ -1,14 +1,13 @@
 package metier;
-
-
-public class Disponibilite {
+{
+public class Disponibilite_1 {
     private int poids;
     private int DemiJournee;
 	
-    public Disponibilite() {
+    public Disponibilite_1() {
 	}
 
-	public Disponibilite(int poids, int demiJournee) {
+	public Disponibilite_1(int poids, int demiJournee) {
 		this.poids = poids;
 		DemiJournee = demiJournee;
 	}

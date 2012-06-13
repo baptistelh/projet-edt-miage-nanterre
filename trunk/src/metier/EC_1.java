@@ -1,15 +1,14 @@
 package metier;
-
-
-public class EC {
+{
+public class EC_1 {
     private int NumeroEC;
     private String Libelle;
     private double Coef;
 	
-    public EC() {
+    public EC_1() {
 	}
 	
-    public EC(int numeroEC, String libelle, double coef) {
+    public EC_1(int numeroEC, String libelle, double coef) {
 		NumeroEC = numeroEC;
 		Libelle = libelle;
 		Coef = coef;

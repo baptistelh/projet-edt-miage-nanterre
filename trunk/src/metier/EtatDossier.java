@@ -1,5 +1,6 @@
 package metier;
 
+
 public class EtatDossier {
     private int NumeroEtat;
     private String etat;

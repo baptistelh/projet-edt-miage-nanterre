@@ -1,5 +1,6 @@
 package metier;
 
+
 public class Entreprise {
     private int NumeroEntreprise;
     private String Nom;

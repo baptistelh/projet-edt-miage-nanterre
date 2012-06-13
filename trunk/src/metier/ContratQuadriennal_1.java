@@ -2,15 +2,15 @@ package metier;
 
 import java.util.GregorianCalendar;
 
-public class ContratQuadriennal {
+public class ContratQuadriennal_1 {
     private int NumeroContrat;
     private GregorianCalendar date;
     private String Duree;
 	
-    public ContratQuadriennal() {
+    public ContratQuadriennal_1() {
 	}
 
-	public ContratQuadriennal(int numeroContrat, GregorianCalendar date,
+	public ContratQuadriennal_1(int numeroContrat, GregorianCalendar date,
 			String duree) {
 		NumeroContrat = numeroContrat;
 		this.date = date;

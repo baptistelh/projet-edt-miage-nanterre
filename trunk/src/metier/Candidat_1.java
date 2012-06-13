@@ -3,7 +3,7 @@ package metier;
 import java.util.GregorianCalendar;
 
 
-public class Candidat {
+public class Candidat_1 {
     private int NumeroCandidat;
     private String Nom;
     private String Prenom;
@@ -16,11 +16,11 @@ public class Candidat {
     private boolean etatDuDossier;
     private String Mail;
 	
-    public Candidat(){
+    public Candidat_1(){
     	
     }
     
-    public Candidat(int numeroCandidat, String nom, String prenom,
+    public Candidat_1(int numeroCandidat, String nom, String prenom,
 			String adresse, String telephone, GregorianCalendar dateNaissance,
 			String login, String passWord, GregorianCalendar date,
 			boolean etatDuDossier, String mail) {
