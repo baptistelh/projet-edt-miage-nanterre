@@ -2,7 +2,7 @@ package testWS;
 
 import javax.jws.WebService;
 
-@WebService(endpointInterface ="ws.Hello")
+@WebService(endpointInterface ="testWS.Hello")
 public class HelloWS implements Hello {
 
 	@Override
