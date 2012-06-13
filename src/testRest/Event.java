@@ -1,27 +1,69 @@
 package testRest;
 
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
 public class Event {
-	private String nom;
-	private String toto;
+	private int year;
+	private int mounth;
+	private int date;
+	private int hour;
+	private int minute;
 	
-	public Event(String nom, String toto) {
-		super();
-		this.nom = nom;
-		this.toto = toto;
+//	public Event(GregorianCalendar gc) {
+//		this.year = gc.getTime().getYear()+1900;
+//		this.mounth = gc.getTime().getMonth();
+//		this.date = gc.getTime().getDate();
+//		this.hour = gc.getTime().getHours();
+//		this.minute = gc.getTime().getMinutes();
+//	}
+	
+	public Event(GregorianCalendar gc) {
+		this.year = gc.get(Calendar.YEAR);
+		this.mounth = gc.get(Calendar.MONTH)+1;
+		this.date = gc.get(Calendar.DAY_OF_MONTH);
+		this.hour = gc.get(Calendar.HOUR_OF_DAY);
+		this.minute = gc.get(Calendar.MINUTE);
 	}
 	
-	public String getNom() {
-		return nom;
+	public int getYear() {
+		return year;
 	}
-	public void setNom(String nom) {
-		this.nom = nom;
+
+	public void setYear(int year) {
+		this.year = year;
 	}
-	public String getToto() {
-		return toto;
+
+	public int getMounth() {
+		return mounth;
 	}
-	public void setToto(String toto) {
-		this.toto = toto;
+
+	public void setMounth(int mounth) {
+		this.mounth = mounth;
 	}
-	
+
+	public int getDate() {
+		return date;
+	}
+
+	public void setDate(int date) {
+		this.date = date;
+	}
+
+	public int getHour() {
+		return hour;
+	}
+
+	public void setHour(int hour) {
+		this.hour = hour;
+	}
+
+	public int getMinute() {
+		return minute;
+	}
+
+	public void setMinute(int minute) {
+		this.minute = minute;
+	}
 	
 }
