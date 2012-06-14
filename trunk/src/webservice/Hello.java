@@ -10,6 +10,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import beans.Creneau;
+import beans.EC;
 
 // POJO, no interface no extends
 
@@ -25,13 +26,15 @@ public class Hello {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Event> sayJsonHello() {
-		Event e1 = new Event(new Creneau(new GregorianCalendar(2011,11,15,13,12), 120));
-		Event e2 = new Event(new Creneau(new GregorianCalendar(2012,5,14,1,00),90));
+		Event e1 = new Event(new Creneau(new GregorianCalendar(2011, 11, 15,
+				13, 12), 120), new EC(1, "toto", 4));
+		Event e2 = new Event(new Creneau(new GregorianCalendar(2012, 5, 14, 1,
+				00), 90), new EC(2, "titi", 2));
 		List<Event> listEvt = new ArrayList<Event>();
-		
+
 		listEvt.add(e1);
 		listEvt.add(e2);
-		
+
 		return listEvt;
 	}
 }
