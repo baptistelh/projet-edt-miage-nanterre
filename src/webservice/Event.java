@@ -1,4 +1,4 @@
-package testRest;
+package webservice;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -9,14 +9,6 @@ public class Event {
 	private int date;
 	private int hour;
 	private int minute;
-	
-//	public Event(GregorianCalendar gc) {
-//		this.year = gc.getTime().getYear()+1900;
-//		this.mounth = gc.getTime().getMonth();
-//		this.date = gc.getTime().getDate();
-//		this.hour = gc.getTime().getHours();
-//		this.minute = gc.getTime().getMinutes();
-//	}
 	
 	public Event(GregorianCalendar gc) {
 		this.year = gc.get(Calendar.YEAR);
