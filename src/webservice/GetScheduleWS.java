@@ -10,6 +10,8 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import com.sun.jersey.api.json.JSONConfiguration;
+
 import beans.Creneau;
 import beans.EC;
 
@@ -25,7 +27,14 @@ import beans.EC;
 @Path("/GetSchedule")
 public class GetScheduleWS {
 	
-	@GET @Path("test/{paramtest}")
+	@GET @Path("/toto")
+	@Produces(MediaType.APPLICATION_JSON)
+	public CalendarTest getScheduleTest() {
+		JSONConfiguration.natural().build();
+		return new CalendarTest();
+	}
+	
+	@GET @Path("urlavecparam/{paramtest}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public String getSchedule(@PathParam("paramtest") String str) {
 		return "le param est "+str;
