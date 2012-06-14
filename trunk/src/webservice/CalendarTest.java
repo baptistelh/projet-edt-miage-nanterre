@@ -7,11 +7,11 @@ public class CalendarTest {
 		
 	}
 
-	public EventTest getEt() {
+	public EventTest getEvts() {
 		return evts;
 	}
 
-	public void setEt(EventTest et) {
+	public void setEvts(EventTest evts) {
 		this.evts = evts;
 	}
 
