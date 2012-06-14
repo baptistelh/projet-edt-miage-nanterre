@@ -46,5 +46,34 @@ public class Event {
 		this.end = "\'"+date2+"/"+mounth2+"/"+year2+" "+hour2+":"+minute2+"\'";
 	}
 
+	public static void main(String[] args) {
+		GregorianCalendar gc = new GregorianCalendar(2011, 11, 15,13, 12);
+		System.out.println(gc.getTime().toString());
+		System.out.println(gc.getTime());
+	}
+	
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getStart() {
+		return start;
+	}
+
+	public void setStart(String start) {
+		this.start = start;
+	}
+
+	public String getEnd() {
+		return end;
+	}
+
+	public void setEnd(String end) {
+		this.end = end;
+	}
 	
 }
