@@ -1,21 +1,17 @@
-body {
-    margin: 20px;
-}
-h1 {
-    margin-bottom: 15px;
-    font-size: 16px;
-}
-
 #app-header {
     text-align: center;
     font-family: arial;
 }
-#app-center .x-panel-header {
-    font-size: 13px;
-    text-align: center;
-    padding-left: 178px;
+.app-center-header .x-panel-header-text-default {
     font-family: helvetica, arial, sans-serif;
     color: #455C6F;
+    font-size: 13px;
+}
+.app-center-header .x-panel-header-body .x-box-item {
+    text-align: center;
+}
+#app-calendar .x-panel-header {
+    padding-left: 0;
 }
 #app-west {
     border-right: 1px solid #99BBE8;
@@ -25,7 +21,7 @@ h1 {
 }
 #app-header-content h1 {
     float:left;
-    margin:8px 5px;
+    margin: 9px 5px;
     font-size: 18px;
     color: #455C6F;
 }
@@ -37,18 +33,11 @@ h1 {
 #app-logo .logo-top,
 #app-logo .logo-bottom {
     height: 0;
-    font-size: 0;
-    line-height: 0;
-    padding: 0;
     overflow: hidden;
     margin: 0 1px;
-    border: 0;
     border-top-width: 1px;
     border-top-style: solid;
     border-color: #9F2727;
-}
-.x-ie #app-logo .logo-top {
-    margin-bottom: -1px;
 }
 .ext-border-box #app-logo .logo-top,
 .ext-border-box #app-logo .logo-bottom {
@@ -69,8 +58,7 @@ h1 {
     color: #455C6F;
 }
 #app-msg {
-/*    background: #FAD163;*/
-    color: #c8a52e;
+    background: #FAD163;
     padding: 2px 10px;
     font-weight: bold;
     font-size: 13px;
