@@ -1,4 +1,4 @@
-
+package beans;
 public class EC {
     private int NumeroEC;
     private String Libelle;

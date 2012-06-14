@@ -1,4 +1,4 @@
-
+package beans;
 public class Formation {
     private int NumeroFormation;
     private String Libelle;

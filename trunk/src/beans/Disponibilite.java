@@ -1,4 +1,4 @@
-
+package beans;
 public class Disponibilite {
     private int poids;
     private int DemiJournee;

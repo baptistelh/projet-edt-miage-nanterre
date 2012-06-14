@@ -1,3 +1,4 @@
+package beans;
 
 public class Etudiant {
 	private int NumeroEtudiant;

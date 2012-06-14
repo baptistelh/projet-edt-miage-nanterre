@@ -1,3 +1,4 @@
+package beans;
 import java.util.GregorianCalendar;
 
 public class ContratApprentissage {

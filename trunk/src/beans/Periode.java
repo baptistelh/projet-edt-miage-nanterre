@@ -1,4 +1,4 @@
-
+package beans;
 public class Periode {
 	private int NumeroPeriode;
 
