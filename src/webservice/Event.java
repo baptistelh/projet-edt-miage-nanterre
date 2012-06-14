@@ -3,59 +3,37 @@ package webservice;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
+import beans.Creneau;
+
 public class Event {
-	private int year;
-	private int mounth;
-	private int date;
-	private int hour;
-	private int minute;
+	private int year1;
+	private int mounth1;
+	private int date1;
+	private int hour1;
+	private int minute1;
 	
-	public Event(GregorianCalendar gc) {
-		this.year = gc.get(Calendar.YEAR);
-		this.mounth = gc.get(Calendar.MONTH)+1;
-		this.date = gc.get(Calendar.DAY_OF_MONTH);
-		this.hour = gc.get(Calendar.HOUR_OF_DAY);
-		this.minute = gc.get(Calendar.MINUTE);
-	}
+	private int year2;
+	private int mounth2;
+	private int date2;
+	private int hour2;
+	private int minute2;
 	
-	public int getYear() {
-		return year;
+	public Event(Creneau c) {
+		this.year1 = c.getHoraire().get(Calendar.YEAR);
+		this.mounth1 = c.getHoraire().get(Calendar.MONTH)+1;
+		this.date1 = c.getHoraire().get(Calendar.DAY_OF_MONTH);
+		this.hour1 = c.getHoraire().get(Calendar.HOUR_OF_DAY);
+		this.minute1 = c.getHoraire().get(Calendar.MINUTE);
+		
+		int h = c.getDuree()/60;
+		int m = c.getDuree()%60;
+		
+		
+		this.year2 = c.getHoraire().get(Calendar.YEAR);
+		this.mounth2 = c.getHoraire().get(Calendar.MONTH)+1;
+		this.date2 = c.getHoraire().get(Calendar.HOUR_OF_DAY)+h;
+		this.minute2 = c.getHoraire().get(Calendar.MINUTE)+m;
 	}
 
-	public void setYear(int year) {
-		this.year = year;
-	}
-
-	public int getMounth() {
-		return mounth;
-	}
-
-	public void setMounth(int mounth) {
-		this.mounth = mounth;
-	}
-
-	public int getDate() {
-		return date;
-	}
-
-	public void setDate(int date) {
-		this.date = date;
-	}
-
-	public int getHour() {
-		return hour;
-	}
-
-	public void setHour(int hour) {
-		this.hour = hour;
-	}
-
-	public int getMinute() {
-		return minute;
-	}
-
-	public void setMinute(int minute) {
-		this.minute = minute;
-	}
 	
 }
