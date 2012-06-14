@@ -9,6 +9,8 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import beans.Creneau;
+
 // POJO, no interface no extends
 
 // The class registers its methods for the HTTP GET request using the @GET annotation. 
@@ -23,8 +25,8 @@ public class Hello {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Event> sayJsonHello() {
-		Event e1 = new Event(new GregorianCalendar(2011,11,15,13,12));
-		Event e2 = new Event(new GregorianCalendar(2012,5,14,1,00));
+		Event e1 = new Event(new Creneau(new GregorianCalendar(2011,11,15,13,12), 120));
+		Event e2 = new Event(new Creneau(new GregorianCalendar(2012,5,14,1,00),90));
 		List<Event> listEvt = new ArrayList<Event>();
 		
 		listEvt.add(e1);
