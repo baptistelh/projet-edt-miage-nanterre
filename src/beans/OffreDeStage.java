@@ -1,4 +1,4 @@
-
+package beans;
 public class OffreDeStage {
     private int NumeroOffreDeStage;
     private String DescriptionPoste;

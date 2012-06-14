@@ -1,4 +1,4 @@
-
+package beans;
 public class EtatDossier {
     private int NumeroEtat;
     private String etat;

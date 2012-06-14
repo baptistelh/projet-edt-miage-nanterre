@@ -1,4 +1,4 @@
-
+package beans;
 public class VoeuxEC {
 	private boolean ChoixEC;
 

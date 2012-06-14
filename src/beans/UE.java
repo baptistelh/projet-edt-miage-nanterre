@@ -1,3 +1,4 @@
+package beans;
 
 public class UE {
 	private int NumeroUE;

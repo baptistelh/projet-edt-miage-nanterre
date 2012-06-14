@@ -1,4 +1,4 @@
-
+package beans;
 public class Semestre {
     private int NumeroSemestre;
     private String Libelle;

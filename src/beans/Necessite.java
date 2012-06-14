@@ -1,4 +1,4 @@
-
+package beans;
 public class Necessite {
 	private int NbHeures_maquette;
 

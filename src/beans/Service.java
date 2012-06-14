@@ -1,4 +1,4 @@
-
+package beans;
 public class Service {
 	private int NbHeures;
 
