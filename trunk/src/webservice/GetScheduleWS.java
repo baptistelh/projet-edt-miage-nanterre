@@ -73,7 +73,7 @@ public class GetScheduleWS {
 		return listEvt;
 	}
 	
-	@GET @Path("Room")
+	@GET @Path("/Room")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Event> getScheduleFromRoom() {
 		Event e1 = new Event(new Creneau(new GregorianCalendar(2011, 11, 15,
