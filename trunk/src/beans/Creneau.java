@@ -1,5 +1,6 @@
 package beans;
 import java.io.Serializable;
+import java.util.GregorianCalendar;
 
 
 public class Creneau implements Serializable {
@@ -7,7 +8,7 @@ public class Creneau implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = -1130222760201225781L;
-	private String horaire;
+	private GregorianCalendar horaire;
     private int duree;
     private EC monEC;
     private Type monType;
@@ -19,7 +20,7 @@ public class Creneau implements Serializable {
     	super();
 	}
 
-	public Creneau(Enseignant monEnseignant, Salle maSalle, EC monEC, Type monType, String horaire, int duree) {
+	public Creneau(Enseignant monEnseignant, Salle maSalle, EC monEC, Type monType, GregorianCalendar horaire, int duree) {
 		this();
 		this.horaire = horaire;
 		this.duree = duree;
@@ -33,11 +34,11 @@ public class Creneau implements Serializable {
 		this.monType.getMesCreneaux().add(this);
 	}
 
-	public String getHoraire() {
+	public GregorianCalendar getHoraire() {
 		return horaire;
 	}
 
-	public void setHoraire(String horaire) {
+	public void setHoraire(GregorianCalendar horaire) {
 		this.horaire = horaire;
 	}
 
