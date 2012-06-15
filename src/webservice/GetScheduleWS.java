@@ -16,6 +16,9 @@ import com.sun.jersey.api.json.JSONConfiguration;
 
 import beans.Creneau;
 import beans.EC;
+import beans.Enseignant;
+import beans.Salle;
+import beans.Type;
 
 // POJO, no interface no extends
 
@@ -47,10 +50,16 @@ public class GetScheduleWS {
 	@GET @Path("/Ec")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Event> getScheduleFromEc() {
-		Event e1 = new Event(new Creneau(new GregorianCalendar(2011, 11, 15,
-				13, 12), 120), new EC(1, "toto", 4));
-		Event e2 = new Event(new Creneau(new GregorianCalendar(2012, 5, 14, 1,
-				00), 90), new EC(2, "titi", 2));
+		
+		
+		
+		Creneau c = new Creneau(new Enseignant(), new Salle(), new EC(), new Type(), new GregorianCalendar(2011, 11, 15,
+				13, 12), 90);
+		Creneau c2 = new Creneau(new Enseignant(), new Salle(), new EC(), new Type(), new GregorianCalendar(2012, 5, 14, 1,
+				00), 120);
+		
+		Event e1 = new Event(c);
+		Event e2 = new Event(c2);
 		
 		List<Event> listEvt = new ArrayList<Event>();
 		listEvt.add(e1);
