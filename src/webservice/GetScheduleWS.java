@@ -4,10 +4,12 @@ import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.List;
 
+import javax.ws.rs.DefaultValue;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 import com.sun.jersey.api.json.JSONConfiguration;
@@ -29,9 +31,11 @@ public class GetScheduleWS {
 	
 	@GET @Path("/toto")
 	@Produces(MediaType.APPLICATION_JSON)
-	public CalendarTest getScheduleTest() {
-		JSONConfiguration.natural().build();
-		return new CalendarTest();
+	public CalendarTest getScheduleTest(@DefaultValue("06-10-2012") @QueryParam("start") String start,@DefaultValue("06-16-2012") @QueryParam("end") String end,@DefaultValue("1") @QueryParam("page") int page,@DefaultValue("25") @QueryParam("limit") int limit) {
+		
+		//JSONConfiguration.natural().build();
+		JSONConfiguration.natural().rootUnwrapping(false).build();
+		return new CalendarTest(new EventTest());
 	}
 	
 	@GET @Path("urlavecparam/{paramtest}")

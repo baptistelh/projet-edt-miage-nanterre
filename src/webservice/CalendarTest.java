@@ -1,17 +1,22 @@
 package webservice;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CalendarTest {
-	private EventTest evts = new EventTest();
 	
-	public CalendarTest(){
-		
+	private List <EventTest> evts = new ArrayList<EventTest>();
+	
+	
+	public CalendarTest(EventTest et){
+		this.evts.add(et);
 	}
 
-	public EventTest getEvts() {
+	public List <EventTest> getEvts() {
 		return evts;
 	}
 
-	public void setEvts(EventTest evts) {
+	public void setEvts(List <EventTest> evts) {
 		this.evts = evts;
 	}
 
