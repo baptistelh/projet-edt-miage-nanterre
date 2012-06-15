@@ -29,7 +29,7 @@ public class CrenauxEDT_test_mercredi {
 				Creneau cLundi = new Creneau(e1, s1, ec1,type1, "09:00", 120);
 				Jours j1=new Jours();
 				j1.setDate(new GregorianCalendar(2012, 05, 11));
-				cLundi.setDate(j1);
+				cLundi.setDateCreneau(j1);
 				
 				//Mardi
 				Enseignant e2=new Enseignant(1,"Giroud", "Olivier", "1 avenue des coupeurs d'orange" , "0143855908",new GregorianCalendar(1960,10, 10), "logGiroud", "pwdGiroud");	
@@ -41,18 +41,18 @@ public class CrenauxEDT_test_mercredi {
 				Creneau cMardi = new Creneau(e2, s2, ec2,type2, "11:00", 120);
 				Jours j2=new Jours();
 				j2.setDate(new GregorianCalendar(2012, 05, 12));
-				cLundi.setDate(j2);	
+				cLundi.setDateCreneau(j2);	
 				
 				//Mercredi
 				Jours jour = new Jours(new GregorianCalendar(2012, 05, 13));
-				Enseignant enseignant = new Enseignant(2, "Girard", "René", "2 rue des champs élysés" , "0123456789", new GregorianCalendar(1978,7, 2), "Girard", "pwdGirard");
+				Enseignant enseignant = new Enseignant(2, "Girard", "Renï¿½", "2 rue des champs ï¿½lysï¿½s" , "0123456789", new GregorianCalendar(1978,7, 2), "Girard", "pwdGirard");
 				Salle salle = new Salle("210A", 50, "enferNum1");
 				Formation formation = new Formation(1);
 				UE ue = new UE(1, formation);
 				EC ec = new EC(1, ue, formation);
 				Type type = new Type(1, "TD");
 				Creneau creneau = new Creneau(enseignant, salle, ec, type, "08:30", 240);
-				creneau.setDate(jour);
+				creneau.setDateCreneau(jour);
 				
 				
 				//Jeudi
@@ -65,7 +65,7 @@ public class CrenauxEDT_test_mercredi {
 				Creneau cJeudi = new Creneau(e4, s4, ec4,type4, "13:00", 120);
 				Jours j4=new Jours();
 				j4.setDate(new GregorianCalendar(2012, 05, 14));
-				cLundi.setDate(j4);
+				cLundi.setDateCreneau(j4);
 				
 				//Vendredi
 				Enseignant e5=new Enseignant(1,"Evra", "Patrice", "1 avenue des grevistes" , "0143855910",new GregorianCalendar(1960,10, 10), "logEvra", "pwdEvra");	
@@ -77,7 +77,7 @@ public class CrenauxEDT_test_mercredi {
 				Creneau cVendredi = new Creneau(e5, s5, ec5,type5, "15:00", 120);
 				Jours j5=new Jours();
 				j5.setDate(new GregorianCalendar(2012, 05, 15));
-				cLundi.setDate(j5);	
+				cLundi.setDateCreneau(j5);	
 		
 		
 		

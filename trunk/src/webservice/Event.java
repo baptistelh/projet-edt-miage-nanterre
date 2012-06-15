@@ -19,7 +19,7 @@ public class Event {
 		this.title = c.getMonEC().getLibelle() + c.getMaSalle().getNumSalle() + c.getMonEnseignant().getNom();
 		
 		
-		GregorianCalendar gc = c.getDate().getDate();
+		GregorianCalendar gc = c.getDateCreneau().getDate();
 		int heure = Integer.parseInt(c.getHoraire().split(":")[0]);
 		int minute = Integer.parseInt(c.getHoraire().split(":")[1]);
 
