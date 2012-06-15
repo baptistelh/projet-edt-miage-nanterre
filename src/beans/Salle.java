@@ -1,23 +1,35 @@
 package beans;
-import java.util.GregorianCalendar;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
+public class Salle implements Serializable{
 
-public class Salle {
-
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1368414132801708425L;
 	private String numSalle ;
 	private int capacite ;
 	private String lieu ;
+	private List<Reunion> mesReunions = new ArrayList<Reunion>();
+	private List<Creneau> mesCreneaux = new ArrayList<Creneau>();
 	
-	public Salle(String numSalle, int capacite, String lieu) {
-		super();
-		this.numSalle = numSalle;
-		this.capacite = capacite;
-		this.lieu = lieu;
-	}
 	public Salle() {
 		super();
 	}
 	
+	public Salle(String numSalle, int capacite, String lieu) {
+		this();
+		this.numSalle = numSalle;
+		this.capacite = capacite;
+		this.lieu = lieu;
+	}
+	
+	public Salle(String numSalle){
+		this(numSalle,0,"");
+	}
+		
 	public String getNumSalle() {
 		return numSalle;
 	}
@@ -39,5 +51,21 @@ public class Salle {
 	
 	public void setLieu(String lieu) {
 		this.lieu = lieu;
+	}
+
+	public List<Reunion> getMesReunions() {
+		return mesReunions;
+	}
+
+	public void setMesReunions(List<Reunion> mesReunions) {
+		this.mesReunions = mesReunions;
+	}
+
+	public List<Creneau> getMesCreneaux() {
+		return mesCreneaux;
+	}
+
+	public void setMesCreneaux(List<Creneau> mesCreneaux) {
+		this.mesCreneaux = mesCreneaux;
 	}
 }

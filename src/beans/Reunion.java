@@ -1,12 +1,14 @@
 package beans;
-import java.util.GregorianCalendar;
+import java.io.Serializable;
+public class Reunion implements Serializable{
 
-
-public class Reunion {
-
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2993752565734149875L;
 	private int numReunion ;
-	private GregorianCalendar date ;
-	private int numSalle ;
+	private Jours date ;
+	private Salle maSalle ;
 	private String libelle ;
 	private String horaire ; 
 	private int duree ;
@@ -16,36 +18,31 @@ public class Reunion {
 		super();
 	}
 	
-	public Reunion(int numReunion, GregorianCalendar date, int numSalle,
-			String libelle, String horaire, int duree) {
-		super();
+	public Reunion(int numReunion, String libelle, String horaire, int duree) {
+		this();
 		this.numReunion = numReunion;
-		this.date = date;
-		this.numSalle = numSalle;
 		this.libelle = libelle;
 		this.horaire = horaire;
 		this.duree = duree;
 	}
-
-
+	
+	public Reunion(int numReunion){
+		this(numReunion,"","",0);
+	}
+	
 	public int getNumReunion() {
 		return numReunion;
 	}
 	public void setNumReunion(int numReunion) {
 		this.numReunion = numReunion;
 	}
-	public GregorianCalendar getDate() {
+	public Jours getDate() {
 		return date;
 	}
-	public void setDate(GregorianCalendar date) {
+	public void setDate(Jours date) {
 		this.date = date;
 	}
-	public int getNumSalle() {
-		return numSalle;
-	}
-	public void setNumSalle(int numSalle) {
-		this.numSalle = numSalle;
-	}
+
 	public String getLibelle() {
 		return libelle;
 	}
@@ -64,8 +61,12 @@ public class Reunion {
 	public void setDuree(int duree) {
 		this.duree = duree;
 	}
-	
-	
-	
 
+	public Salle getMaSalle() {
+		return maSalle;
+	}
+
+	public void setMaSalle(Salle maSalle) {
+		this.maSalle = maSalle;
+	}
 }
