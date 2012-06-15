@@ -40,11 +40,11 @@ Ext.define('Ext.calendar.App', {
 //            data: Ext.calendar.data.Events.getData()
 //        });
         
-        this.eventStore = Ext.create('Ext.calendar.data.MemoryEventStore', {
+        this.eventStore = Ext.create('Ext.data.Store', {
             autoLoad: true,
             proxy: {
                 type: 'rest',
-                url: '/rest/GetSchedule/Ec',
+                url: '/fr.p10.miage.m1.projetedt/rest/GetSchedule/Ec',
                 noCache: false,
                 
                 reader: {
