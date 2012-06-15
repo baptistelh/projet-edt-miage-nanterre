@@ -6,21 +6,29 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 import beans.Creneau;
-import beans.EC;
-import beans.Promotion;
 
 public class Event {
 	private String title;
 	private String start;
 	private String end;
 	
-	public Event(Creneau c, EC ec) {
+	//pour un EC
+	public Event(Creneau c) {
 		DateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 		
-		this.title = ec.getLibelle();
-		this.start = "\'"+df.format(c.getHoraire().getTime())+"\'";
-		c.getHoraire().add(Calendar.MINUTE, c.getDuree());
-		this.end = "\'"+df.format(c.getHoraire().getTime())+"\'";
+		this.title = c.getMonEC().getLibelle() + c.getMaSalle().getNumSalle() + c.getMonEnseignant().getNom();
+		
+		
+		GregorianCalendar gc = c.getDate().getDate();
+		int heure = Integer.parseInt(c.getHoraire().split(":")[0]);
+		int minute = Integer.parseInt(c.getHoraire().split(":")[1]);
+
+		gc.add(Calendar.HOUR,heure);
+		gc.add(Calendar.MINUTE, minute);
+		
+		this.start = "\'"+df.format(gc.getTime())+"\'";
+		gc.add(Calendar.MINUTE, c.getDuree());
+		this.end = "\'"+df.format(gc.getTime())+"\'";
 	}
 	
 	public String getTitle() {
