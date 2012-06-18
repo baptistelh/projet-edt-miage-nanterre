@@ -30,7 +30,17 @@ public class EnseignantEDT {
 		merge.addAll(newCreneaux);
 
 		boolean depassementjournee = verificationCreneaux.depassementJournee(merge);
+		boolean voeux=respectVoeuxEnseignant(merge,e);
 
+	}
+	
+	public boolean respectVoeuxEnseignant(List<Creneau> creneaux, Enseignant e){
+		boolean result=true;
+		
+		
+		
+		
+		return result;
 	}
 
 	
