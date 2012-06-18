@@ -7,8 +7,8 @@ public class EventTest {
 	private int id = 1001;
 	private int cid = 1;
 	private String title = "Vacation";
-	private String start = "1/10/2007 03:05:01 PM GMT-0600";
-	private String end = "1/10/2007 03:05:01 PM GMT-0600";
+	private String start = "18/06/2012 03:05:01 PM GMT-0600";
+	private String end = "18/06/2012 04:05:01 PM GMT-0600";
 	private String notes = "Have fun";
 	
 	public EventTest() {
