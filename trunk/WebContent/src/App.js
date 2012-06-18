@@ -41,19 +41,21 @@ Ext.define('Ext.calendar.App', {
 //            data: Ext.calendar.data.Events.getData()
 //        });
         
-        this.eventStore = Ext.create('Ext.calendar.data.EventStore', {
-        	autoLoad: true,
-            proxy: {
-                type: 'rest',
-                url: 'rest/GetSchedule/toto',
-                noCache: false,
-                
-                reader: {
-                    type: 'json',
-                    root: 'evts'
-                }
-            },
-        });
+        this.eventStore = Ext.create('Ext.calendar.data.EventStore');
+        
+//        this.eventStore = Ext.create('Ext.calendar.data.EventStore', {
+//        	autoLoad: true,
+//            proxy: {
+//                type: 'rest',
+//                url: 'rest/GetSchedule/toto',
+//                noCache: false,
+//                
+//                reader: {
+//                    type: 'json',
+//                    root: 'evts'
+//                }
+//            },
+//        });
         
 //        this.eventStore = Ext.create('Ext.calendar.data.MemoryEventStore', {
 //            autoLoad: true,
