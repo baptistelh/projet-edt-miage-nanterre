@@ -15,7 +15,7 @@ public class EventTest {
 	private Date startNotFormat = new Date(2012-1900, 5, 19, 10, 00);
 	private String start = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(startNotFormat);
 	private Date endNotFormat = new Date(2012-1900, 5, 19, 11, 00);
-	private String end = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(startNotFormat);
+	private String end = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(endNotFormat);
 	private String notes = "Have fun";
 	private boolean ad = false;
 	
