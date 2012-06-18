@@ -22,14 +22,25 @@ Ext.define('Ext.calendar.data.MemoryEventStore', {
         'Ext.calendar.data.EventMappings'
     ],
     
+//    proxy: {
+//        type: 'memory',
+//        reader: {
+//            type: 'json',
+//            root: 'evts'
+//        },
+//        writer: {
+//            type: 'json'
+//        }
+//    },
+    
     proxy: {
-        type: 'memory',
+        type: 'rest',
+        url: '/fr.p10.miage.m1.projetedt/rest/GetSchedule/toto',
+        noCache: false,
+        
         reader: {
             type: 'json',
             root: 'evts'
-        },
-        writer: {
-            type: 'json'
         }
     },
     
