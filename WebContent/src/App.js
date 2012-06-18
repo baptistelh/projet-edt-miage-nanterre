@@ -20,6 +20,7 @@ Ext.define('Ext.calendar.App', {
         'Ext.calendar.data.MemoryCalendarStore',
         'Ext.calendar.data.MemoryEventStore',
         'Ext.calendar.data.Events',
+        'Ext.calendar.data.EventStore',
         'Ext.calendar.data.Calendars',
         'Ext.calendar.form.EventWindow'
     ],
@@ -49,7 +50,7 @@ Ext.define('Ext.calendar.App', {
                 
                 reader: {
                     type: 'json',
-                    root: 'data'
+                    root: 'evts'
                 }
             },
         });
