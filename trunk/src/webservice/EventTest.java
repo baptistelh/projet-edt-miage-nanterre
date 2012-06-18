@@ -1,5 +1,10 @@
 package webservice;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.GregorianCalendar;
+
 
 
 public class EventTest {
@@ -7,9 +12,12 @@ public class EventTest {
 	private int id = 1001;
 	private int cid = 1;
 	private String title = "Vacation";
-	private String start = "18/06/2012 03:05:01 PM GMT-0600";
-	private String end = "18/06/2012 04:05:01 PM GMT-0600";
+	private Date startNotFormat = new Date(2012-1900, 5, 19, 10, 00);
+	private String start = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(startNotFormat);
+	private Date endNotFormat = new Date(2012-1900, 5, 19, 11, 00);
+	private String end = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(startNotFormat);
 	private String notes = "Have fun";
+	private boolean ad = false;
 	
 	public EventTest() {
 		
@@ -39,6 +47,22 @@ public class EventTest {
 		this.title = title;
 	}
 
+	public String getNotes() {
+		return notes;
+	}
+
+	public void setNotes(String notes) {
+		this.notes = notes;
+	}
+
+	public boolean getAd() {
+		return ad;
+	}
+
+	public void setAd(boolean ad) {
+		this.ad = ad;
+	}
+
 	public String getStart() {
 		return start;
 	}
@@ -54,13 +78,4 @@ public class EventTest {
 	public void setEnd(String end) {
 		this.end = end;
 	}
-
-	public String getNotes() {
-		return notes;
-	}
-
-	public void setNotes(String notes) {
-		this.notes = notes;
-	}
-
 }
