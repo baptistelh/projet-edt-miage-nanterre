@@ -29,7 +29,7 @@ public class GetScheduleWS {
 	
 	@GET @Path("/toto")
 	@Produces(MediaType.APPLICATION_JSON)
-	public CalendarTest getScheduleTest(@DefaultValue("06-10-2012") @QueryParam("start") String start,@DefaultValue("06-16-2012") @QueryParam("end") String end,@DefaultValue("1") @QueryParam("page") int page,@DefaultValue("25") @QueryParam("limit") int limit) {
+	public CalendarTest getScheduleTest(@DefaultValue("06-17-2012") @QueryParam("start") String start,@DefaultValue("06-23-2012") @QueryParam("end") String end,@DefaultValue("1") @QueryParam("page") int page,@DefaultValue("25") @QueryParam("limit") int limit) {
 		
 		//JSONConfiguration.natural().build();
 		JSONConfiguration.natural().rootUnwrapping(false).build();

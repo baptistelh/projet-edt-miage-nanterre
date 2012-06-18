@@ -36,22 +36,23 @@ Ext.define('Ext.calendar.App', {
         // A sample event store that loads static JSON from a local file. Obviously a real
         // implementation would likely be loading remote data via an HttpProxy, but the
         // underlying store functionality is the same.
-//        this.eventStore = Ext.create('Ext.calendar.data.MemoryEventStore', {
-//            data: Ext.calendar.data.Events.getData()
-//        });
-        
-        this.eventStore = Ext.create('Ext.data.Store', {
-            autoLoad: true,
-            proxy: {
-                type: 'rest',
-                url: '/fr.p10.miage.m1.projetedt/rest/GetSchedule/Ec',
-                noCache: false,
-                
-                reader: {
-                    type: 'json'
-                }
-            }
+        this.eventStore = Ext.create('Ext.calendar.data.MemoryEventStore', {
+            data: Ext.calendar.data.Events.getData()
         });
+        
+//        this.eventStore = Ext.create('Ext.calendar.data.MemoryEventStore', {
+//            autoLoad: true,
+//            model: 
+//            proxy: {
+//                type: 'rest',
+//                url: '/fr.p10.miage.m1.projetedt/rest/GetSchedule/toto',
+//                noCache: false,
+//                
+//                reader: {
+//                    type: 'json'
+//                }
+//            }
+//        });
         
         // This is the app UI layout code.  All of the calendar views are subcomponents of
         // CalendarPanel, but the app title bar and sidebar/navigation calendar are separate
