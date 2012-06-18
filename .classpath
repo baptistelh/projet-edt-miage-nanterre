@@ -8,15 +8,5 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="Formation_1.2.jar"/>
-	<classpathentry kind="lib" path="backport-util-concurrent-3.1.jar"/>
-	<classpathentry kind="lib" path="commons-codec-1.5.jar"/>
-	<classpathentry kind="lib" path="commons-lang-2.6.jar"/>
-	<classpathentry kind="lib" path="commons-logging-1.1.1.jar"/>
-	<classpathentry kind="lib" path="groovy-all-1.8.5.jar"/>
-	<classpathentry kind="lib" path="ical4j-1.0.3.jar"/>
-	<classpathentry kind="lib" path="jta-1.1.jar"/>
-	<classpathentry kind="lib" path="quartz-1.8.4.jar"/>
-	<classpathentry kind="lib" path="slf4j-api-1.6.4.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
