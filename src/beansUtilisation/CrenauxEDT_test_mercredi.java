@@ -41,7 +41,7 @@ public class CrenauxEDT_test_mercredi {
 				Creneau cMardi = new Creneau(e2, s2, ec2,type2, "11:00", 120);
 				Jours j2=new Jours();
 				j2.setDate(new GregorianCalendar(2012, 05, 12));
-				cLundi.setDateCreneau(j2);	
+				cMardi.setDateCreneau(j2);	
 				
 				//Mercredi
 				Jours jour = new Jours(new GregorianCalendar(2012, 05, 13));
@@ -51,8 +51,8 @@ public class CrenauxEDT_test_mercredi {
 				UE ue = new UE(1, formation);
 				EC ec = new EC(1, ue, formation);
 				Type type = new Type(1, "TD");
-				Creneau creneau = new Creneau(enseignant, salle, ec, type, "08:30", 240);
-				creneau.setDateCreneau(jour);
+				Creneau cMercredi = new Creneau(enseignant, salle, ec, type, "08:30", 240);
+				cMercredi.setDateCreneau(jour);
 				
 				
 				//Jeudi
@@ -65,7 +65,7 @@ public class CrenauxEDT_test_mercredi {
 				Creneau cJeudi = new Creneau(e4, s4, ec4,type4, "13:00", 120);
 				Jours j4=new Jours();
 				j4.setDate(new GregorianCalendar(2012, 05, 14));
-				cLundi.setDateCreneau(j4);
+				cJeudi.setDateCreneau(j4);
 				
 				//Vendredi
 				Enseignant e5=new Enseignant(1,"Evra", "Patrice", "1 avenue des grevistes" , "0143855910",new GregorianCalendar(1960,10, 10), "logEvra", "pwdEvra");	
@@ -77,7 +77,7 @@ public class CrenauxEDT_test_mercredi {
 				Creneau cVendredi = new Creneau(e5, s5, ec5,type5, "15:00", 120);
 				Jours j5=new Jours();
 				j5.setDate(new GregorianCalendar(2012, 05, 15));
-				cLundi.setDateCreneau(j5);	
+				cVendredi.setDateCreneau(j5);	
 		
 		
 		
