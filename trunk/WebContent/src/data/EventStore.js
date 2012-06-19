@@ -13,18 +13,4 @@ Ext.define('Ext.calendar.data.EventStore', {
           root: 'evts'
       }
     },
-
-//	constructor: function(config){
-//		this.onCreateRecords = Ext.Function.createInterceptor(this.onCreateRecords, this.interceptCreateRecords);
-//	},
-//	
-//	interceptCreateRecords: function(records, operation, success) {
-//            var i = 0,
-//                rec,
-//                len = records.length;
-//            
-//            for (; i < len; i++) {
-//                records[i].data[Ext.calendar.data.EventMappings.StartDate.name] = new Date(records[i].data[Ext.calendar.data.EventMappings.StartDate.name]);
-//            }
-//	}
 });
