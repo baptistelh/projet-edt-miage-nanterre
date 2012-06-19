@@ -1,8 +1,6 @@
 package webservice;
 
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.GregorianCalendar;
 
 
@@ -12,10 +10,10 @@ public class EventTest {
 	private int id = 1001;
 	private int cid = 1;
 	private String title = "Vacation";
-	private Date startNotFormat = new Date(2012-1900, 5, 19, 10, 00);
-	private String start = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(startNotFormat);
-	private Date endNotFormat = new Date(2012-1900, 5, 19, 11, 00);
-	private String end = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(endNotFormat);
+	private GregorianCalendar startNotFormat = new GregorianCalendar(2012, 5, 19, 10, 00);
+	private String start = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(startNotFormat.getTime());
+	private GregorianCalendar endNotFormat = new GregorianCalendar(2012, 5, 19, 12, 00);
+	private String end = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(endNotFormat.getTime());
 	private String notes = "Have fun";
 	private boolean ad = false;
 	
