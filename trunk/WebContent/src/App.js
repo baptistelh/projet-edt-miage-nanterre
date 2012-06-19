@@ -34,9 +34,7 @@ Ext.define('Ext.calendar.App', {
             data: Ext.calendar.data.Calendars.getData()
         });
 
-        // A sample event store that loads static JSON from a local file. Obviously a real
-        // implementation would likely be loading remote data via an HttpProxy, but the
-        // underlying store functionality is the same.
+        // Création de l'event store pour consommer le webservice JEE
 
         this.eventStore = Ext.create('Ext.calendar.data.EventStore');
         
