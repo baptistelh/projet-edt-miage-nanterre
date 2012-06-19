@@ -1,6 +1,7 @@
 package webservice;
 
 import java.util.ArrayList;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 import javax.ws.rs.DefaultValue;
@@ -14,6 +15,13 @@ import javax.ws.rs.core.MediaType;
 import com.sun.jersey.api.json.JSONConfiguration;
 
 import beans.Creneau;
+import beans.EC;
+import beans.Enseignant;
+import beans.Formation;
+import beans.Jours;
+import beans.Salle;
+import beans.Type;
+import beans.UE;
 
 // POJO, no interface no extends
 
@@ -27,14 +35,57 @@ import beans.Creneau;
 @Path("/GetSchedule")
 public class GetScheduleWS {
 	
-	@GET @Path("/toto")
+	@GET @Path("/titi")
 	@Produces(MediaType.APPLICATION_JSON)
-	public CalendarTest getScheduleTest(@DefaultValue("06-17-2012") @QueryParam("start") String start,@DefaultValue("06-23-2012") @QueryParam("end") String end,@DefaultValue("1") @QueryParam("page") int page,@DefaultValue("25") @QueryParam("limit") int limit) {
+	public Calendar getScheduleTest() {
 		
 		//JSONConfiguration.natural().build();
 		JSONConfiguration.natural().rootUnwrapping(false).build();
-		return new CalendarTest(new EventTest());
+		
+		Calendar c = new Calendar();
+		Enseignant e1=new Enseignant(1,"Aragou", "muriel", "1 avenue du meilleur des tuteurs" , "0143855907",new GregorianCalendar(1960,10, 10), "logAragou", "pwdAragou");	
+		Salle s1=new Salle("210A", 50, "enferNum1");
+		Formation F1=new Formation();
+		UE ue1=new UE(1,F1);
+		EC ec1= new EC(1, ue1, F1);
+		Type type1 = new Type(1, "TD"); 
+		Creneau cLundi = new Creneau(e1, s1, ec1,type1, "09:00", 120);
+		Jours j1=new Jours();
+		j1.setDate(new GregorianCalendar(2012, 05, 19));
+		cLundi.setDateCreneau(j1);
+		
+		Event e = new Event(cLundi);
+		
+		c.addEvt(e);
+		
+		Enseignant e2=new Enseignant(1,"Giroud", "Olivier", "1 avenue des coupeurs d'orange" , "0143855908",new GregorianCalendar(1960,10, 10), "logGiroud", "pwdGiroud");	
+		Salle s2=new Salle("210A", 50, "enferNum2");
+		Formation F2=new Formation();
+		UE ue2=new UE(1,F2);
+		EC ec2= new EC(1, ue2, F2);
+		Type type2 = new Type(1, "TD"); 
+		Creneau cMardi = new Creneau(e2, s2, ec2,type2, "11:00", 120);
+		Jours j2=new Jours();
+		j2.setDate(new GregorianCalendar(2012, 05, 20));
+		cMardi.setDateCreneau(j2);	
+		
+		e = new Event(cMardi);
+		c.addEvt(e);
+		
+		return c;
 	}
+	
+	@GET @Path("/toto")
+	@Produces(MediaType.APPLICATION_JSON)
+	public CalendarTest getScheduleTest2() {
+		
+		//JSONConfiguration.natural().build();
+		JSONConfiguration.natural().rootUnwrapping(false).build();
+		
+		return new CalendarTest(new EventTest());
+		
+	}
+		
 	
 	@GET @Path("urlavecparam/{paramtest}")
 	@Produces(MediaType.APPLICATION_JSON)

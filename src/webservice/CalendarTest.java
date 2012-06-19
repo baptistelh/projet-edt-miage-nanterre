@@ -8,7 +8,15 @@ public class CalendarTest {
 	private List <EventTest> evts = new ArrayList<EventTest>();
 	
 	
+	public CalendarTest() {
+		
+	}
+	
 	public CalendarTest(EventTest et){
+		this.evts.add(et);
+	}
+	
+	public void addEvt(EventTest et) {
 		this.evts.add(et);
 	}
 
