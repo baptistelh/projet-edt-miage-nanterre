@@ -24,11 +24,13 @@ public class ODBC_onur {
 		}
 	
 	//recupere tous les creneaux d'un enseigant
-	public static List <Creneau> getCreneaux (Connection c, Enseignant e)(){	
+	public static List <Creneau> getCreneaux (Connection c, Enseignant e){	
 	}
 	
 	//enregistre creneaux d'un enseignant. L'idee est de tout écrasé dans la base pour l'enseignant donné et de réecire. 
-	public static boolean setCreneau
+	public static boolean setCreneau(Connection c, Enseignant e){
+		
+	}
 
 
 }
