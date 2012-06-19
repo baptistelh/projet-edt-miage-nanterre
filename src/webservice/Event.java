@@ -8,7 +8,7 @@ import java.util.GregorianCalendar;
 import beans.Creneau;
 
 public class Event {
-	
+	private static int IDENT_AUTO = 0;
 	private int id = 0;
 	private int cid = 1;
 	private String title;
@@ -37,7 +37,7 @@ public class Event {
 		gc.add(Calendar.MINUTE, c.getDuree());
 		this.end = df.format(gc.getTime());
 		
-		this.id++;
+		this.id = IDENT_AUTO++;
 	}
 	
 	public String getTitle() {
