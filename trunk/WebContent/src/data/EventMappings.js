@@ -18,12 +18,12 @@ Ext.calendar.data.EventMappings = {
     },
     Title: {
         name: 'Title',
-        mapping: 'ec',
+        mapping: 'title',
         type: 'string'
     },
     StartDate: {
         name: 'StartDate',
-        mapping: 'stat',
+        mapping: 'start',
         type: 'date',
         dateFormat: 'Y-m-d H:i:s'
     },
