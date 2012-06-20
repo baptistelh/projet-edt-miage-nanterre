@@ -35,7 +35,7 @@ Ext.define('Ext.calendar.view.DayBody', {
              * @param {Ext.calendar.EventRecord} rec The {@link Ext.calendar.EventRecord record} for the event that was resized
              * containing the updated start and end dates
              */
-            eventresize: true,
+            eventresize: false,
             /**
              * @event dayclick
              * Fires after the user clicks within the day view container and not on an event element
@@ -45,7 +45,7 @@ Ext.define('Ext.calendar.view.DayBody', {
              * DayBodyView always return false for this param.
              * @param {Ext.core.Element} el The Element that was clicked on
              */
-            dayclick: true
+            dayclick: false
         });
     },
 
@@ -162,6 +162,7 @@ Ext.define('Ext.calendar.view.DayBody', {
     getEventBodyMarkup: function() {
         if (!this.eventBodyMarkup) {
             this.eventBodyMarkup = ['{Title}',
+            '&#160;-- ({Time})',
             '<tpl if="_isReminder">',
             '<i class="ext-cal-ic ext-cal-ic-rem">&#160;</i>',
             '</tpl>',

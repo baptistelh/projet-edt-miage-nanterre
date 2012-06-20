@@ -24,7 +24,7 @@ Ext.define('Ext.calendar.view.Day', {
      * @cfg {Boolean} showTime
      * True to display the current time in today's box in the calendar, false to not display it (defautls to true)
      */
-    showTime: true,
+    showTime: false,
     /**
      * @cfg {Boolean} showTodayText
      * True to display the {@link #todayText} string in today's box in the calendar, false to not display it (defautls to true)
