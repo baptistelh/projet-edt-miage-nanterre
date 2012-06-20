@@ -9,22 +9,22 @@
 <body>
 <h1>Bienvenue sur la modification de l'EDT</h1>
 
-<html><body>
 <FORM METHOD=POST ACTION='http://localhost:8080/TD2_Servlets/Convertisseur'>
-<INPUT type='text' value='0' name='enseignant'>
-Enseignant 
-<INPUT type='text' value='0' name='EC'>
+Nom Enseignant 
+<INPUT type='text' value='' name='nom_enseignant'><br>
 EC
-<INPUT type='text' value='0' name='promotion'>
-Promotion
-<INPUT type='text' value='0' name='periode'>
-Periode
-<INPUT type='text' value='0' name='date'>
-Date
-<INPUT type='text' value='0' name='duree'>
+<INPUT type='text' value='' name='EC'><br>
+Date JJ/MM/AAAA
+<INPUT type='text' value='' name='date'><br>
 Duree en minutes
-<INPUT type='submit' value='Envoyer'>
+<INPUT type='text' value='' name='duree'><br>
+Horaire HH:MM
+<INPUT type='text' value='' name='horaire'><br>
+Type
+<INPUT type='text' value='' name='type'><br>
+Salle
+<INPUT type='text' value='' name='salle'><br>
+<INPUT type='submit' value='creer'><br>
 </FORM>
-</html></body>
 </body>
 </html>
