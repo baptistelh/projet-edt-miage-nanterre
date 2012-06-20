@@ -8,8 +8,21 @@
 </head>
 <body>
 <h1>Bienvenue sur la modification de l'EDT</h1>
+<%@ page import="java.util.List"%> 
+<%@ page import="java.util.ArrayList"%>
+<%/*List<Enseignant> enseignants = new ArrayList();
+<SELECT name="nom" size="1">
+<OPTION>lundi
+<OPTION>mardi
+<OPTION>mercredi
+<OPTION>jeudi
+<OPTION>vendredi
+</SELECT> */
+%>
 
-<FORM METHOD=POST ACTION='http://localhost:8080/TD2_Servlets/Convertisseur'>
+
+
+<FORM METHOD=POST ACTION='http://localhost:8080/fr.p10.miage.m1.projetedt/nom_de_la_servlet'>
 Nom Enseignant 
 <INPUT type='text' value='' name='nom_enseignant'><br>
 EC
