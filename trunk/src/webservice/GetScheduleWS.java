@@ -49,6 +49,7 @@ public class GetScheduleWS {
 		Formation F1=new Formation();
 		UE ue1=new UE(1,F1);
 		EC ec1= new EC(1, ue1);
+		ec1.setLibelle("Genie logiciel");
 		Type type1 = new Type(1, "TD");
 		Jours j1=new Jours();
 		j1.setDateDuJour(new GregorianCalendar(2012, 05, 19));
@@ -63,6 +64,7 @@ public class GetScheduleWS {
 		Formation F2=new Formation();
 		UE ue2=new UE(1,F2);
 		EC ec2= new EC(1, ue2);
+		ec2.setLibelle("Chauffage de banc");
 		Type type2 = new Type(1, "TD"); 
 		Jours j2=new Jours();
 		j2.setDateDuJour(new GregorianCalendar(2012, 05, 20));
