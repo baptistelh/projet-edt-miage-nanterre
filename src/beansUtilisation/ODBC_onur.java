@@ -31,6 +31,9 @@ public class ODBC_onur {
 	public static boolean setCreneau(Connection c, Enseignant e){
 		
 	}
-
+	
+	public static Enseignant getEnseignant(Connection c, String nom){
+		
+	}
 
 }
