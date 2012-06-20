@@ -11,7 +11,7 @@ public class Event {
 	private static int IDENT_AUTO = 0;
 	private int id = 0;
 	private int cid = 1;
-	private String ec;
+	private String title;
 	private int time; 
 	private String start;
 	private String end;
@@ -22,7 +22,7 @@ public class Event {
 		DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		
 		this.id = IDENT_AUTO++;
-		this.ec = c.getMonEC().getLibelle();
+		this.title = c.getMonEC().getLibelle();
 		this.time = c.getDuree();
 				
 		GregorianCalendar gc = c.getDateCreneau().getDateDuJour();
@@ -57,12 +57,12 @@ public class Event {
 		this.cid = cid;
 	}
 
-	public String getEc() {
-		return ec;
+	public String getTitle() {
+		return title;
 	}
 
-	public void setEc(String ec) {
-		this.ec = ec;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 	public int getTime() {
