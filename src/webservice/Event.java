@@ -11,22 +11,21 @@ public class Event {
 	private static int IDENT_AUTO = 0;
 	private int id = 0;
 	private int cid = 1;
-	private String title;
-//	private GregorianCalendar startNotFormat = new GregorianCalendar(2012, 5, 19, 10, 00);
-//	private String start = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(startNotFormat.getTime());
-//	private GregorianCalendar endNotFormat = new GregorianCalendar(2012, 5, 19, 12, 00);
-//	private String end = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(endNotFormat.getTime());
+	private String ec;
+	private int time; 
 	private String start;
 	private String end;
-	private String notes = "Have fun";
-	private boolean ad = false;
+	private String room;
+	private String teacher;
 	
 	public Event(Creneau c) {
 		DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		
-		this.title = c.getMonEC().getLibelle() + c.getMaSalle().getNumSalle() + c.getMonEnseignant().getNom();
-		
-		GregorianCalendar gc = c.getDateCreneau().getDate();
+		this.id = IDENT_AUTO++;
+		this.ec = c.getMonEC().getLibelle();
+		this.time = c.getDuree();
+				
+		GregorianCalendar gc = c.getDateCreneau().getDateDuJour();
 		int heure = Integer.parseInt(c.getHoraire().split(":")[0]);
 		int minute = Integer.parseInt(c.getHoraire().split(":")[1]);
 
@@ -37,31 +36,9 @@ public class Event {
 		gc.add(Calendar.MINUTE, c.getDuree());
 		this.end = df.format(gc.getTime());
 		
-		this.id = IDENT_AUTO++;
-	}
-	
-	public String getTitle() {
-		return title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	public String getStart() {
-		return start;
-	}
-
-	public void setStart(String start) {
-		this.start = start;
-	}
-
-	public String getEnd() {
-		return end;
-	}
-
-	public void setEnd(String end) {
-		this.end = end;
+		this.room = c.getMaSalle().getNumeroSalle();
+		this.teacher = c.getMonEnseignant().getPrenom()+" "+c.getMonEnseignant().getNom();
+		
 	}
 
 	public int getId() {
@@ -80,22 +57,52 @@ public class Event {
 		this.cid = cid;
 	}
 
-	public String getNotes() {
-		return notes;
+	public String getEc() {
+		return ec;
 	}
 
-	public void setNotes(String notes) {
-		this.notes = notes;
+	public void setEc(String ec) {
+		this.ec = ec;
 	}
 
-	public boolean isAd() {
-		return ad;
+	public int getTime() {
+		return time;
 	}
 
-	public void setAd(boolean ad) {
-		this.ad = ad;
+	public void setTime(int time) {
+		this.time = time;
 	}
-	
-	
+
+	public String getStart() {
+		return start;
+	}
+
+	public void setStart(String start) {
+		this.start = start;
+	}
+
+	public String getEnd() {
+		return end;
+	}
+
+	public void setEnd(String end) {
+		this.end = end;
+	}
+
+	public String getRoom() {
+		return room;
+	}
+
+	public void setRoom(String room) {
+		this.room = room;
+	}
+
+	public String getTeacher() {
+		return teacher;
+	}
+
+	public void setTeacher(String teacher) {
+		this.teacher = teacher;
+	}
 	
 }
