@@ -34,7 +34,7 @@ Ext.define('Ext.calendar.view.Day', {
      * @cfg {String} todayText
      * The text to display in the current day's box in the calendar when {@link #showTodayText} is true (defaults to 'Today')
      */
-    todayText: 'Today',
+    todayText: 'Aujourd\'hui',
     /**
      * @cfg {String} ddCreateEventText
      * The text to display inside the drag proxy while dragging over the calendar to create a new event (defaults to 
