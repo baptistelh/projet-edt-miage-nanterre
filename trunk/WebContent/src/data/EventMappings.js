@@ -18,12 +18,12 @@ Ext.calendar.data.EventMappings = {
     },
     Title: {
         name: 'Title',
-        mapping: 'title',
+        mapping: 'ec',
         type: 'string'
     },
     StartDate: {
         name: 'StartDate',
-        mapping: 'start',
+        mapping: 'stat',
         type: 'date',
         dateFormat: 'Y-m-d H:i:s'
     },
@@ -33,10 +33,20 @@ Ext.calendar.data.EventMappings = {
         type: 'date',
         dateFormat: 'Y-m-d H:i:s'
     },
+    Time: {
+        name: 'Time',
+        mapping: 'time',
+        type: 'string'
+    },
     Location: {
         name: 'Location',
-        mapping: 'loc',
+        mapping: 'room',
         type: 'string'
+    },
+    Teacher: {
+    	name: 'Teacher',
+    	mapping:'teacher',
+    	type: 'string,'
     },
     Notes: {
         name: 'Notes',
