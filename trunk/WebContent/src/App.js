@@ -34,7 +34,7 @@ Ext.define('Ext.calendar.App', {
             data: Ext.calendar.data.Calendars.getData()
         });
 
-        // Création de l'event store pour consommer le webservice JEE
+        // Crï¿½ation de l'event store pour consommer le webservice JEE
         this.eventStore = Ext.create('Ext.calendar.data.EventStore');
         
         // This is the app UI layout code.  All of the calendar views are subcomponents of
@@ -86,7 +86,8 @@ Ext.define('Ext.calendar.App', {
                     border: false,
                     id:'app-calendar',
                     region: 'center',
-                    activeItem: 3, // month view
+//                    activeItem: 2, // month view
+                    activeItem : 1, //week view par defaut
                     
                     monthViewCfg: {
                         showHeader: true,
