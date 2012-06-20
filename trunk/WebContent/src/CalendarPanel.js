@@ -39,7 +39,7 @@ Ext.define('Ext.calendar.CalendarPanel', {
      * If the day and week views are both hidden, the month view will show by default even if
      * this config is false.
      */
-    showMonthView: false,
+    showMonthView: true,
     /**
      * @cfg {Boolean} showNavBar
      * True to display the calendar navigation toolbar, false to hide it (defaults to true). Note that
