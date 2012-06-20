@@ -12,7 +12,7 @@ public class Event {
 	private int id = 0;
 	private int cid = 1;
 	private String title;
-	private int time; 
+	private String time; 
 	private String start;
 	private String end;
 	private String room;
@@ -23,13 +23,17 @@ public class Event {
 		
 		this.id = IDENT_AUTO++;
 		this.title = c.getMonEC().getLibelle();
-		this.time = c.getDuree();
+		
+		int hour = c.getDuree()/60;
+		int minute = c.getDuree()%60;
+		
+		this.time = hour+":"+minute;
 				
 		GregorianCalendar gc = c.getDateCreneau().getDateDuJour();
-		int heure = Integer.parseInt(c.getHoraire().split(":")[0]);
-		int minute = Integer.parseInt(c.getHoraire().split(":")[1]);
+		hour = Integer.parseInt(c.getHoraire().split(":")[0]);
+		minute = Integer.parseInt(c.getHoraire().split(":")[1]);
 
-		gc.add(Calendar.HOUR,heure);
+		gc.add(Calendar.HOUR,hour);
 		gc.add(Calendar.MINUTE, minute);
 		
 		this.start = df.format(gc.getTime());
@@ -65,11 +69,11 @@ public class Event {
 		this.title = title;
 	}
 
-	public int getTime() {
+	public String getTime() {
 		return time;
 	}
 
-	public void setTime(int time) {
+	public void setTime(String time) {
 		this.time = time;
 	}
 

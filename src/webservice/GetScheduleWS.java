@@ -54,7 +54,7 @@ public class GetScheduleWS {
 		Jours j1=new Jours();
 		j1.setDateDuJour(new GregorianCalendar(2012, 05, 19));
 		Creneau cLundi = new Creneau(e1, s1, ec1, type1, j1, "09:00");
-		cLundi.setDuree(120);
+		cLundi.setDuree(90);
 		
 		Event e = new Event(cLundi);
 		c.addEvt(e);
