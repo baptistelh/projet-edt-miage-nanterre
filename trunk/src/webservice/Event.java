@@ -27,7 +27,10 @@ public class Event {
 		int hour = c.getDuree()/60;
 		int minute = c.getDuree()%60;
 		
-		this.time = hour+":"+minute;
+		this.time = hour+"h"+minute;
+		if(minute < 10)
+			this.time +="0";
+		
 				
 		GregorianCalendar gc = c.getDateCreneau().getDateDuJour();
 		hour = Integer.parseInt(c.getHoraire().split(":")[0]);
