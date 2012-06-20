@@ -53,7 +53,9 @@ public class verificationCreneaux {
 			for (Creneau temp2 : c2) {
 				Jours j1 = temp1.getDateCreneau();
 				Jours j2 = temp2.getDateCreneau();
-				if (j1.equals(j2)) {
+				System.out.println(j1.getDate().toString());
+				System.out.println(j2.getDate().toString());
+				if (j1.getDate().equals(j2.getDate())) {
 
 					// date arbritraire pour comparaison horaires. Construction
 					// heure debut creneau, heure fin creneau
@@ -67,7 +69,10 @@ public class verificationCreneaux {
 					GregorianCalendar gcFin2 = new GregorianCalendar(2000, 1,
 							1, Integer.parseInt(temp2.getHoraire()),
 							temp2.getDuree(), 0);
-
+					System.out.println("gcdeb1:" + gcDeb1.toString() +"\n");
+					System.out.println("gcdeb2:" + gcDeb2.toString() +"\n");
+					System.out.println("gcFin1:" + gcFin1.toString() +"\n");
+					System.out.println("gcFin2:" + gcFin2.toString() +"\n");
 					if (((gcDeb2.after(gcDeb1)) && (gcDeb2.before(gcFin1)))
 							|| ((gcFin2.after(gcDeb1)) && (gcFin2
 									.before(gcFin1)))) {
