@@ -41,7 +41,7 @@ Ext.define('Ext.calendar.App', {
         // CalendarPanel, but the app title bar and sidebar/navigation calendar are separate
         // pieces that are composed in app-specific layout code since they could be omitted
         // or placed elsewhere within the application.
-        Ext.Loader.loadScriptFile('Ext.calendar.localization.ext-lang-fr.js',function() {
+//        Ext.Loader.loadScriptFile('Ext.calendar.localization.ext-lang-fr.js',function() {
         Ext.create('Ext.Viewport', {
             layout: 'border',
             renderTo: 'calendar-ct',
@@ -194,7 +194,7 @@ Ext.define('Ext.calendar.App', {
                     }
                 }]
             }]
-        });
+//        });
         });
     },
         
