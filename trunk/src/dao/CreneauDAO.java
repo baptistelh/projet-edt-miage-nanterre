@@ -4,6 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 import beans.Creneau;
@@ -54,6 +55,7 @@ public class CreneauDAO extends DAO<Creneau> {
 
 		@Override
 	public Creneau create(Creneau obj) {
+			
 			try {
 					Statement request = this.connect.createStatement();
 					String requete = "INSERT INTO "+ FormationDAO.TABLE+" (NO_ENSEIGNANT, " +
@@ -81,30 +83,7 @@ public class CreneauDAO extends DAO<Creneau> {
 					if(debug) System.out.println(requete);		                                                 
 				
 					request.close();
-				/*	if(!obj.getMesUE().isEmpty()){
-						for(int i=0;i<obj.getMesUE().size();i++){				
-							UEDAO ueDAO = new UEDAO();
-							if(ueDAO.find(obj.getMesUE().get(i).getNumeroUE()) ==null){
-								ueDAO.create(obj.getMesUE().get(i));
-							}
-							else{
-								//on met a jour
-							}
-						}
-					}*/
-				/*	if(!obj.getMesPromotions().isEmpty()){
-						for(int i=0;i<obj.getMesPromotions().size();i++){				
-							PromotionDAO promoDAO = new PromotionDAO();
-							if(promoDAO.find(obj.getMesPromotions().get(i).getNumeroPromotion()) ==null){
-								promoDAO.create(obj.getMesPromotions().get(i));
-							}
-							else{
-								//on met a jour
-							}
-						}
-					}*/
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			return obj;
@@ -112,9 +91,12 @@ public class CreneauDAO extends DAO<Creneau> {
 	}
 
 	@Override
-	public Creneau update(Formation obj) {
-		// TODO Auto-generated method stub
-		return null;
+	public Creneau update(Creneau obj) {
+		
+		delete (obj);
+		create(obj);
+		
+		return obj;
 	}
 
 	@Override
@@ -122,50 +104,66 @@ public class CreneauDAO extends DAO<Creneau> {
 			try {
 				Statement request = this.connect.createStatement();
 				String requete = "DELETE FROM " + CreneauDAO.TABLE +" WHERE NO_ENSEIGNANT = " + obj.getMonEnseignant().getNumeroEnseignant() +
-		                        " AND   NO_SALLE = " +  obj.getMaSalle().getNumeroSalle() +
+		                        " AND   NO_SALLE = '" +  obj.getMaSalle().getNumeroSalle() + "'" +
 		                        " AND   NO_EC = " + obj.getMonEC().getNumeroEC() +
 		                        " AND   NO_UE = " + obj.getMonEC().getMonUE().getNumeroUE() +
 		                        " AND   NO_FORMATION = " + obj.getMonEC().getMonUE().getMaFormation().getNumeroFormation() +
 		                        " AND   NO_TYPE = " + obj.getMonType().getNumeroType() +
-		                        " AND   DATE_CRENEAU = " + DAO.dateFromJavaToOracle(obj.getDateCreneau().getDateDuJour()) + ";";
+		                        " AND   DATE_CRENEAU = " + DAO.dateFromJavaToOracle(obj.getDateCreneau().getDateDuJour());
 				request.executeUpdate(requete);
 				
 				request.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		
 	}
 	
-	public void loadMesUE(Formation obj) {
-		int id = obj.getNumeroFormation();
+	public Creneau find(int no_enseignant, String no_salle, int no_ec, int no_ue, int no_formation, int no_type, GregorianCalendar date_creneau){
+
+		Creneau obj = null;
 		try {
 			Statement request = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
-			ResultSet result = request.executeQuery("SELECT * FROM " + UEDAO.TABLE + " WHERE NO_FORMATION = " + id);
+			String requete = "SELECT * FROM " + CreneauDAO.TABLE + 
+								" WHERE NO_ENSEIGNANT = " + no_enseignant +
+		                        " AND   NO_SALLE = '" +  no_salle + "'" +
+		                        " AND   NO_EC = " + no_ec +
+		                        " AND   NO_UE = " + no_ue +
+		                        " AND   NO_FORMATION = " + no_formation +
+		                        " AND   NO_TYPE = " + no_type +
+		                        " AND   DATE_CRENEAU = " + DAO.dateFromJavaToOracle(date_creneau);
+			System.out.println(request);
+			ResultSet result = request.executeQuery(requete);
 
-			while(result.next()){
-				UE ue = new UE(result.getInt("NO_UE"), obj);
-				obj.getMesUE().add(ue);
-			}
+				
+				
+				EnseignantDAO enseignantDAO= new EnseignantDAO();
+				SalleDAO salleDAO= new SalleDAO();
+				ECDAO ecDAO= new ECDAO();
+				TypeDAO typeDAO= new TypeDAO();
+				JoursDAO joursDAO= new JoursDAO();
+				
+
+				obj = new Creneau();
+				obj.setMonEnseignant(enseignantDAO.find(result.getInt("NO_ENSEIGNANT")));
+				obj.setMaSalle(salleDAO.find(result.getInt("NO_SALLE")));
+				obj.setMonEC(ecDAO.find(result.getInt("NO_EC"), result.getInt("NO_UE"), result.getInt("NO_FORMATION")));
+				obj.setMonType(typeDAO.find(result.getInt("NO_TYPE")));
+				obj.setDateCreneau(joursDAO.find(result.getDate("DATE_CRENEAU")));
+				obj.setDuree(result.getInt("DUREE_CRENEAU"));
+				obj.setHoraire(result.getString("DUREE_CRENEAU"));
+				
+				request.close();
+			
 	    } catch (SQLException e) {
 	            e.printStackTrace();
 	    }
 	}
-	
-	public void loadMesPromotions(Creneau obj) {
-		int id = obj.getNumeroFormation();
-		try {
-			Statement request = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
-			ResultSet result = request.executeQuery("SELECT * FROM " + PromotionDAO.TABLE + " WHERE NO_FORMATION = " + id);
 
-			while(result.next()){
-				Promotion p = new Promotion(result.getInt("NO_PROMOTION"));
-				obj.getMesPromotions().add(p);
-			}
-	    } catch (SQLException e) {
-	            e.printStackTrace();
-	    }
+	@Override
+	public Creneau find(int arg0) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
