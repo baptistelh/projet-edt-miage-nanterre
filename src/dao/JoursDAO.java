@@ -8,8 +8,6 @@ import java.util.List;
 
 import beans.*;
 
-
-
 public class JoursDAO extends DAO<Jours> {
 	
 	public static String TABLE = "JOURS";
@@ -17,8 +15,8 @@ public class JoursDAO extends DAO<Jours> {
 	public static boolean debug = true;
 	
 	public List<Jours> findAll() {
-		List <Creneau> listeCreneaux= new ArrayList<Creneau>();
-		Creneau obj = null;
+		List <Jours> listeJours= new ArrayList<Jours>();
+		Jours obj = null;
 		try {
 			Statement request = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
 			ResultSet result = request.executeQuery("SELECT * FROM " + JoursDAO.TABLE);
@@ -32,7 +30,9 @@ public class JoursDAO extends DAO<Jours> {
 				JoursDAO joursDAO= new JoursDAO();
 				
 
-				obj = new Creneau();
+				obj = new Jours();
+				obj.setDateDuJour(result.getDate());
+				
 				obj.setMonEnseignant(enseignantDAO.find(result.getInt("NO_ENSEIGNANT")));
 				obj.setMaSalle(salleDAO.find(result.getInt("NO_SALLE")));
 				obj.setMonEC(ecDAO.find(result.getInt("NO_EC"), result.getInt("NO_UE"), result.getInt("NO_FORMATION")));
@@ -165,6 +165,12 @@ public class JoursDAO extends DAO<Jours> {
 	    } catch (SQLException e) {
 	            e.printStackTrace();
 	    }
+	}
+
+	@Override
+	public Jours find(int arg0) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
