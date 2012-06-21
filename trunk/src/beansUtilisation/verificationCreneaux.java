@@ -1,5 +1,6 @@
 package beansUtilisation;
 
+import java.util.Calendar;
 import java.util.Enumeration;
 import java.util.GregorianCalendar;
 import java.util.Hashtable;
@@ -59,21 +60,48 @@ public class verificationCreneaux {
 
 					// date arbritraire pour comparaison horaires. Construction
 					// heure debut creneau, heure fin creneau
+					
+					int heureDeb1=Integer.parseInt(temp1.getHoraire().substring(0,2));
+					int minDeb1=Integer.parseInt(temp1.getHoraire().substring(3));
 					GregorianCalendar gcDeb1 = new GregorianCalendar(2000, 1,
-							1, Integer.parseInt(temp1.getHoraire()), 0, 0);
+							1,heureDeb1,minDeb1, 0);
+					
+					int minDuree=minDeb1+temp1.getDuree();
+					int heureFin1=heureDeb1+(minDuree/60);
+					int minFin1=minDuree%60;
+					
 					GregorianCalendar gcFin1 = new GregorianCalendar(2000, 1,
-							1, Integer.parseInt(temp1.getHoraire()),
-							temp1.getDuree(), 0);
-					GregorianCalendar gcDeb2 = new GregorianCalendar(2000, 1,
-							1, Integer.parseInt(temp2.getHoraire()), 0, 0);
+							1,heureFin1,minFin1, 0);
+					
+					int heureDeb2=Integer.parseInt(temp2.getHoraire().substring(0,2));
+					int minDeb2=Integer.parseInt(temp2.getHoraire().substring(3));
+					
+					GregorianCalendar gcDeb2 =  new GregorianCalendar(2000, 1,
+							1,heureDeb2,minDeb2, 0);
+					
+					int minDuree2=minDeb2+temp2.getDuree();
+					int heureFin2=heureDeb2+(minDuree2/60);
+					int minFin2=minDuree2%60;
+					
+					System.out.println("heuredeb1: " + heureDeb1+"\n");
+					System.out.println("mindeb1: " + minDeb1+"\n");
+					System.out.println("heureFin1: " + heureFin1+"\n");
+					System.out.println("minFin1: " + minFin1+"\n");
+					System.out.println("heureDeb2:" + heureDeb2+"\n");
+					System.out.println("minFin2:" + minDeb1+"\n");
+					System.out.println("heureFin2: " + heureFin2+"\n");
+					System.out.println("minFin2: " + minFin2+"\n");
+					
+					
 					GregorianCalendar gcFin2 = new GregorianCalendar(2000, 1,
-							1, Integer.parseInt(temp2.getHoraire()),
-							temp2.getDuree(), 0);
-					System.out.println("gcdeb1:" + gcDeb1.toString() +"\n");
-					System.out.println("gcdeb2:" + gcDeb2.toString() +"\n");
-					System.out.println("gcFin1:" + gcFin1.toString() +"\n");
-					System.out.println("gcFin2:" + gcFin2.toString() +"\n");
-					if (((gcDeb2.after(gcDeb1)) && (gcDeb2.before(gcFin1)))
+							1, heureFin2,minFin2, 0);
+					
+					System.out.println("gcdeb1:" + gcDeb1.get(Calendar.HOUR)+ gcDeb1.get(Calendar.MINUTE)+"\n");
+					System.out.println("gcdeb2:" + gcDeb2.get(Calendar.HOUR)+ gcDeb2.get(Calendar.MINUTE) +"\n");
+					System.out.println("gcFin1:" + gcFin1.get(Calendar.HOUR)+ gcFin1.get(Calendar.MINUTE) +"\n");
+					System.out.println("gcFin2:" + gcFin2.get(Calendar.HOUR)+ gcFin2.get(Calendar.MINUTE) +"\n");
+					
+					if ((((gcDeb2.after(gcDeb1))||(gcDeb2.equals(gcDeb1))) && (gcDeb2.before(gcFin1)))
 							|| ((gcFin2.after(gcDeb1)) && (gcFin2
 									.before(gcFin1)))) {
 						result = false;
