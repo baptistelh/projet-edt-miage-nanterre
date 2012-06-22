@@ -102,4 +102,90 @@ public class JoursDAO extends DAO<Jours> {
 		}
 		return j;
 	}
+
+	public void loadMesCreneaux(Jours obj) {
+		GregorianCalendar date = obj.getDateDuJour();
+		try {
+			Statement request = this.connect.createStatement(
+					ResultSet.TYPE_SCROLL_INSENSITIVE,
+					ResultSet.CONCUR_UPDATABLE);
+			ResultSet result = request.executeQuery("SELECT * FROM "
+					+ CreneauDAO.TABLE + " WHERE DATE = '"
+					+ DAO.dateFromJavaToOracle(date) + "'");
+
+			while (result.next()) {
+				CreneauDAO c = new CreneauDAO();
+				Creneau creneau = c.find(result.getInt("NO_ENSEIGNANT"), result
+						.getString("NO_SALLE"), result.getInt("NO_EC"), result
+						.getInt("NO_UE"), result.getInt("NO_FORMATION"), result
+						.getInt("NO_TYPE"), DAO.dateFromOracleToJava(result
+						.getDate("DATE_CRENEAU")));
+
+				obj.getMesCreneaux().add(creneau);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void loadMesIndisponibilites(Jours obj) {
+		GregorianCalendar date = obj.getDateDuJour();
+		try {
+			Statement request = this.connect.createStatement(
+					ResultSet.TYPE_SCROLL_INSENSITIVE,
+					ResultSet.CONCUR_UPDATABLE);
+			ResultSet result = request.executeQuery("SELECT * FROM "
+					+ IndisponibiliteDAO.TABLE + " WHERE JOURS = '"
+					+ DAO.dateFromJavaToOracle(date) + "'");
+
+			while (result.next()) {
+				IndisponibiliteDAO i = new IndisponibiliteDAO();
+				Indisponibilite indispo = i.find(result.getDate("DATE_INDISPO"), result
+						.getInt("NO_ENSEIGNANT"));
+				obj.getMesIndisponibilites().add(indispo);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void loadMesReunions(Jours obj) {
+		GregorianCalendar date = obj.getDateDuJour();
+		try {
+			Statement request = this.connect.createStatement(
+					ResultSet.TYPE_SCROLL_INSENSITIVE,
+					ResultSet.CONCUR_UPDATABLE);
+			ResultSet result = request.executeQuery("SELECT * FROM "
+					+ ReunionDAO.TABLE + " WHERE DATE = '"
+					+ DAO.dateFromJavaToOracle(date) + "'");
+
+			while (result.next()) {
+				ReunionDAO r = new ReunionDAO();
+				Reunion reunion = r.find(result.getInt("NO_REUNION"));
+				obj.getMesReunions().add(reunion);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void loadMesExamens(Jours obj) {
+		GregorianCalendar date = obj.getDateDuJour();
+		try {
+			Statement request = this.connect.createStatement(
+					ResultSet.TYPE_SCROLL_INSENSITIVE,
+					ResultSet.CONCUR_UPDATABLE);
+			ResultSet result = request.executeQuery("SELECT * FROM "
+					+ ExamenDAO.TABLE + " WHERE DATE = '"
+					+ DAO.dateFromJavaToOracle(date) + "'");
+
+			while (result.next()) {
+				ExamenDAO e = new ExamenDAO();
+				Examen examen = e.find(result.getInt("NO_EXAMEN"));
+				obj.getMesExamens().add(examen);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 }
