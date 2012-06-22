@@ -14,11 +14,15 @@ import javax.ws.rs.core.MediaType;
 
 import com.sun.jersey.api.json.JSONConfiguration;
 
+import dao.EnseignantDAO;
+import dao.SalleDAO;
+
 import beans.Creneau;
 import beans.EC;
 import beans.Enseignant;
 import beans.Formation;
 import beans.Jours;
+import beans.Promotion;
 import beans.Salle;
 import beans.Type;
 import beans.UE;
@@ -53,8 +57,7 @@ public class GetScheduleWS {
 		Type type1 = new Type(1, "TD");
 		Jours j1=new Jours();
 		j1.setDateDuJour(new GregorianCalendar(2012, 05, 19));
-		Creneau cLundi = new Creneau(e1, s1, ec1, type1, j1, "09:00");
-		cLundi.setDuree(90);
+		Creneau cLundi = new Creneau(e1, s1, ec1, type1, j1, "09:00", 90);
 		
 		Event e = new Event(cLundi);
 		c.addEvt(e);
@@ -68,8 +71,7 @@ public class GetScheduleWS {
 		Type type2 = new Type(1, "TD"); 
 		Jours j2=new Jours();
 		j2.setDateDuJour(new GregorianCalendar(2012, 05, 20));
-		Creneau cMardi = new Creneau(e2, s2, ec2, type2, j2, "11:00");
-		cMardi.setDuree(180);
+		Creneau cMardi = new Creneau(e2, s2, ec2, type2, j2, "11:00", 180);
 	
 		e = new Event(cMardi);
 		c.addEvt(e);
@@ -89,58 +91,73 @@ public class GetScheduleWS {
 	}
 		
 	
-	@GET @Path("urlavecparam/{paramtest}")
-	@Produces(MediaType.APPLICATION_JSON)
-	public String getSchedule(@PathParam("paramtest") String str) {
-		return "le param est "+str;
-	}
+//	@GET @Path("urlavecparam/{paramtest}")
+//	@Produces(MediaType.APPLICATION_JSON)
+//	public String getSchedule(@PathParam("paramtest") String str) {
+//		return "le param est "+str;
+//	}
 	
 	@GET @Path("/Ec")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Event> getScheduleFromEc() {
-		Event e1 = new Event(new Creneau());
-		Event e2 = new Event(new Creneau());
+		ECDAO ed = new ECDAO();
 		
+		List<EC> le =  ed.findAll();
 		List<Event> listEvt = new ArrayList<Event>();
-		listEvt.add(e1);
-		listEvt.add(e2);
+		
+		for(EC e : le) {
+			for(Creneau c : e.getMesCreneaux())
+				listEvt.add(new Event(c));
+		}
+
 		return listEvt;
 	}
 	
 	@GET @Path("/Teacher")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Event> getScheduleFromTeacher() {
-		Event e1 = new Event(new Creneau());
-		Event e2 = new Event(new Creneau());
+		EnseignantDAO ed = new EnseignantDAO();
 		
+		List<Enseignant> le =  ed.findAll();
 		List<Event> listEvt = new ArrayList<Event>();
-		listEvt.add(e1);
-		listEvt.add(e2);
+		
+		for(Enseignant e : le) {
+			for(Creneau c : e.getMesCreneaux())
+				listEvt.add(new Event(c));
+		}
+
 		return listEvt;
 	}
 	
-	@GET @Path("/Promotion")
-	@Produces(MediaType.APPLICATION_JSON)
-	public List<Event> getScheduleFromPromotion() {
-		
-		Event e1 = new Event(new Creneau());
-		Event e2 = new Event(new Creneau());
-		
-		List<Event> listEvt = new ArrayList<Event>();
-		listEvt.add(e1);
-		listEvt.add(e2);
-		return listEvt;
-	}
+//	@GET @Path("/Promotion")
+//	@Produces(MediaType.APPLICATION_JSON)
+//	public List<Event> getScheduleFromPromotion() {
+//		PromotionDAO pd = new PromotionDAO();
+//		
+//		List<Promotion> lp =  pd.findAll();
+//		List<Event> listEvt = new ArrayList<Event>();
+//		
+//		for(Promotion p : lp) {
+//			for(Creneau c : p.getMesCreneaux())
+//				listEvt.add(new Event(c));
+//		}
+//
+//		return listEvt;
+//	}
 	
 	@GET @Path("Room")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Event> getScheduleFromRoom() {
-		Event e1 = new Event(new Creneau());
-		Event e2 = new Event(new Creneau());
+		SalleDAO sd = new SalleDAO();
 		
+		List<Salle> ls =  sd.findAll();
 		List<Event> listEvt = new ArrayList<Event>();
-		listEvt.add(e1);
-		listEvt.add(e2);
+		
+		for(Salle s : ls) {
+			for(Creneau c : s.getMesCreneaux())
+				listEvt.add(new Event(c));
+		}
+
 		return listEvt;
 	}
 }
