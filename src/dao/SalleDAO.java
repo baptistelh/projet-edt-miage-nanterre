@@ -126,7 +126,7 @@ public class SalleDAO extends DAO<Salle> {
 		return null;
 	}
 	
-	public void loadMesCreneau(Salle obj) {
+	public void loadMesCreneaux(Salle obj) {
 		String no_salle = obj.getNumeroSalle();
 		try {
 			Statement request = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
@@ -143,6 +143,23 @@ public class SalleDAO extends DAO<Salle> {
 						DAO.dateFromOracleToJava(result.getDate("DATE_CRENEAU")));
 				
 				obj.getMesCreneaux().add(creneau);
+			}
+	    } catch (SQLException e) {
+	            e.printStackTrace();
+	    }
+	}
+	
+	public void loadMesReunions(Salle obj) {
+		String no_salle = obj.getNumeroSalle();
+		try {
+			Statement request = this.connect.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
+			ResultSet result = request.executeQuery("SELECT * FROM " + ReunionDAO.TABLE + " WHERE NO_SALLE = " + no_salle);
+
+			while(result.next()){
+				ReunionDAO r = new ReunionDAO();
+				Reunion reunion= r.find(result.getInt("NO_REUNION"));
+				
+				obj.getMesReunions().add(reunion);
 			}
 	    } catch (SQLException e) {
 	            e.printStackTrace();
