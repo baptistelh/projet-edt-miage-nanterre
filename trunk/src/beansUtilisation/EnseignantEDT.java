@@ -3,6 +3,7 @@ package beansUtilisation;
 import beans.*;
 
 import java.sql.Connection;
+import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.GregorianCalendar;
 import java.util.Hashtable;
@@ -37,11 +38,15 @@ public class EnseignantEDT {
 		}
 	}
 
-	public boolean respectVoeuxEnseignant(List<Creneau> creneaux, Enseignant e){
+	public static boolean respectVoeuxEnseignant(List<Creneau> creneaux, Enseignant e){
 		boolean result=true;
-		List <Indisponibilite> indispos =e.getMesIndispos();
-		List <Creneau> indisposC = null;
+		List <Indisponibilite> indispos =e.getMesIndisponibilites();
+		List <Creneau> indisposC = new ArrayList<Creneau>();
 		String horaireIndispo;
+		Enseignant tempEns=e;
+		Salle tempSalle=new Salle();
+		EC tempEC =new EC();
+		Type tempType=new Type();
 		// On parcours la liste des indispos. On garde que les indispos ou poids=0 et on crée une liste de creneaux les contenant pour comparaison avec creneau de l'enseigant (souhaité et deja enregistrés)
 		for (Indisponibilite i:indispos){
 			if (i.getPoids()!=0){
@@ -54,8 +59,7 @@ public class EnseignantEDT {
 				}else{
 					horaireIndispo="13:45";
 				}
-				Creneau temp= new Creneau(null,null,null,null,horaireIndispo,240);
-				temp.setDateCreneau(i.getDateIndisponibilite());
+				Creneau temp= new Creneau(tempEns,tempSalle,tempEC,tempType,i.getDateIndisponibilite(),horaireIndispo,240);
 				indisposC.add(temp);
 				
 			}
