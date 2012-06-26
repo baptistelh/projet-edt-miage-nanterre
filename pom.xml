@@ -464,5 +464,19 @@
 			<scope>system</scope>
 			<systemPath>${integration.lib.path}/jackson-core-asl-1.9.2.jar</systemPath>
 		</dependency>      
+		<dependency>
+			<groupId>fr.paris10.miage.m1a.edt</groupId>
+			<artifactId>externallib_13</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>${integration.lib.path}/jersey-json-1.12.jar</systemPath>
+		</dependency>            
+		<dependency>
+			<groupId>fr.paris10.miage.m1a.edt</groupId>
+			<artifactId>externallib_14</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>${integration.lib.path}/jersey-core-1.12.jar</systemPath>
+		</dependency>            
 	</dependencies>
 </project>
