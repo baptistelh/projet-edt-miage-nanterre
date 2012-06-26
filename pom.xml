@@ -52,7 +52,11 @@
 			<url>http://repo1.maven.org/maven2</url>
 		</pluginRepository>
 	</pluginRepositories>
-	<build>
+
+    <properties>
+		<integration.lib.path>/var/lib/hudson/jobs/EDT-M1A-2011-2012/workspace/WebContent/WEB-INF/lib</integration.lib.path>
+	  </properties>
+    <build>
 		<sourceDirectory>src</sourceDirectory>
 		<scriptSourceDirectory>src/scripts</scriptSourceDirectory>
 		<testSourceDirectory>test</testSourceDirectory>
@@ -365,5 +369,12 @@
 			<version>6.0</version>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+			<groupId>fr.paris10.miage.m1a</groupId>
+			<artifactId>projetintegration</artifactId>
+			<version>2.1</version>
+			<scope>system</scope>
+			<systemPath>${integration.lib.path}/Formation_2.1.jar</systemPath>
+		</dependency>      
 	</dependencies>
 </project>
