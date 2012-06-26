@@ -14,6 +14,7 @@ import javax.ws.rs.core.MediaType;
 
 import com.sun.jersey.api.json.JSONConfiguration;
 
+import dao.ECDAO;
 import dao.EnseignantDAO;
 import dao.SalleDAO;
 
