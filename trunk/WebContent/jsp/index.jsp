@@ -13,9 +13,9 @@
 <%@ page import="dao.EnseignantDAO"%>;
 <%@ page import="beans.Enseignant"%>;
 <%
-Enseignant e1=new Enseignant(1,"Aragou", "muriel", "1 avenue du meilleur des tuteurs" , "0143855907",new GregorianCalendar(1960,10, 10), "logAragou", "pwdAragou");	
-Enseignant e2=new Enseignant(1,"Giroud", "Olivier", "1 avenue des coupeurs d'orange" , "0143855908",new GregorianCalendar(1960,10, 10), "logGiroud", "pwdGiroud");	
-Enseignant e3 = new Enseignant(2, "Girard", "Ren�", "2 rue des champs �lys�s" , "0123456789", new GregorianCalendar(1978,7, 2), "Girard", "pwdGirard");
+Enseignant e1=new Enseignant(1,"Aragou", "Muriel", "1 avenue du meilleur des tuteurs" , "0143855907",new GregorianCalendar(1960,10, 10), "logAragou", "pwdAragou");	
+Enseignant e2=new Enseignant(2,"Giroud", "Olivier", "1 avenue des coupeurs d'orange" , "0143855908",new GregorianCalendar(1960,10, 10), "logGiroud", "pwdGiroud");	
+Enseignant e3 = new Enseignant(3, "Girard", "Rene", "2 rue des champs �lys�s" , "0123456789", new GregorianCalendar(1978,7, 2), "Girard", "pwdGirard");
 //List<Enseignant> enseignants = new EnseignantDAO().findAll();
 List<Enseignant> enseignants = new ArrayList<Enseignant>();
 enseignants.add(e1);
@@ -33,7 +33,7 @@ enseignants.add(e3);
  <TD> <SELECT name="nom_enseignant" size="1">
 <%int i;
 for (i=0;i<enseignants.size();i++){ %>
-<OPTION><%=enseignants.get(i) %>
+<OPTION><%=enseignants.get(i).getNom().concat(enseignants.get(i).getPrenom()) %>
 <%} %>
 </SELECT>  </TD>
   </TR>
