@@ -122,7 +122,6 @@ public class SalleDAO extends DAO<Salle> {
 
 	@Override
 	public Salle find(int arg0) {
-		 TODO Auto-generated method stub
 		return null;
 	}
 	
