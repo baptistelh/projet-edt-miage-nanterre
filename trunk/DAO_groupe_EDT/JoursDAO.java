@@ -51,7 +51,6 @@ public class JoursDAO extends DAO<Jours> {
 				System.out.println(requete);
 			request.close();
 		} catch (SQLException e) {
-			 TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return obj;
@@ -59,7 +58,6 @@ public class JoursDAO extends DAO<Jours> {
 
 	@Override
 	public Jours update(Jours obj) {
-		 TODO Auto-generated method stub
 		return null;
 	}
 
@@ -73,7 +71,6 @@ public class JoursDAO extends DAO<Jours> {
 			request.executeUpdate(requete);
 			request.close();
 		} catch (SQLException e) {
-			 TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -81,7 +78,6 @@ public class JoursDAO extends DAO<Jours> {
 
 	@Override
 	public Jours find(int arg0) {
-		 TODO Auto-generated method stub
 		return null;
 	}
 
