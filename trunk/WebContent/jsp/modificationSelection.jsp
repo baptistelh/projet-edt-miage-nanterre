@@ -85,7 +85,7 @@ for (i=0;i<es.size();i++){ %>
  <TH> Formation  </TH>
  <TD> <SELECT name="formation">
 <%for (i=0;i<fs.size();i++){ %>
-<OPTION <% if (c.getMaFormation().equals(fs.get(i)))%> selected="selected"<%; %> Value= "<%=fs.get(i).getNumeroFormation() %>"><%=fs.get(i).getLibelle()%>
+<OPTION <% if (c.getMonEC().getMonUE().getMaFormation().equals(fs.get(i)))%> selected="selected"<%; %> Value= "<%=fs.get(i).getNumeroFormation() %>"><%=fs.get(i).getLibelle()%>
 <%} %>
 </SELECT>  </TD>
   </TR>
