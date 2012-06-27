@@ -9,6 +9,8 @@ import java.util.GregorianCalendar;
 import java.util.Hashtable;
 import java.util.List;
 
+import testDAO.CreneauDAO;
+
 public class EnseignantEDT {
 
 	public void setCreneau(List<Creneau> newCreneaux, Enseignant e) {
@@ -18,9 +20,10 @@ public class EnseignantEDT {
 		String login = "";
 		String password = "";
 		String url = "";
-		Connection connection = ODBC_onur.getConnectiontoDB(login, password,
-				url);
-		List<Creneau> creneauxRegistred = ODBC_onur.getCreneaux(connection, e);
+//		Connection connection = ODBC_onur.getConnectiontoDB(login, password,
+//				url);
+		CreneauDAO creneauDAO = new CreneauDAO();
+		List<Creneau> creneauxRegistred = creneauDAO.findAll();
 
 		// Comparaison chevauchement creneaux;
 		boolean chevauche = verificationCreneaux.chevauchementCreneaux(
@@ -34,7 +37,7 @@ public class EnseignantEDT {
 		
 		if(chevauche && depassementjournee && voeux){
 			e.setMesCreneaux(merge);
-			ODBC_onur.setCreneau(connection, e);
+//			creneauDAO.create(obj);
 		}
 	}
 
