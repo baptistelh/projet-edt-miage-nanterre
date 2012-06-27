@@ -11,7 +11,6 @@ import java.util.List;
 import net.fortuna.ical4j.data.CalendarBuilder;
 import net.fortuna.ical4j.model.Calendar;
 import net.fortuna.ical4j.model.Component;
-import net.fortuna.ical4j.model.Property;
  
 public class GenererJourFeries {
    
