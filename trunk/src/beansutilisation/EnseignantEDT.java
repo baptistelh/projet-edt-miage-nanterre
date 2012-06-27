@@ -17,9 +17,9 @@ public class EnseignantEDT {
 
 		// Connection à la base et récupération de tous les créneaux de
 		// l'enseignant en paramètre
-		String login = "";
-		String password = "";
-		String url = "";
+//		String login = "";
+//		String password = "";
+//		String url = "";
 //		Connection connection = ODBC_onur.getConnectiontoDB(login, password,
 //				url);
 		CreneauDAO creneauDAO = new CreneauDAO();

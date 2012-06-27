@@ -53,7 +53,7 @@ public class GenererJourFeries {
                 final String dtStartValue = component.getProperty(DTSTART).getValue();
                 //Récupération du déscriptif de l’evènement
                 //à travers la propriété SUMMARY
-                final String summaryValue = component.getProperty(SUMMARY).getValue();
+//                final String summaryValue = component.getProperty(SUMMARY).getValue();
                 Date dateEvent = (new SimpleDateFormat(pattern)).parse(dtStartValue);
                 //Test si la date est bien dans notre interval
                 if (dateEvent.after(dateEnd) || dateEvent.before(dateBegin)) {
