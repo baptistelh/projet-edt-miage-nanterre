@@ -29,19 +29,19 @@ public class CreneauDAO {
 		CreneauDAO.list.remove(obj);
 	}
 
-	public Creneau find(int no_enseignant, String no_salle, int no_ec,
-			int no_ue, int no_formation, int no_type,
-			GregorianCalendar date_creneau) {
+	public Creneau find(int noEnseignant, String noSalle, int noEc,
+			int noUe, int noFormation, int noType,
+			GregorianCalendar dateCreneau) {
 
 		for (Creneau c : CreneauDAO.list)
-			if (c.getMonEnseignant().getNumeroEnseignant() == no_enseignant
-					&& c.getMaSalle().getNumeroSalle() == no_salle
-					&& c.getMonEC().getNumeroEC() == no_ec
-					&& c.getMonEC().getMonUE().getNumeroUE() == no_ue
+			if (c.getMonEnseignant().getNumeroEnseignant() == noEnseignant
+					&& c.getMaSalle().getNumeroSalle() == noSalle
+					&& c.getMonEC().getNumeroEC() == noEc
+					&& c.getMonEC().getMonUE().getNumeroUE() == noUe
 					&& c.getMonEC().getMonUE().getMaFormation()
-							.getNumeroFormation() == no_formation
-					&& c.getMonType().getNumeroType() == no_type
-					&& c.getDateCreneau().getDateDuJour().equals(date_creneau)) {
+							.getNumeroFormation() == noFormation
+					&& c.getMonType().getNumeroType() == noType
+					&& c.getDateCreneau().getDateDuJour().equals(dateCreneau)) {
 				return c;
 			}
 
