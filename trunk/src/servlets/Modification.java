@@ -28,7 +28,6 @@ public class Modification extends HttpServlet {
 		EnseignantDAO ed = new EnseignantDAO();
 		
 		//1 = id de l'enseignant
-		Enseignant ens= ed.find(1);
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response)

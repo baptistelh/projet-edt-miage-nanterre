@@ -4,8 +4,8 @@ import java.util.GregorianCalendar;
 
 public class DepassementSemaine {
 	// 
-	GregorianCalendar gregorianCalendar;
-	int nbrMinutes;
+	private GregorianCalendar gregorianCalendar;
+	private int nbrMinutes;
 
 	/**
 	 * @param gregorianCalendar : semaine de depassement
