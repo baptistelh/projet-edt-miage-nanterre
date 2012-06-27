@@ -15,7 +15,7 @@ public class VerificationPromoSalle {
 	
 	public static boolean verifSalle(List<Creneau> c1, Salle s1) {
 		
-		return verificationCreneaux.chevauchementCreneaux(c1, s1.getMesCreneaux());
+		return VerificationCreneaux.chevauchementCreneaux(c1, s1.getMesCreneaux());
 		
 }
 	
@@ -35,6 +35,6 @@ public class VerificationPromoSalle {
 				}
 		}
 		
-		return verificationCreneaux.chevauchementCreneaux(c1, l1);
+		return VerificationCreneaux.chevauchementCreneaux(c1, l1);
 	}
 }
