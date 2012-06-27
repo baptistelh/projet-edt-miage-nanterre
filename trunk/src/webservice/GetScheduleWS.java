@@ -4,12 +4,9 @@ import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.List;
 
-import javax.ws.rs.DefaultValue;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 import com.sun.jersey.api.json.JSONConfiguration;
@@ -23,7 +20,6 @@ import beans.EC;
 import beans.Enseignant;
 import beans.Formation;
 import beans.Jours;
-import beans.Promotion;
 import beans.Salle;
 import beans.Type;
 import beans.UE;

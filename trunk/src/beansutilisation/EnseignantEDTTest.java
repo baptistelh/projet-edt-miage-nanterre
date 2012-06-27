@@ -1,11 +1,8 @@
 package beansutilisation;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.GregorianCalendar;
-import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
 
 import beans.Creneau;
 import beans.EC;

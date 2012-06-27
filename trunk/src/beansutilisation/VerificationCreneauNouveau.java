@@ -6,9 +6,6 @@ import java.util.Hashtable;
 import java.util.List;
 
 import beans.Creneau;
-import beans.Jours;
-import beans.Promotion;
-import beans.Salle;
 
 public class VerificationCreneauNouveau {
 

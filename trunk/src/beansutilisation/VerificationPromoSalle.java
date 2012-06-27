@@ -1,12 +1,10 @@
 package beansutilisation;
 
 import java.util.ArrayList;
-import java.util.GregorianCalendar;
 import java.util.List;
 
 import beans.Creneau;
 import beans.EC;
-import beans.Jours;
 import beans.Promotion;
 import beans.Salle;
 import beans.UE;
