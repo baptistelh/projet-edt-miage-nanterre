@@ -347,8 +347,8 @@
 				<version>1.6R5</version>
 			</dependency>
 			<dependency>
-				<groupId>org.glassfish.packager</groupId>
-				<artifactId>jersey</artifactId>
+				<groupId>com.sun.jersey</groupId>
+				<artifactId>jersey-json</artifactId>
 			</dependency>
 			<dependency>
 				<groupId>org.mnode.ical4j</groupId>
