@@ -21,13 +21,13 @@ public class Modification extends HttpServlet {
 			throws IOException, ServletException {
 
 		response.setContentType("text/html");
-		PrintWriter out = response.getWriter();
-		String nom=request.getParameter("enseignant");
+		response.getWriter();
+		request.getParameter("enseignant");
 		
 		// connection a la base de données
-		String login="";
-		String password="";
-		String url="";
+//		String login="";
+//		String password="";
+//		String url="";
 //		Connection connection = ODBC_onur.getConnectiontoDB(login, password, url);
 		
 		EnseignantDAO ed = new EnseignantDAO();
