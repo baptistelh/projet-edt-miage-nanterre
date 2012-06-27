@@ -347,10 +347,6 @@
 				<version>1.6R5</version>
 			</dependency>
 			<dependency>
-				<groupId>com.sun.jersey</groupId>
-				<artifactId>jersey-json</artifactId>
-			</dependency>
-			<dependency>
 				<groupId>org.mnode.ical4j</groupId>
 				<artifactId>ical4j</artifactId>
 				<version>1.0.3</version>
