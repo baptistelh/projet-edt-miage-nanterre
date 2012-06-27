@@ -39,21 +39,18 @@ public class ModeleCreaneau {
 	public static ArrayList<Enseignant> getAllEnseignants(){
 		
 		EnseignantDAO daoEns= new EnseignantDAO(); 
-		ArrayList<Enseignant> ens= (ArrayList<Enseignant>) daoEns.findAll();
-		return ens;
+		return (ArrayList<Enseignant>) daoEns.findAll();
 	}
 	public static ArrayList<Salle> getAllSalle(){
 		
 		SalleDAO daoSalle= new SalleDAO(); 
-		ArrayList<Salle> salles= (ArrayList<Salle>) daoSalle.findAll();
-		return salles;
+		return (ArrayList<Salle>) daoSalle.findAll();
 	}
 	
 	public static ArrayList<EC> getAllEC(){
 		
 		ECDAO daoEc= new ECDAO(); 
-		ArrayList<EC> ecs= (ArrayList<EC>) daoEc.findAll();
-		return ecs;
+		return (ArrayList<EC>) daoEc.findAll();
 	}
 	
 	

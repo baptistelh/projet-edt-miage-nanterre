@@ -33,7 +33,7 @@ public class CreneauDAO {
 			int noUe, int noFormation, int noType,
 			GregorianCalendar dateCreneau) {
 
-		for (Creneau c : CreneauDAO.list)
+		for (Creneau c : CreneauDAO.list) {
 			if (c.getMonEnseignant().getNumeroEnseignant() == noEnseignant
 					&& c.getMaSalle().getNumeroSalle() == noSalle
 					&& c.getMonEC().getNumeroEC() == noEc
@@ -44,6 +44,7 @@ public class CreneauDAO {
 					&& c.getDateCreneau().getDateDuJour().equals(dateCreneau)) {
 				return c;
 			}
+		}
 
 				return null;
 	}
