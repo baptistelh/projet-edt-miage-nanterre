@@ -22,8 +22,9 @@ public class SalleDAO {
 
 	public Salle update(Salle obj) {
 		for(Salle s : SalleDAO.list) {
-			if(s.getNumeroSalle() == obj.getNumeroSalle())
+			if(s.getNumeroSalle() == obj.getNumeroSalle()) {
 				SalleDAO.list.remove(s);
+			}
 		}
 		SalleDAO.list.add(obj);		
 		return obj;
@@ -33,8 +34,9 @@ public class SalleDAO {
 	
 	public Salle find(String noSalle) {
 		for(Salle s : SalleDAO.list) {
-			if(s.getNumeroSalle() == noSalle)
+			if(s.getNumeroSalle() == noSalle) {
 				return s;
+			}
 		}
 		return null;
 	}

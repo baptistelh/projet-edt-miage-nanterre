@@ -11,8 +11,9 @@ public class EnseignantDAO {
 	
 	public Enseignant find(int id) {
 		for(Enseignant e : EnseignantDAO.list) {
-			if(e.getNumeroEnseignant() == id)
+			if(e.getNumeroEnseignant() == id) {
 				return e;
+			}
 		}
 		return null;
 	}
@@ -28,8 +29,9 @@ public class EnseignantDAO {
 	
 	public Enseignant update(Enseignant obj) {
 		for(Enseignant e : EnseignantDAO.list) {
-			if(e.getNumeroEnseignant() == obj.getNumeroEnseignant())
+			if(e.getNumeroEnseignant() == obj.getNumeroEnseignant()) {
 				EnseignantDAO.list.remove(e);
+			}
 		}
 		EnseignantDAO.list.add(obj);		
 		return obj;
