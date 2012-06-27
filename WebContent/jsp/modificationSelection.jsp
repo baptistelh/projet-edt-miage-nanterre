@@ -15,26 +15,34 @@
 <%@ page import="beans.Salle"%>;
 <%@ page import="beans.Formation"%>;
 <%@ page import="beans.UE"%>;
+<%@ page import="beans.Creneau"%>;
 <%
 List<Enseignant> es=(ArrayList<Enseignant>)(request.getAttribute("listEnseignants"));
 List<EC> ecs=(ArrayList<EC>)(request.getAttribute("listEC"));
 List<Salle> salles=(ArrayList<Salle>)(request.getAttribute("listSalles"));
 List<Formation> fs=(ArrayList<Formation>)(request.getAttribute("listFormations"));
-//List<UE> ues=(ArrayList<UE>)(request.getAttribute("listUE"));
+Creneau c=(Creneau)(request.getAttribute("monCreneau"));
 
+
+/*Attention :
+	- Java script utilisé pour le calendrier,
+	- Types renvoyés et leur format
+	- Possibilité d'obtenir la formation via un créneau ?
+	- demander de recevoir un créneau après validation du créneau à modifier
+*/
 %>
 
 
 
 <TABLE BORDER="1">
-  <CAPTION> Formulaire d'ajout de créneau </CAPTION>
+  <CAPTION> Modifications à apporter </CAPTION>
   <FORM METHOD=GET ACTION='http://localhost:8080/fr.p10.miage.m1.projetedt/nom_de_la_servlet'>
   <TR>
  <TH> Nom Enseignant  </TH>
  <TD> <SELECT name="nom_enseignant">
 <%int i;
 for (i=0;i<es.size();i++){ %>
-<OPTION Value= "<%=es.get(i).getNumeroEnseignant() %>"><%=es.get(i).getNom().concat(" ".concat(es.get(i).getPrenom())) %>
+<OPTION<% if (c.getMonEnseignant().equals(es.get(i)))%> selected="selected"<%; %> value= "<%=es.get(i).getNumeroEnseignant() %>"><%=es.get(i).getNom().concat(" ".concat(es.get(i).getPrenom())) %>
 <%} %>
 </SELECT>  </TD>
   </TR>
@@ -42,7 +50,7 @@ for (i=0;i<es.size();i++){ %>
  <TH> EC </TH>
  <TD> <SELECT name="EC">
 <%for (i=0;i<ecs.size();i++){ %>
-<OPTION Value= "<%=ecs.get(i).getNumeroEC() %>"><%=ecs.get(i).getLibelle() %>
+<OPTION<% if (c.getMonEC().equals(ecs.get(i)))%> selected="selected"<%; %> Value= "<%=ecs.get(i).getNumeroEC() %>"><%=ecs.get(i).getLibelle() %>
 <%} %>
 </SELECT>  </TD>
   </TR>
@@ -50,25 +58,25 @@ for (i=0;i<es.size();i++){ %>
  <TH> Date JJ/MM/AAAA </TH>
  <TD> 
  <script type="text/javascript" src="calendrier.js"></script>
- <input type="text" name="date" onclick="ds_sh(this);" /> </TD>
+ <input type="text" name="date" value='<%=c.getDateCreneau().getDateDuJour().toString()%>'onclick="ds_sh(this);" /> </TD>
   </TR>
   <TR>
  <TH> Duree en minutes </TH>
- <TD> <INPUT type='text' value='' name='duree'> </TD>
+ <TD> <INPUT type='text' value='<%=c.getClass() %>' name='duree'> </TD>
   </TR>
   <TR>
  <TH> Horaire HH:MM </TH>
- <TD> <INPUT type='text' value='' name='horaire'> </TD>
+ <TD> <INPUT type='text' value='<%=c.getHoraire() %>' name='horaire'> </TD>
   </TR>
   <TR>
  <TH> Type </TH>
- <TD> <INPUT type='text' value='' name='type'> </TD>
+ <TD> <INPUT type='text' value='<%=c.getMonType().getLibelle() %>' name='type'> </TD>
   </TR>
   <TR>
  <TH> Salle </TH>
 <TD> <SELECT name="salle">
 <%for (i=0;i<salles.size();i++){ %>
-<OPTION Value= "<%=salles.get(i).getNumeroSalle() %>"><%=salles.get(i).getNumeroSalle().concat(" ".concat(salles.get(i).getLieu())) %>
+<OPTION <% if (c.getMaSalle().equals(salles.get(i)))%> selected="selected"<%; %> Value= "<%=salles.get(i).getNumeroSalle() %>"><%=salles.get(i).getNumeroSalle().concat(" ".concat(salles.get(i).getLieu())) %>
 <%} %>
 </SELECT>  </TD>
   </TR>
@@ -77,7 +85,7 @@ for (i=0;i<es.size();i++){ %>
  <TH> Formation  </TH>
  <TD> <SELECT name="formation">
 <%for (i=0;i<fs.size();i++){ %>
-<OPTION Value= "<%=fs.get(i).getNumeroFormation() %>"><%=fs.get(i).getLibelle()%>
+<OPTION <% if (c.getMaFormation().equals(fs.get(i)))%> selected="selected"<%; %> Value= "<%=fs.get(i).getNumeroFormation() %>"><%=fs.get(i).getLibelle()%>
 <%} %>
 </SELECT>  </TD>
   </TR>
