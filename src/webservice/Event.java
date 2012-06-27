@@ -8,7 +8,7 @@ import java.util.GregorianCalendar;
 import beans.Creneau;
 
 public class Event {
-	public static int IDENT_AUTO = 0;
+	private static int identAuto = 0;
 	private int id = 0;
 	private int cid = 1;
 	private String title;
@@ -21,7 +21,7 @@ public class Event {
 	public Event(Creneau c) {
 		DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		
-		this.id = IDENT_AUTO++;
+		this.id = identAuto++;
 		this.title = c.getMonEC().getLibelle();
 		
 		int hour = c.getDuree()/60;
