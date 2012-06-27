@@ -16,8 +16,9 @@ public class ECDAO {
 	
 	public EC find(int numEc, int numUe, int numFormation) {
 		for(EC e : ECDAO.list) {
-			if(e.getNumeroEC() == numEc)
+			if(e.getNumeroEC() == numEc) {
 				return e;
+			}
 		}
 		return null;
 	}
@@ -33,8 +34,9 @@ public class ECDAO {
 
 	public EC update(EC obj) {
 		for(EC e : ECDAO.list) {
-			if(e.getNumeroEC() == obj.getNumeroEC())
+			if(e.getNumeroEC() == obj.getNumeroEC()) {
 				ECDAO.list.remove(e);
+			}
 		}
 		ECDAO.list.add(obj);
 		return obj;
