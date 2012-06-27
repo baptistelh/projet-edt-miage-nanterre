@@ -24,7 +24,7 @@ public class GenererJourFeries {
             + "fr.french%23holiday%40group.v.calendar.google.com"
             + "/public/basic.ics";
     public static final String SUMMARY = "SUMMARY";
-    public static final String pattern = "yyyyMMdd";
+    public static final String PATTERN = "yyyyMMdd";
     
     public GenererJourFeries() {
     	
@@ -36,8 +36,8 @@ public class GenererJourFeries {
     	
         try {
             //Init
-            final Date dateEnd = (new SimpleDateFormat(pattern)).parse(DATE_END);
-            final Date dateBegin = (new SimpleDateFormat(pattern)).parse(DATE_BEGIN);
+            final Date dateEnd = (new SimpleDateFormat(PATTERN)).parse(DATE_END);
+            final Date dateBegin = (new SimpleDateFormat(PATTERN)).parse(DATE_BEGIN);
  
             //Mise en place du stream pour la récupération du fichier ICS
             final InputStream stream = new URL(GOOGLE_URL).openStream();
@@ -53,7 +53,7 @@ public class GenererJourFeries {
                 //Récupération du déscriptif de l’evènement
                 //à travers la propriété SUMMARY
 //                final String summaryValue = component.getProperty(SUMMARY).getValue();
-                Date dateEvent = (new SimpleDateFormat(pattern)).parse(dtStartValue);
+                Date dateEvent = (new SimpleDateFormat(PATTERN)).parse(dtStartValue);
                 //Test si la date est bien dans notre interval
                 if (dateEvent.after(dateEnd) || dateEvent.before(dateBegin)) {
                     continue;
