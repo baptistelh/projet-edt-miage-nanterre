@@ -107,8 +107,9 @@ public class GetScheduleWS {
 		List<Event> listEvt = new ArrayList<Event>();
 		
 		for(EC e : le) {
-			for(Creneau c : e.getMesCreneaux())
+			for(Creneau c : e.getMesCreneaux()) {
 				listEvt.add(new Event(c));
+			}
 		}
 
 		return listEvt;
@@ -123,8 +124,9 @@ public class GetScheduleWS {
 		List<Event> listEvt = new ArrayList<Event>();
 		
 		for(Enseignant e : le) {
-			for(Creneau c : e.getMesCreneaux())
+			for(Creneau c : e.getMesCreneaux()) {
 				listEvt.add(new Event(c));
+			}
 		}
 
 		return listEvt;
@@ -155,8 +157,9 @@ public class GetScheduleWS {
 		List<Event> listEvt = new ArrayList<Event>();
 		
 		for(Salle s : ls) {
-			for(Creneau c : s.getMesCreneaux())
+			for(Creneau c : s.getMesCreneaux()) {
 				listEvt.add(new Event(c));
+			}
 		}
 
 		return listEvt;
