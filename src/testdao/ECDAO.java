@@ -14,9 +14,9 @@ public class ECDAO {
 		return null;
 	}
 	
-	public EC find(int num_ec, int num_ue, int num_formation) {
+	public EC find(int numEc, int numUe, int numFormation) {
 		for(EC e : ECDAO.list) {
-			if(e.getNumeroEC() == num_ec)
+			if(e.getNumeroEC() == numEc)
 				return e;
 		}
 		return null;
