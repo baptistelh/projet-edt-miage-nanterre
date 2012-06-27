@@ -27,7 +27,7 @@ List<Formation> fs=(ArrayList<Formation>)(request.getAttribute("listFormations")
 
 
 <TABLE BORDER="1">
-  <CAPTION> Formulaire d'ajout de créneau </CAPTION>
+  <CAPTION> Sélection du créneau à modifier</CAPTION>
   <FORM METHOD=GET ACTION='http://localhost:8080/fr.p10.miage.m1.projetedt/nom_de_la_servlet'>
   <TR>
  <TH> Nom Enseignant  </TH>
