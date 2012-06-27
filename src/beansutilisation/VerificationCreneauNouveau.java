@@ -10,7 +10,7 @@ import beans.Creneau;
 public class VerificationCreneauNouveau {
 
 	
-	public static Boolean HeureMaxSemaine(List<Creneau> c){
+	public static Boolean heureMaxSemaine(List<Creneau> c){
 		Boolean r = false;
 		
 		// Hashtable pour stocker duree des journées

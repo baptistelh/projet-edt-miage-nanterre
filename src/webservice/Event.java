@@ -8,7 +8,7 @@ import java.util.GregorianCalendar;
 import beans.Creneau;
 
 public class Event {
-	private static int IDENT_AUTO = 0;
+	public static int IDENT_AUTO = 0;
 	private int id = 0;
 	private int cid = 1;
 	private String title;

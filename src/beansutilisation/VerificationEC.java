@@ -9,12 +9,7 @@ public class VerificationEC {
 	
 	
 	public static boolean verificationTempsEC (EC monEC, Type t){
-		if (monEC.getMesNecessites().get(getIndexOfNecessite(monEC,t)).getNb_maquette()==getNbMinutesCreneaux(monEC,t)) {
-			return true;
-		}
-		else {
-			return false;
-		}
+		return monEC.getMesNecessites().get(getIndexOfNecessite(monEC,t)).getNb_maquette()==getNbMinutesCreneaux(monEC,t);
 	}
 	
 	private static int getNbMinutesCreneaux(EC monEC, Type t){
