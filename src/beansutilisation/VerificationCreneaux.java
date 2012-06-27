@@ -22,8 +22,9 @@ public class VerificationCreneaux {
 		for (Creneau tempC : c1) {
 			j = tempC.getDateCreneau();
 			JourneeDepassement jd = new JourneeDepassement(j.getDateDuJour(), 0);
-			if (!dureesJournees.contains(jd))
+			if (!dureesJournees.contains(jd)) {
 				dureesJournees.add(jd);
+			}
 		}
 
 		// parcours jours et addition des durées
