@@ -27,8 +27,8 @@ public class EnseignantEDTTest {
 				"1 avenue du meilleur des tuteurs", "0143855907",
 				new GregorianCalendar(1960, 10, 10), "logAragou", "pwdAragou");
 		Salle s1 = new Salle("210A", 50, "enferNum1");
-		Formation F1 = new Formation();
-		UE ue1 = new UE(1, F1);
+		Formation f1 = new Formation();
+		UE ue1 = new UE(1, f1);
 		EC ec1 = new EC(1, ue1);
 		Type type1 = new Type(1, "TD");
 

@@ -51,8 +51,8 @@ public class GetScheduleWS {
 		
 		Enseignant e1=new Enseignant(1,"Aragou", "muriel", "1 avenue du meilleur des tuteurs" , "0143855907",new GregorianCalendar(1960,10, 10), "logAragou", "pwdAragou");	
 		Salle s1=new Salle("210A", 50, "enferNum1");
-		Formation F1=new Formation();
-		UE ue1=new UE(1,F1);
+		Formation f1=new Formation();
+		UE ue1=new UE(1,f1);
 		EC ec1= new EC(1, ue1);
 		ec1.setLibelle("Genie logiciel");
 		Type type1 = new Type(1, "TD");
@@ -65,8 +65,8 @@ public class GetScheduleWS {
 		
 		Enseignant e2=new Enseignant(1,"Giroud", "Olivier", "1 avenue des coupeurs d'orange" , "0143855908",new GregorianCalendar(1960,10, 10), "logGiroud", "pwdGiroud");	
 		Salle s2=new Salle("210A", 50, "enferNum2");
-		Formation F2=new Formation();
-		UE ue2=new UE(1,F2);
+		Formation f2=new Formation();
+		UE ue2=new UE(1,f2);
 		EC ec2= new EC(1, ue2);
 		ec2.setLibelle("Chauffage de banc");
 		Type type2 = new Type(1, "TD"); 
