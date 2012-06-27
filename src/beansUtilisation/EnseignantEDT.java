@@ -26,12 +26,12 @@ public class EnseignantEDT {
 		List<Creneau> creneauxRegistred = creneauDAO.findAll();
 
 		// Comparaison chevauchement creneaux;
-		boolean chevauche = verificationCreneaux.chevauchementCreneaux(
+		boolean chevauche = VerificationCreneaux.chevauchementCreneaux(
 				creneauxRegistred, newCreneaux);
 		List<Creneau> merge = creneauxRegistred;
 		merge.addAll(newCreneaux);
 
-		boolean depassementjournee = verificationCreneaux
+		boolean depassementjournee = VerificationCreneaux
 				.depassementJournee(merge);
 		boolean voeux = respectVoeuxEnseignant(merge, e);
 		
@@ -68,7 +68,7 @@ public class EnseignantEDT {
 			}
 		}
 		
-		result=verificationCreneaux.chevauchementCreneaux(indisposC, e.getMesCreneaux());
+		result=VerificationCreneaux.chevauchementCreneaux(indisposC, e.getMesCreneaux());
 		
 		return result;
 	}
