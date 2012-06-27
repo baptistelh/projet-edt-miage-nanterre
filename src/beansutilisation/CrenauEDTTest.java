@@ -22,8 +22,8 @@ public class CrenauEDTTest {
 		//Lundi
 		Enseignant e1=new Enseignant(1,"Aragou", "muriel", "1 avenue du meilleur des tuteurs" , "0143855907",new GregorianCalendar(1960,10, 10), "logAragou", "pwdAragou");	
 		Salle s1=new Salle("210A", 50, "enferNum1");
-		Formation F1=new Formation();
-		UE ue1=new UE(1,F1);
+		Formation f1=new Formation();
+		UE ue1=new UE(1,f1);
 		EC ec1= new EC(1, ue1);
 		Type type1 = new Type(1, "TD"); 
 		Jours j1 = new Jours(new GregorianCalendar(2012, 05, 27));
@@ -33,8 +33,8 @@ public class CrenauEDTTest {
 		//Mardi
 		Enseignant e2=new Enseignant(1,"Giroud", "Olivier", "1 avenue des coupeurs d'orange" , "0143855908",new GregorianCalendar(1960,10, 10), "logGiroud", "pwdGiroud");	
 		Salle s2=new Salle("210A", 50, "enferNum2");
-		Formation F2=new Formation();
-		UE ue2=new UE(1,F2);
+		Formation f2=new Formation();
+		UE ue2=new UE(1,f2);
 		EC ec2= new EC(1, ue2);
 		Type type2 = new Type(1, "TD");
 		Jours j2 = new Jours(new GregorianCalendar(2012, 05, 27));
@@ -45,8 +45,8 @@ public class CrenauEDTTest {
 		Jours jour = new Jours(new GregorianCalendar(2012, 05, 13));
 		Enseignant enseignant = new Enseignant(2, "Girard", "Ren�", "2 rue des champs �lys�s" , "0123456789", new GregorianCalendar(1978,7, 2), "Girard", "pwdGirard");
 		Salle salle = new Salle("210A", 50, "enferNum1");
-		Formation formation = new Formation(1);
-		UE ue = new UE(1, formation);
+		Formation f3 = new Formation(1);
+		UE ue = new UE(1, f3);
 		EC ec = new EC(1, ue);
 		Type type = new Type(1, "TD");
 		Jours j3 = new Jours(new GregorianCalendar(2012, 05, 27));
@@ -57,8 +57,8 @@ public class CrenauEDTTest {
 		//Jeudi
 		Enseignant e4=new Enseignant(1,"Menez", "Jeremy", "1 avenue des croqueurs" , "0143855909",new GregorianCalendar(1960,10, 10), "logMenez", "pwdMenez");	
 		Salle s4=new Salle("4A", 50, "enferNum4");
-		Formation F4=new Formation();
-		UE ue4=new UE(1,F4);
+		Formation f4=new Formation();
+		UE ue4=new UE(1,f4);
 		EC ec4= new EC(1, ue4);
 		Type type4 = new Type(1, "TD"); 
 		Jours j4 = new Jours(new GregorianCalendar(2012, 05, 27));
@@ -68,8 +68,8 @@ public class CrenauEDTTest {
 		//Vendredi
 		Enseignant e5=new Enseignant(1,"Evra", "Patrice", "1 avenue des grevistes" , "0143855910",new GregorianCalendar(1960,10, 10), "logEvra", "pwdEvra");	
 		Salle s5=new Salle("210A", 50, "enferNum5");
-		Formation F5=new Formation();
-		UE ue5=new UE(1,F5);
+		Formation f5 = new Formation();
+		UE ue5=new UE(1,f5);
 		EC ec5= new EC(1, ue5);
 		Type type5 = new Type(1, "CM"); 
 		Jours j5 = new Jours(new GregorianCalendar(2012, 05, 27));
