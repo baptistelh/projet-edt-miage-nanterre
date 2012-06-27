@@ -11,7 +11,7 @@ import java.util.List;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-import testDAO.EnseignantDAO;
+import testdao.EnseignantDAO;
 
 import beans.*;
 
