@@ -47,6 +47,14 @@ public class ControllerPrincipal extends HttpServlet {
 					req.setAttribute("listFormations", ModeleCreneau.getAllFormation());
 					req.setAttribute("listTypes", ModeleCreneau.getAllTypes());
 					
+					Integer idEnseignant  = Integer.parseInt(req.getParameter("nom_enseignant"));
+					String idSalle        = req.getParameter("salle");
+					Integer idEc          = Integer.parseInt(req.getParameter("EC"));
+					Integer idType        = Integer.parseInt(req.getParameter("type"));
+					String date           = req.getParameter("date");
+					
+					req.setAttribute("monCreneau", ModeleCreneau.getCreneau(idEnseignant, idSalle, idEc, idType, date));
+					
 					req.getRequestDispatcher("modificationSelection.jsp").forward(req, res);
 				} else
 					if(action.equals("pageSuppressionCreneau")){
@@ -76,8 +84,6 @@ public class ControllerPrincipal extends HttpServlet {
 								Integer idEc          = Integer.parseInt(req.getParameter("EC"));
 								Integer idType        = Integer.parseInt(req.getParameter("type"));
 								String date           = req.getParameter("date");
-								String horaire        = req.getParameter("horaire");
-								String duree          = req.getParameter("duree");
 								
 								ModeleCreneau.suppression(idEnseignant, idSalle, idEc, idType, date);
 							} else 
@@ -92,6 +98,8 @@ public class ControllerPrincipal extends HttpServlet {
 									String duree          = req.getParameter("duree");
 									
 									ModeleCreneau.modification(idEnseignant, idSalle, idEc, idType, idPromo, date, horaire, duree);
+								} else {
+									req.getRequestDispatcher("index.jsp").forward(req, res);
 								}
 	}
 }
