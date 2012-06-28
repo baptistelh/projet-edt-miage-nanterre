@@ -33,6 +33,9 @@ public class ControllerPrincipal extends HttpServlet {
 			
 			req.getRequestDispatcher("jsp/creation.jsp").forward(req, res);
 		} else
+			if(action.equals("Afficher le calendrier")){
+				req.getRequestDispatcher("index.html").forward(req, res);
+			}
 			if(action.equals("Modificatio de Creneau")){
 				req.setAttribute("listEnseignants", ModeleCreneau.getAllEnseignants());
 				req.setAttribute("listEC", ModeleCreneau.getAllEC());
@@ -70,7 +73,7 @@ public class ControllerPrincipal extends HttpServlet {
 					} else
 						if(action.equals("ajouterCreneau")){
 							Integer idEnseignant  = Integer.parseInt(req.getParameter("nom_enseignant"));
-							Integer idSalle       = Integer.parseInt(req.getParameter("salle"));
+							String idSalle       = req.getParameter("salle");
 							Integer idEc          = Integer.parseInt(req.getParameter("EC"));
 							Integer idType        = Integer.parseInt(req.getParameter("type"));
 							Integer idPromo       = Integer.parseInt(req.getParameter("promo"));
@@ -82,7 +85,7 @@ public class ControllerPrincipal extends HttpServlet {
 						} else 
 							if(action.equals("supprimerCreneau")){
 								Integer idEnseignant  = Integer.parseInt(req.getParameter("nom_enseignant"));
-								Integer idSalle       = Integer.parseInt(req.getParameter("salle"));
+								String idSalle       = req.getParameter("salle");
 								Integer idEc          = Integer.parseInt(req.getParameter("EC"));
 								Integer idType        = Integer.parseInt(req.getParameter("type"));
 								String date           = req.getParameter("date");
@@ -91,7 +94,7 @@ public class ControllerPrincipal extends HttpServlet {
 							} else 
 								if(action.equals("MAJCreneau")){
 									Integer idEnseignant  = Integer.parseInt(req.getParameter("nom_enseignant"));
-									Integer idSalle       = Integer.parseInt(req.getParameter("salle"));
+									String idSalle       = req.getParameter("salle");
 									Integer idEc          = Integer.parseInt(req.getParameter("EC"));
 									Integer idType        = Integer.parseInt(req.getParameter("type"));
 									Integer idPromo       = Integer.parseInt(req.getParameter("promo"));
