@@ -68,7 +68,7 @@ public class ModeleCreneau {
 		CreneauDAO creDao= new CreneauDAO();
 		creDao.create(newCreneau);
 		
-		//update de l'enseignant
+		//update de l'enseignant - PEUT ETRE A ENLEVER CAR PAS DE CHANGEMENT NORMALEMENT
 		ArrayList<Creneau> newCreneauxEns = new ArrayList<Creneau>();
 		newCreneauxEns.addAll(ens.getMesCreneaux());
 		newCreneauxEns.addAll(newCreneaux);
@@ -77,7 +77,7 @@ public class ModeleCreneau {
 		
 	
 		
-		//update de la salle
+		//update de la salle PEUT ETRE A ENLEVER CAR PAS DE CHANGEMENT NORMALEMENT
 		ArrayList<Creneau> newCreneauxsalle = new ArrayList<Creneau>();
 		newCreneauxsalle.addAll(salle.getMesCreneaux());
 		newCreneauxsalle.addAll(newCreneaux);
@@ -86,9 +86,10 @@ public class ModeleCreneau {
 		
 		
 		
+		
 	}
 	
-	public boolean modification(int idEns, int idSalle, int idEc){
+	public boolean modification(int idEns, int idSalle, int idEc, int typearg,int idPromo, String date, String horaire, String duree){
 		boolean result=false;
 		
 		
@@ -96,7 +97,7 @@ public class ModeleCreneau {
 	}
 	
 	
-	public boolean suppression(int idEns, int idSalle, int idEc){
+	public boolean suppression(int idEns, int idSalle, int idEc, int typearg,String date){
 		boolean result=false;
 		
 		
