@@ -29,7 +29,7 @@ List<Type> ts=(List<Type>)(request.getAttribute("listTypes"));
 
 <TABLE BORDER="1">
   <CAPTION> Formulaire de suppression de créneau </CAPTION>
-  <FORM METHOD=GET ACTION='http://localhost:8080/fr.p10.miage.m1.projetedt/http://localhost:8080/fr.p10.miage.m1.projetedt/ControllerPrincipal'>
+  <FORM METHOD=GET ACTION='/ControllerPrincipal'>
   <TR>
  <TH> Nom Enseignant  </TH>
  <TD> <SELECT name="nom_enseignant">
