@@ -9,8 +9,12 @@ import java.util.GregorianCalendar;
 import java.util.Hashtable;
 import java.util.List;
 
-public class EnseignantEDT {
+public final class EnseignantEDT {
 
+	private EnseignantEDT() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public static void TestEnseignant(List<Creneau> newCreneaux, Enseignant e)
 			throws VerificationException {
 

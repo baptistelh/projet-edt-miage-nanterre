@@ -7,8 +7,11 @@ import java.util.List;
 
 import beans.Creneau;
 
-public class VerificationCreneauNouveau {
+public final class VerificationCreneauNouveau {
 
+	private VerificationCreneauNouveau() {
+		// TODO Auto-generated constructor stub
+	}
 	
 	public static Boolean heureMaxSemaine(List<Creneau> c){
 		Boolean r = false;

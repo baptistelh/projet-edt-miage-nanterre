@@ -14,7 +14,11 @@ import beans.Salle;
 import beans.Type;
 import beans.UE;
 
-public class VerificationPromoSalle {
+public final class VerificationPromoSalle {
+	
+	private VerificationPromoSalle() {
+		// TODO Auto-generated constructor stub
+	}
 	
 	public static void verifSalle(List<Creneau> c1, Salle s1) throws VerificationException {
 		if (!VerificationCreneaux.chevauchementCreneaux(c1, s1.getMesCreneaux())){

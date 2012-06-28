@@ -14,8 +14,12 @@ import beans.Salle;
 import beans.Type;
 import beans.UE;
 
-public class EnseignantEDTTest {
+public final class EnseignantEDTTest {
 
+	private EnseignantEDTTest() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 

@@ -5,8 +5,11 @@ import beans.EC;
 import beans.Necessite;
 import beans.Type;
 
-public class VerificationEC {
+public final class VerificationEC {
 	
+	private VerificationEC() {
+		// TODO Auto-generated constructor stub
+	}
 	
 	public static void verificationTempsEC (EC monEC, Type t) throws VerificationException{
 		if (monEC.getMesNecessites().get(getIndexOfNecessite(monEC,t)).getNb_maquette()!=getNbMinutesCreneaux(monEC,t))
