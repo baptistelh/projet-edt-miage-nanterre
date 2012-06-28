@@ -29,7 +29,7 @@ List<Type> ts=(List<Type>)(request.getAttribute("listTypes"));
 
 <TABLE BORDER="1">
   <CAPTION> Sélection du créneau à modifier</CAPTION>
-  <FORM METHOD=GET ACTION='/ControllerPrincipal'>
+  <FORM METHOD=GET ACTION='../ControllerPrincipal'>
   <TR>
  <TH> Nom Enseignant  </TH>
  <TD> <SELECT name="nom_enseignant">
@@ -89,7 +89,7 @@ for (i=0;i<es.size();i++){ %>
   
   <TR>
   <TD>
-  <INPUT type='submit' value='pageModificationCreneau'>
+  <INPUT type='submit' name='action'value='MAJCreneau'>
   </TD>
   </TR>
 </FORM>

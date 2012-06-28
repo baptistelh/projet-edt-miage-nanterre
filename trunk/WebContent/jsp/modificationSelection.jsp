@@ -37,7 +37,7 @@ Creneau c=(Creneau)(request.getAttribute("monCreneau"));
 
 <TABLE BORDER="1">
   <CAPTION> Modifications à apporter </CAPTION>
-  <FORM METHOD=GET ACTION='/ControllerPrincipal'>
+  <FORM METHOD=GET ACTION='../ControllerPrincipal'>
   <TR>
  <TH> Nom Enseignant  </TH>
  <TD> <SELECT name="nom_enseignant">
