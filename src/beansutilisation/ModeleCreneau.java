@@ -59,34 +59,34 @@ public class ModeleCreneau {
 		ArrayList<Creneau> newCreneaux = new ArrayList<Creneau>();
 		newCreneaux.add(newCreneau);
 
-		try {
-			EnseignantEDT.TestEnseignant(newCreneaux, ens);
-			VerificationPromoSalle.verifSalle(newCreneaux, salle);
-			VerificationPromoSalle.verifPromo(newCreneaux, prom);
-			VerificationEC.verificationTempsEC(ec, type);
-		} catch (VerificationException e) {
-			e.printStackTrace();
-		}
+//		try {
+//			EnseignantEDT.TestEnseignant(newCreneaux, ens);
+//			VerificationPromoSalle.verifSalle(newCreneaux, salle);
+//			VerificationPromoSalle.verifPromo(newCreneaux, prom);
+//			VerificationEC.verificationTempsEC(ec, type);
+//		} catch (VerificationException e) {
+//			e.printStackTrace();
+//		}
 
 		// cr�ation du cr�neau
 		CreneauDAO creDao = new CreneauDAO();
 		creDao.create(newCreneau);
 
-		// update de l'enseignant - PEUT ETRE A ENLEVER CAR PAS DE CHANGEMENT
-		// NORMALEMENT
-		ArrayList<Creneau> newCreneauxEns = new ArrayList<Creneau>();
-		newCreneauxEns.addAll(ens.getMesCreneaux());
-		newCreneauxEns.addAll(newCreneaux);
-		ens.setMesCreneaux(newCreneauxEns);
-		ensDAO.update(ens);
-
-		// update de la salle PEUT ETRE A ENLEVER CAR PAS DE CHANGEMENT
-		// NORMALEMENT
-		ArrayList<Creneau> newCreneauxsalle = new ArrayList<Creneau>();
-		newCreneauxsalle.addAll(salle.getMesCreneaux());
-		newCreneauxsalle.addAll(newCreneaux);
-		salle.setMesCreneaux(newCreneauxsalle);
-		salleDAO.update(salle);
+//		// update de l'enseignant - PEUT ETRE A ENLEVER CAR PAS DE CHANGEMENT
+//		// NORMALEMENT
+//		ArrayList<Creneau> newCreneauxEns = new ArrayList<Creneau>();
+//		newCreneauxEns.addAll(ens.getMesCreneaux());
+//		newCreneauxEns.addAll(newCreneaux);
+//		ens.setMesCreneaux(newCreneauxEns);
+//		ensDAO.update(ens);
+//
+//		// update de la salle PEUT ETRE A ENLEVER CAR PAS DE CHANGEMENT
+//		// NORMALEMENT
+//		ArrayList<Creneau> newCreneauxsalle = new ArrayList<Creneau>();
+//		newCreneauxsalle.addAll(salle.getMesCreneaux());
+//		newCreneauxsalle.addAll(newCreneaux);
+//		salle.setMesCreneaux(newCreneauxsalle);
+//		salleDAO.update(salle);
 
 	}
 
@@ -137,14 +137,14 @@ public class ModeleCreneau {
 		ArrayList<Creneau> newCreneaux = new ArrayList<Creneau>();
 		newCreneaux.add(finded);
 
-		try {
-			EnseignantEDT.TestEnseignant(newCreneaux, ens);
-			VerificationPromoSalle.verifSalle(newCreneaux, salle);
-			VerificationPromoSalle.verifPromo(newCreneaux, prom);
-			VerificationEC.verificationTempsEC(ec, type);
-		} catch (VerificationException e) {
-			e.printStackTrace();
-		}
+//		try {
+//			EnseignantEDT.TestEnseignant(newCreneaux, ens);
+//			VerificationPromoSalle.verifSalle(newCreneaux, salle);
+//			VerificationPromoSalle.verifPromo(newCreneaux, prom);
+//			VerificationEC.verificationTempsEC(ec, type);
+//		} catch (VerificationException e) {
+//			e.printStackTrace();
+//		}
 
 		creDao.update(finded);
 	}
