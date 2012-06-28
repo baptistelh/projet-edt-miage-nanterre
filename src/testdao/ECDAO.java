@@ -65,5 +65,14 @@ public class ECDAO {
 	public void loadMesServices(EC obj){
 
 	}
+	
+	public static void loadMesEC(){
+		// Attention aux UE
+		list.add(new EC(1, new UE(), "POO", 3));
+		list.add(new EC(2, new UE(), "CAR1", 3));
+		list.add(new EC(3, new UE(), "CAR2", 3));
+		list.add(new EC(4, new UE(), "Genie Logiciel", 3));
+		list.add(new EC(5, new UE(), "Optimisation combinatoire", 3));
+	}
 
 }
