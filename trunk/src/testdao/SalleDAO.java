@@ -34,7 +34,7 @@ public class SalleDAO {
 	
 	public Salle find(String noSalle) {
 		for(Salle s : SalleDAO.list) {
-			if(s.getNumeroSalle() == noSalle) {
+			if(s.getNumeroSalle().equals(noSalle)) {
 				return s;
 			}
 		}
