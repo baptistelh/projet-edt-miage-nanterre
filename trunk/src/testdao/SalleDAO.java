@@ -1,5 +1,6 @@
 package testdao;
 import java.util.ArrayList;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 import beans.*;
@@ -53,4 +54,9 @@ public class SalleDAO {
 		
 	}
 
+	public static void loadMesSalles(){
+		list.add(new Salle ("210A",24,"Batiment G"));
+		list.add(new Salle ("210B",28,"Batiment G"));
+		list.add(new Salle ("307",16,"Batiment G"));
+	}
 }
