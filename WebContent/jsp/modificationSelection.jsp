@@ -18,12 +18,11 @@
 <%@ page import="beans.Creneau"%>
 <%@ page import="beans.Type"%>
 <%
-List<Enseignant> es=(ArrayList<Enseignant>)(request.getAttribute("listEnseignants"));
-List<EC> ecs=(ArrayList<EC>)(request.getAttribute("listEC"));
-List<Salle> salles=(ArrayList<Salle>)(request.getAttribute("listSalles"));
-List<Formation> fs=(ArrayList<Formation>)(request.getAttribute("listFormations"));
-List<Type> ts=(ArrayList<Type>)(request.getAttribute("listTypes"));
-Creneau c=(Creneau)(request.getAttribute("monCreneau"));
+List<Enseignant> es=(List<Enseignant>)(request.getAttribute("listEnseignants"));
+List<EC> ecs=(List<EC>)(request.getAttribute("listEC"));
+List<Salle> salles=(List<Salle>)(request.getAttribute("listSalles"));
+List<Formation> fs=(List<Formation>)(request.getAttribute("listFormations"));
+List<Type> ts=(List<Type>)(request.getAttribute("listTypes"));
 
 
 /*Attention :
