@@ -64,7 +64,5 @@ public class VerificationPromoSalle {
 		System.out.println(verifSalle(l1, s1));
 		System.out.println(verifSalle(l1, s2));
 		
-		Promotion p1= new Promotion(1);
-		Formation f1 = new Formation(1, "MIAGE", "1", "Master", grade, "Apprentissage")
 	}
 }
