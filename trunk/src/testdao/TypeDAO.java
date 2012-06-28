@@ -16,24 +16,27 @@ public class TypeDAO {
 
 	public void delete(Type obj) {
 		for(Type t : TypeDAO.list) {
-			if(t.getNumeroType() == obj.getNumeroType())
+			if(t.getNumeroType() == obj.getNumeroType()) {
 				TypeDAO.list.remove(t);
+			}
 		}
 		TypeDAO.list.add(obj);
 	}
 
 	public Type find(int obj) {
 		for(Type t : TypeDAO.list) {
-			if(t.getNumeroType() == obj)
+			if(t.getNumeroType() == obj) {
 				return t;
+			}
 		}
 		return null;
 	}
 
 	public Type update(Type obj) {
 		for(Type t : TypeDAO.list) {
-			if(t.getNumeroType() == obj.getNumeroType())
+			if(t.getNumeroType() == obj.getNumeroType()) {
 				TypeDAO.list.remove(t);
+			}
 		}
 		TypeDAO.list.add(obj);
 		return obj;

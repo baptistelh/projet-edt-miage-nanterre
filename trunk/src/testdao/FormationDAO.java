@@ -11,8 +11,9 @@ public class FormationDAO {
 
 	public Formation find(int id) {
 		for(Formation f : FormationDAO.list) {
-			if(f.getNumeroFormation() == id)
+			if(f.getNumeroFormation() == id) {
 				return f;
+			}
 		}
 		return null;
 	}
@@ -28,8 +29,9 @@ public class FormationDAO {
 
 	public Formation update(Formation obj) {
 		for(Formation f : FormationDAO.list) {
-			if(f.getNumeroFormation() == obj.getNumeroFormation())
+			if(f.getNumeroFormation() == obj.getNumeroFormation()) {
 				FormationDAO.list.remove(f);
+			}
 		}
 		FormationDAO.list.add(obj);
 		return obj;
@@ -48,12 +50,16 @@ public class FormationDAO {
 	}
 	
 	public static void loadMesFormations(){
-		list.add(new Formation(1, "Master 1 Miage apprentissage", 1,"Apprentissage", "Master", "Miage"));
-		list.add(new Formation(2, "Master 2 Miage apprentissage", 2,"Apprentissage", "Master", "Miage"));
-		list.add(new Formation(3, "Master 1 Miage classique", 1,"Classique", "Master", "Miage"));
-		list.add(new Formation(4, "Master 2 Miage classique", 2,"Classique", "Master", "Miage"));
-		list.add(new Formation(5, "Licence 3 Miage apprentissage", 3,"Apprentissage", "Licence", "Miage"));
-		list.add(new Formation(6, "Licence 3 Miage classique", 3,"Classique", "Licence", "Miage"));
+		String master = "Master";
+		String licence = "Licence";
+		String miage = "Miage";
+		
+		list.add(new Formation(1, "Master 1 Miage apprentissage", 1,"Apprentissage", master, miage));
+		list.add(new Formation(2, "Master 2 Miage apprentissage", 2,"Apprentissage", master, miage));
+		list.add(new Formation(3, "Master 1 Miage classique", 1,"Classique", master, miage));
+		list.add(new Formation(4, "Master 2 Miage classique", 2,"Classique", master, miage));
+		list.add(new Formation(5, "Licence 3 Miage apprentissage", 3,"Apprentissage", licence, miage));
+		list.add(new Formation(6, "Licence 3 Miage classique", 3,"Classique", licence, miage));
 	}
 
 }
