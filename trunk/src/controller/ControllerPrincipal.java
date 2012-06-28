@@ -21,6 +21,7 @@ public class ControllerPrincipal extends HttpServlet {
 	
 	public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {   
 		String action = req.getParameter("action");
+		if(action == null) req.getRequestDispatcher("index.jsp").forward(req, res);
 
 		if(action.equals("pageCreationCreneau")){
 			req.setAttribute("listEnseignants", ModeleCreneau.getAllEnseignants());
@@ -98,8 +99,6 @@ public class ControllerPrincipal extends HttpServlet {
 									String duree          = req.getParameter("duree");
 									
 									ModeleCreneau.modification(idEnseignant, idSalle, idEc, idType, idPromo, date, horaire, duree);
-								} else {
-									req.getRequestDispatcher("index.jsp").forward(req, res);
-								}
+								} 
 	}
 }
