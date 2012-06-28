@@ -46,5 +46,14 @@ public class FormationDAO {
 	public void loadMesPromotions(Formation obj) {
 
 	}
+	
+	public static void loadMesFormations(){
+		list.add(new Formation(1, "Master 1 Miage apprentissage", 1,"Apprentissage", "Master", "Miage"));
+		list.add(new Formation(2, "Master 2 Miage apprentissage", 2,"Apprentissage", "Master", "Miage"));
+		list.add(new Formation(3, "Master 1 Miage classique", 1,"Classique", "Master", "Miage"));
+		list.add(new Formation(4, "Master 2 Miage classique", 2,"Classique", "Master", "Miage"));
+		list.add(new Formation(1, "Licence 3 Miage apprentissage", 3,"Apprentissage", "Licence", "Miage"));
+		list.add(new Formation(2, "Licence 3 Miage classique", 3,"Classique", "Licence", "Miage"));
+	}
 
 }

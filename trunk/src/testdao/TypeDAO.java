@@ -42,5 +42,10 @@ public class TypeDAO {
 	public List<Type> findAll() {
 		return TypeDAO.list;
 	}
+	
+	public static void loadMesFormations(){
+		list.add(new Type(0,"TD"));
+		list.add(new Type(1,"CM"));
+	}
 
 }
