@@ -25,7 +25,7 @@ public class Modification extends HttpServlet {
 //		String url="";
 //		Connection connection = ODBC_onur.getConnectiontoDB(login, password, url);
 		
-		EnseignantDAO ed = new EnseignantDAO();
+//		EnseignantDAO ed = new EnseignantDAO();
 		
 		//1 = id de l'enseignant
 	}
