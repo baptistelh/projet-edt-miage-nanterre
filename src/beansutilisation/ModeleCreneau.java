@@ -34,8 +34,8 @@ public class ModeleCreneau {
 		SalleDAO salleDAO = new SalleDAO();
 		Salle salle = salleDAO.find(idSalle);
 
-		ECDAO EcDAO = new ECDAO();
-		EC ec = EcDAO.find(idEc);
+		ECDAO ecDAO = new ECDAO();
+		EC ec = ecDAO.find(idEc);
 
 		TypeDAO typeDAO = new TypeDAO();
 		Type type = typeDAO.find(typearg);
@@ -106,8 +106,8 @@ public class ModeleCreneau {
 		SalleDAO salleDAO = new SalleDAO();
 		Salle salle = salleDAO.find(idSalle);
 
-		ECDAO EcDAO = new ECDAO();
-		EC ec = EcDAO.find(idEc);
+		ECDAO ecDAO = new ECDAO();
+		EC ec = ecDAO.find(idEc);
 
 		TypeDAO typeDAO = new TypeDAO();
 		Type type = typeDAO.find(typearg);
@@ -152,8 +152,7 @@ public class ModeleCreneau {
 	public static void suppression(int idEns, String idSalle, int idEc,
 			int typearg, String date) {
 
-		// utilisation des bouchons pour les DAO - Y A CEUX QUI GERENT ET CEUX
-		// QUI GERENT PAS. NOUS, ON GERE!
+		// utilisation des bouchons pour les DAO
 		SalleDAO.loadMesSalles();
 		ECDAO.loadMesEC();
 		FormationDAO.loadMesFormations();
@@ -166,8 +165,8 @@ public class ModeleCreneau {
 		SalleDAO salleDAO = new SalleDAO();
 		Salle salle = salleDAO.find(idSalle);
 
-		ECDAO EcDAO = new ECDAO();
-		EC ec = EcDAO.find(idEc);
+		ECDAO ecDAO = new ECDAO();
+		EC ec = ecDAO.find(idEc);
 
 		TypeDAO typeDAO = new TypeDAO();
 		Type type = typeDAO.find(typearg);
@@ -203,8 +202,8 @@ public class ModeleCreneau {
 		int y = Integer.parseInt(date.substring(6));
 		GregorianCalendar gcDate = new GregorianCalendar(y, m-1, d);
 		
-		ECDAO EcDAO = new ECDAO();
-		EC ec = EcDAO.find(noEc);
+		ECDAO ecDAO = new ECDAO();
+		EC ec = ecDAO.find(noEc);
 		
 		
 		CreneauDAO creDao = new CreneauDAO();
@@ -216,22 +215,22 @@ public class ModeleCreneau {
 	public static ArrayList<Enseignant> getAllEnseignants() {
 
 		EnseignantDAO.loadMesEnseignants();
-		EnseignantDAO DAOens = new EnseignantDAO();
-		ArrayList<Enseignant> ens = (ArrayList<Enseignant>) DAOens.findAll();
+		EnseignantDAO daoEns = new EnseignantDAO();
+		ArrayList<Enseignant> ens = (ArrayList<Enseignant>) daoEns.findAll();
 		return ens;
 	}
 
 	public static ArrayList<Salle> getAllSalle() {
 		SalleDAO.loadMesSalles();
-		SalleDAO DAOsalle = new SalleDAO();
-		ArrayList<Salle> salles = (ArrayList<Salle>) DAOsalle.findAll();
+		SalleDAO daoSalle = new SalleDAO();
+		ArrayList<Salle> salles = (ArrayList<Salle>) daoSalle.findAll();
 		return salles;
 	}
 
 	public static ArrayList<EC> getAllEC() {
 		ECDAO.loadMesEC();
-		ECDAO DAOEC = new ECDAO();
-		ArrayList<EC> ecs = (ArrayList<EC>) DAOEC.findAll();
+		ECDAO daoEc = new ECDAO();
+		ArrayList<EC> ecs = (ArrayList<EC>) daoEc.findAll();
 		return ecs;
 	}
 
@@ -239,16 +238,16 @@ public class ModeleCreneau {
 
 		TypeDAO.loadMesTypes();
 
-		TypeDAO DAOType = new TypeDAO();
-		ArrayList<Type> types = (ArrayList<Type>) DAOType.findAll();
+		TypeDAO daoType = new TypeDAO();
+		ArrayList<Type> types = (ArrayList<Type>) daoType.findAll();
 		return types;
 	}
 
 	public static ArrayList<Formation> getAllFormation() {
 		FormationDAO.loadMesFormations();
 
-		FormationDAO DAOFormation = new FormationDAO();
-		ArrayList<Formation> formations = (ArrayList<Formation>) DAOFormation
+		FormationDAO daoFormation = new FormationDAO();
+		ArrayList<Formation> formations = (ArrayList<Formation>) daoFormation
 				.findAll();
 		return formations;
 	}
