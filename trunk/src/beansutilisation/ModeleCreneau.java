@@ -23,8 +23,12 @@ import beans.Type;
  */
 import testdao.*;
 
-public class ModeleCreneau {
+public final class ModeleCreneau {
 
+	private ModeleCreneau() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public static void creation(int idEns, String idSalle, int idEc, int typearg,
 			int idPromo, String date, String horaire, String duree) {
 

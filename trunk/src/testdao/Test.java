@@ -1,9 +1,9 @@
 package testdao;
 import beans.*;
 
-public class Test {
+public final class Test {
 	
-	public Test() {
+	private Test() {
 		// TODO Auto-generated constructor stub
 	}
 	

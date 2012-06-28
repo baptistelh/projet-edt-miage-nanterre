@@ -7,8 +7,12 @@ import java.util.List;
 import beans.Creneau;
 import beans.Jours;
 
-public class VerificationCreneaux {
+public final class VerificationCreneaux {
 
+	private VerificationCreneaux() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public static boolean depassementJournee(List<Creneau> c1) {
 		boolean result = true;
 

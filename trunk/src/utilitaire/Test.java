@@ -4,7 +4,8 @@ import java.util.GregorianCalendar;
 import java.util.List;
 
 
-public class Test {
+public final class Test {
+	
 	private Test() {
 		// TODO Auto-generated constructor stub
 	}

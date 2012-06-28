@@ -11,11 +11,12 @@ import beans.Salle;
 import beans.Type;
 import beans.UE;
 
-public class CrenauEDTTest {
+public final class CrenauEDTTest {
 
-	/**
-	 * @param args
-	 */
+	private CrenauEDTTest() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
