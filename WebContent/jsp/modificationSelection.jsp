@@ -23,7 +23,7 @@ List<EC> ecs=(List<EC>)(request.getAttribute("listEC"));
 List<Salle> salles=(List<Salle>)(request.getAttribute("listSalles"));
 List<Formation> fs=(List<Formation>)(request.getAttribute("listFormations"));
 List<Type> ts=(List<Type>)(request.getAttribute("listTypes"));
-
+Creneau c=(Creneau)(request.getAttribute("monEC"));
 
 /*Attention :
 	- Java script utilisé pour le calendrier,
@@ -58,8 +58,8 @@ for (i=0;i<es.size();i++){ %>
   <TR>
  <TH> Date JJ/MM/AAAA </TH>
  <TD> 
- <script type="text/javascript" src="calendrier.js"></script>
- <input type="text" name="date" value='<%=c.getDateCreneau().getDateDuJour().toString()%>'onclick="ds_sh(this);" /> </TD>
+
+ <input type="text" name="date" value='<%=c.getDateCreneau().getDateDuJour().toString()%>'/> </TD>
   </TR>
   <TR>
  <TH> Duree en minutes </TH>

@@ -16,14 +16,41 @@
 <%@ page import="beans.Formation"%>
 <%@ page import="beans.UE"%>
 <%@ page import="beans.Type"%>
+
+<%-- <%@ page import="testdao.ECDAO"%> --%>
+<%-- <%@ page import="testdao.FormationDAO"%> --%>
+<%-- <%@ page import="testdao.SalleDAO"%> --%>
+<%-- <%@ page import="testdao.EnseignantDAO"%> --%>
+<%-- <%@ page import="testdao.TypeDAO"%> --%>
+
+<% 
+// Pour test :
+// EnseignantDAO ed=new EnseignantDAO();
+// ed.loadMesEnseignants();
+// ECDAO ecd=new ECDAO();
+// ecd.loadMesEC();
+// SalleDAO sd=new SalleDAO();
+// sd.loadMesSalles();
+// FormationDAO fd=new FormationDAO();
+// fd.loadMesFormations();
+// TypeDAO td=new TypeDAO();
+// td.loadMesTypes();
+
+// List<Enseignant> es=ed.findAll();
+// List<EC> ecs=ecd.findAll();
+// List<Salle> salles=sd.findAll();
+// List<Formation> fs=fd.findAll();
+// List<Type> ts=td.findAll();
+%>
+
 <%
 List<Enseignant> es=(List<Enseignant>)(request.getAttribute("listEnseignants"));
 List<EC> ecs=(List<EC>)(request.getAttribute("listEC"));
 List<Salle> salles=(List<Salle>)(request.getAttribute("listSalles"));
 List<Formation> fs=(List<Formation>)(request.getAttribute("listFormations"));
 List<Type> ts=(List<Type>)(request.getAttribute("listTypes"));
-
 %>
+
 
 
 
@@ -50,8 +77,7 @@ for (i=0;i<es.size();i++){ %>
   <TR>
  <TH> Date JJ/MM/AAAA </TH>
  <TD> 
- <script type="text/javascript" src="calendrier.js"></script>
- <input type="text" name="date" onclick="ds_sh(this);" /> </TD>
+ <input type="text" value='' name="date" /> </TD>
   </TR>
   <TR>
  <TH> Duree en minutes </TH>
