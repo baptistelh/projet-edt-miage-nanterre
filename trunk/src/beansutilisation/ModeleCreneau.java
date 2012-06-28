@@ -2,6 +2,7 @@ package beansutilisation;
 
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
+import java.util.List;
 
 import beans.Creneau;
 import beans.EC;
@@ -216,42 +217,42 @@ public final class ModeleCreneau {
 
 	}
 
-	public static ArrayList<Enseignant> getAllEnseignants() {
+	public static List<Enseignant> getAllEnseignants() {
 
 		EnseignantDAO.loadMesEnseignants();
 		EnseignantDAO daoEns = new EnseignantDAO();
-		ArrayList<Enseignant> ens = (ArrayList<Enseignant>) daoEns.findAll();
+		List<Enseignant> ens = (ArrayList<Enseignant>) daoEns.findAll();
 		return ens;
 	}
 
-	public static ArrayList<Salle> getAllSalle() {
+	public static List<Salle> getAllSalle() {
 		SalleDAO.loadMesSalles();
 		SalleDAO daoSalle = new SalleDAO();
-		ArrayList<Salle> salles = (ArrayList<Salle>) daoSalle.findAll();
+		List<Salle> salles = (ArrayList<Salle>) daoSalle.findAll();
 		return salles;
 	}
 
-	public static ArrayList<EC> getAllEC() {
+	public static List<EC> getAllEC() {
 		ECDAO.loadMesEC();
 		ECDAO daoEc = new ECDAO();
-		ArrayList<EC> ecs = (ArrayList<EC>) daoEc.findAll();
+		List<EC> ecs = (ArrayList<EC>) daoEc.findAll();
 		return ecs;
 	}
 
-	public static ArrayList<Type> getAllTypes() {
+	public static List<Type> getAllTypes() {
 
 		TypeDAO.loadMesTypes();
 
 		TypeDAO daoType = new TypeDAO();
-		ArrayList<Type> types = (ArrayList<Type>) daoType.findAll();
+		List<Type> types = (ArrayList<Type>) daoType.findAll();
 		return types;
 	}
 
-	public static ArrayList<Formation> getAllFormation() {
+	public static List<Formation> getAllFormation() {
 		FormationDAO.loadMesFormations();
 
 		FormationDAO daoFormation = new FormationDAO();
-		ArrayList<Formation> formations = (ArrayList<Formation>) daoFormation
+		List<Formation> formations = (ArrayList<Formation>) daoFormation
 				.findAll();
 		return formations;
 	}
