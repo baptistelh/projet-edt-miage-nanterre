@@ -16,13 +16,14 @@ import beans.UE;
 
 public class VerificationPromoSalle {
 	
-	public static boolean verifSalle(List<Creneau> c1, Salle s1) {
-		
-		return VerificationCreneaux.chevauchementCreneaux(c1, s1.getMesCreneaux());
-		
+	public static void verifSalle(List<Creneau> c1, Salle s1) throws VerificationException {
+		if (!VerificationCreneaux.chevauchementCreneaux(c1, s1.getMesCreneaux())){
+			throw new VerificationException("Salle deja occupee");
+			
+		}
 }
 	
-	public static boolean verifPromo(List<Creneau> c1, Promotion s1){
+	public static void verifPromo(List<Creneau> c1, Promotion s1) throws VerificationException{
 		
 		List<Creneau> l0= new ArrayList<Creneau>();
 		List<Creneau> l1= new ArrayList<Creneau>();
@@ -38,7 +39,10 @@ public class VerificationPromoSalle {
 				}
 		}
 		
-		return VerificationCreneaux.chevauchementCreneaux(c1, l1);
+		if(!VerificationCreneaux.chevauchementCreneaux(c1, l1)){
+			throw new VerificationException("Promo deja occupee");
+			
+		}
 	}
 	
 	public static void main(String[] args) {
@@ -61,8 +65,8 @@ public class VerificationPromoSalle {
 		l1.add(cLundi);
 		s1.setMesCreneaux(l1);
 		s2.setMesCreneaux(l2);
-		System.out.println(verifSalle(l1, s1));
-		System.out.println(verifSalle(l1, s2));
+//		System.out.println(verifSalle(l1, s1));
+//		System.out.println(verifSalle(l1, s2));
 		
 	}
 }
