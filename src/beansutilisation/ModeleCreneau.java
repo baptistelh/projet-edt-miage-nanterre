@@ -25,11 +25,10 @@ import testdao.*;
 
 public class ModeleCreneau {
 
-	public static void creation(int idEns, int idSalle, int idEc, int typearg,
+	public static boolean creation(int idEns, String idSalle, int idEc, int typearg,
 			int idPromo, String date, String horaire, String duree) {
 
-		// utilisation des bouchons pour les DAO - Y A CEUX QUI GERENT ET CEUX
-		// QUI GERENT PAS. NOUS, ON GERE!
+		// utilisation des bouchons pour les DAO
 		SalleDAO.loadMesSalles();
 		ECDAO.loadMesEC();
 		FormationDAO.loadMesFormations();
@@ -61,7 +60,7 @@ public class ModeleCreneau {
 
 		int dureInt = Integer.parseInt(duree);
 
-		// Creation d'un bean creneau selon les arguments reçus
+		// Creation d'un bean creneau selon les arguments reï¿½us
 		Creneau newCreneau = new Creneau(ens, salle, ec, type, jour, horaire,
 				dureInt);
 		ArrayList<Creneau> newCreneaux = new ArrayList<Creneau>();
@@ -73,10 +72,11 @@ public class ModeleCreneau {
 			VerificationPromoSalle.verifPromo(newCreneaux, prom);
 			VerificationEC.verificationTempsEC(ec, type);
 		} catch (VerificationException e) {
-			e.printStackTrace();
+			System.err.println(e.getMessage());
+			return false;
 		}
 
-		// création du créneau
+		// crï¿½ation du crï¿½neau
 		CreneauDAO creDao = new CreneauDAO();
 		creDao.create(newCreneau);
 
@@ -95,10 +95,11 @@ public class ModeleCreneau {
 		newCreneauxsalle.addAll(newCreneaux);
 		salle.setMesCreneaux(newCreneauxsalle);
 		salleDAO.update(salle);
+		return true;
 
 	}
 
-	public static void modification(int idEns, int idSalle, int idEc,
+	public static boolean modification(int idEns, String idSalle, int idEc,
 			int typearg, int idPromo, String date, String horaire, String duree) {
 		// utilisation des bouchons pour les DAO - Y A CEUX QUI GERENT ET CEUX
 		// QUI GERENT PAS. NOUS, ON GERE!
@@ -128,12 +129,9 @@ public class ModeleCreneau {
 		int y = Integer.parseInt(date.substring(6));
 		GregorianCalendar gcDate = new GregorianCalendar(y, m-1, d);
 
-		JoursDAO jourDAO = new JoursDAO();
-		Jours jour = jourDAO.find(gcDate);
-
 		int dureInt = Integer.parseInt(duree);
 
-		// Creation d'un bean creneau selon les arguments reçus
+		// Creation d'un bean creneau selon les arguments reï¿½us
 
 		CreneauDAO creDao = new CreneauDAO();
 		Creneau finded = creDao.find(ens.getNumeroEnseignant(), salle
@@ -141,7 +139,7 @@ public class ModeleCreneau {
 				.getNumeroUE(), ec.getMonUE().getMaFormation()
 				.getNumeroFormation(), type.getNumeroType(), gcDate);
 		finded.setDuree(dureInt);
-
+		
 		ArrayList<Creneau> newCreneaux = new ArrayList<Creneau>();
 		newCreneaux.add(finded);
 
@@ -151,15 +149,16 @@ public class ModeleCreneau {
 			VerificationPromoSalle.verifPromo(newCreneaux, prom);
 			VerificationEC.verificationTempsEC(ec, type);
 		} catch (VerificationException e) {
-			e.printStackTrace();
+			System.err.println(e.getMessage());
+			return false;
 		}
-
 		creDao.update(finded);
+		return true;
 	}
 
-	public static void suppression(int idEns, int idSalle, int idEc,
+	public static boolean suppression(int idEns, String idSalle, int idEc,
 			int typearg, String date) {
-
+		
 		// utilisation des bouchons pour les DAO - Y A CEUX QUI GERENT ET CEUX
 		// QUI GERENT PAS. NOUS, ON GERE!
 		SalleDAO.loadMesSalles();
@@ -180,81 +179,53 @@ public class ModeleCreneau {
 		TypeDAO typeDAO = new TypeDAO();
 		Type type = typeDAO.find(typearg);
 
+
+
 		int d = Integer.parseInt(date.substring(0, 2));
 		int m = Integer.parseInt(date.substring(3, 5));
 		int y = Integer.parseInt(date.substring(6));
 		GregorianCalendar gcDate = new GregorianCalendar(y, m-1, d);
 
-		JoursDAO jourDAO = new JoursDAO();
-		Jours jour = jourDAO.find(gcDate);
-
-		// Creation d'un bean creneau selon les arguments reçus
+		// Creation d'un bean creneau selon les arguments reï¿½us
 
 		CreneauDAO creDao = new CreneauDAO();
 		Creneau finded = creDao.find(ens.getNumeroEnseignant(), salle
 				.getNumeroSalle(), ec.getNumeroEC(), ec.getMonUE()
 				.getNumeroUE(), ec.getMonUE().getMaFormation()
 				.getNumeroFormation(), type.getNumeroType(), gcDate);
-
-		creDao.delete(finded);
-
-	}
-
-	public static Creneau getCreneau(int noEnseignant, String noSalle,
-			int noEc, int noType,
-			String date) {
 		
-		ECDAO.loadMesEC();
-		
-		int d = Integer.parseInt(date.substring(0, 2));
-		int m = Integer.parseInt(date.substring(3, 5));
-		int y = Integer.parseInt(date.substring(6));
-		GregorianCalendar gcDate = new GregorianCalendar(y, m-1, d);
-		
-		ECDAO EcDAO = new ECDAO();
-		EC ec = EcDAO.find(noEc);
-		
-		
-		CreneauDAO creDao = new CreneauDAO();
-		return creDao.find(noEnseignant, noSalle, noEc, ec.getMonUE().getNumeroUE(), ec.getMonUE().getMaFormation().getNumeroFormation(),
-				noType, gcDate);
-
+		 creDao.delete(finded);
+		 return true;
 	}
 
 	public static ArrayList<Enseignant> getAllEnseignants() {
 
-		EnseignantDAO.loadMesEnseignants();
 		EnseignantDAO DAOens = new EnseignantDAO();
 		ArrayList<Enseignant> ens = (ArrayList<Enseignant>) DAOens.findAll();
 		return ens;
 	}
 
 	public static ArrayList<Salle> getAllSalle() {
-		SalleDAO.loadMesSalles();
+
 		SalleDAO DAOsalle = new SalleDAO();
 		ArrayList<Salle> salles = (ArrayList<Salle>) DAOsalle.findAll();
 		return salles;
 	}
 
 	public static ArrayList<EC> getAllEC() {
-		ECDAO.loadMesEC();
+
 		ECDAO DAOEC = new ECDAO();
 		ArrayList<EC> ecs = (ArrayList<EC>) DAOEC.findAll();
 		return ecs;
 	}
 
 	public static ArrayList<Type> getAllTypes() {
-
-		TypeDAO.loadMesTypes();
-
 		TypeDAO DAOType = new TypeDAO();
 		ArrayList<Type> types = (ArrayList<Type>) DAOType.findAll();
 		return types;
 	}
 
 	public static ArrayList<Formation> getAllFormation() {
-		FormationDAO.loadMesFormations();
-
 		FormationDAO DAOFormation = new FormationDAO();
 		ArrayList<Formation> formations = (ArrayList<Formation>) DAOFormation
 				.findAll();
