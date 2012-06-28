@@ -65,8 +65,18 @@ public class VerificationPromoSalle {
 		l1.add(cLundi);
 		s1.setMesCreneaux(l1);
 		s2.setMesCreneaux(l2);
-//		System.out.println(verifSalle(l1, s1));
-//		System.out.println(verifSalle(l1, s2));
+		
+		try {
+			verifSalle(l1, s1);
+		} catch(Exception e) { 
+			e.printStackTrace(); 
+		}
+		
+		try {
+			verifSalle(l1, s2);
+		} catch(Exception e) { 
+			e.printStackTrace(); 
+		}
 		
 	}
 }
