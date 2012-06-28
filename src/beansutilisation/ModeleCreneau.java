@@ -196,6 +196,27 @@ public class ModeleCreneau {
 		 creDao.delete(finded);
 		 return true;
 	}
+	
+	public static Creneau getCreneau(int noEnseignant, String noSalle,
+			int noEc, int noType,
+			String date) {
+		
+		ECDAO.loadMesEC();
+		
+		int d = Integer.parseInt(date.substring(0, 2));
+		int m = Integer.parseInt(date.substring(3, 5));
+		int y = Integer.parseInt(date.substring(6));
+		GregorianCalendar gcDate = new GregorianCalendar(y, m-1, d);
+		
+		ECDAO EcDAO = new ECDAO();
+		EC ec = EcDAO.find(noEc);
+		
+		
+		CreneauDAO creDao = new CreneauDAO();
+		return creDao.find(noEnseignant, noSalle, noEc, ec.getMonUE().getNumeroUE(), ec.getMonUE().getMaFormation().getNumeroFormation(),
+				noType, gcDate);
+
+	}
 
 	public static ArrayList<Enseignant> getAllEnseignants() {
 
