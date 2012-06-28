@@ -12,19 +12,18 @@ public class VerificationCreneaux {
 	public static boolean depassementJournee(List<Creneau> c1) {
 		boolean result = true;
 
-		// Hashtable pour stocker duree des journées
+	
 		ArrayList<JourneeDepassement> dureesJournees = new ArrayList<JourneeDepassement>();
 		Jours j = new Jours();
 
 		for (Creneau tempC : c1) {
 			j = tempC.getDateCreneau();
 			JourneeDepassement jd = new JourneeDepassement(j.getDateDuJour(), 0);
-			if (!dureesJournees.contains(jd)) {
+			if (!dureesJournees.contains(jd))
 				dureesJournees.add(jd);
-			}
 		}
 
-		// parcours jours et addition des durées
+		
 		for (Creneau tempC : c1) {
 			j = tempC.getDateCreneau();
 			for (JourneeDepassement jtemp : dureesJournees) {
@@ -37,7 +36,7 @@ public class VerificationCreneaux {
 			}
 		}
 
-		// verification dépassement par journée en parcourant la hashtable
+
 
 		for (JourneeDepassement jtemp : dureesJournees) {
 			if (jtemp.getDuree() > 480) {
