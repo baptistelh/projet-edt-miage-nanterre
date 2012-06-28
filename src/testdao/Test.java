@@ -2,7 +2,11 @@ package testdao;
 import beans.*;
 
 public class Test {
-
+	
+	public Test() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public static void main(String[] args) {
 		// Instanciation du DAO de la salle
 		SalleDAO.loadMesSalles();
