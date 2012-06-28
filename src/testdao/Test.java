@@ -1,13 +1,27 @@
 package testdao;
+import beans.*;
 
 public class Test {
-	
+
 	public static void main(String[] args) {
-		//Instanciation du DAO de la salle
-			EnseignantDAO.loadMesEnseignants();
-			SalleDAO.loadMesSalles();
-			ECDAO.loadMesEC();
-			FormationDAO.loadMesFormations();
-			TypeDAO.loadMesFormations();
+		// Instanciation du DAO de la salle
+		SalleDAO.loadMesSalles();
+		ECDAO.loadMesEC();
+		FormationDAO.loadMesFormations();
+		TypeDAO.loadMesFormations();
+		EnseignantDAO.loadMesEnseignants();
+		
+		EnseignantDAO ed = new EnseignantDAO();
+		
+		for(Enseignant e : ed.findAll()) {
+			System.out.println(e.getPrenom()+" "+e.getNom());
+
+		}
+		
+		ECDAO ecd = new ECDAO();
+		for(EC ec : ecd.findAll())
+			System.out.println(ec.getLibelle());
+		
+
 	}
 }
