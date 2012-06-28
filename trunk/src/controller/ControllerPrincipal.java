@@ -21,6 +21,12 @@ public class ControllerPrincipal extends HttpServlet {
 	
 	public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {   
 		String action =(String) req.getParameter("action");
+		
+		String nomEnseignant = "nom_enseignant";
+		String salle = "salle";
+		String type = "type";
+		String d = "date";
+		
 		if(action == null) {
 			req.getRequestDispatcher("jsp/index.jsp").forward(req, res);
 		}
@@ -32,18 +38,18 @@ public class ControllerPrincipal extends HttpServlet {
 			if(action.equals("Afficher le calendrier")){
 				req.getRequestDispatcher("index.html").forward(req, res);
 			}
-			if(action.equals("Modificatio de Creneau")){
+			if(action.equals("Modification de Creneau")){
 				envoyerListesJsp(req);				
 				req.getRequestDispatcher("jsp/modification.jsp").forward(req, res);
 			} else
 				if(action.equals("pageModificationSelectionCreneau")){
 					envoyerListesJsp(req);
 					
-					Integer idEnseignant  = Integer.parseInt(req.getParameter("nom_enseignant"));
-					String idSalle        = req.getParameter("salle");
+					Integer idEnseignant  = Integer.parseInt(req.getParameter(nomEnseignant));
+					String idSalle        = req.getParameter(salle);
 					Integer idEc          = Integer.parseInt(req.getParameter("EC"));
-					Integer idType        = Integer.parseInt(req.getParameter("type"));
-					String date           = req.getParameter("date");
+					Integer idType        = Integer.parseInt(req.getParameter(type));
+					String date           = req.getParameter(d);
 					
 					req.setAttribute("monCreneau", ModeleCreneau.getCreneau(idEnseignant, idSalle, idEc, idType, date));
 					
@@ -54,33 +60,33 @@ public class ControllerPrincipal extends HttpServlet {
 						req.getRequestDispatcher("jsp/suppression.jsp").forward(req, res);
 					} else
 						if(action.equals("ajouterCreneau")){
-							Integer idEnseignant  = Integer.parseInt(req.getParameter("nom_enseignant"));
-							String idSalle       = req.getParameter("salle");
+							Integer idEnseignant  = Integer.parseInt(req.getParameter(nomEnseignant));
+							String idSalle       = req.getParameter(salle);
 							Integer idEc          = Integer.parseInt(req.getParameter("EC"));
-							Integer idType        = Integer.parseInt(req.getParameter("type"));
+							Integer idType        = Integer.parseInt(req.getParameter(type));
 							Integer idPromo       = 1;
 							String date           = req.getParameter("date");
 							String horaire        = req.getParameter("horaire");
-							String duree          = req.getParameter("duree");
+							String duree          = req.getParameter(d);
 							
 							ModeleCreneau.creation(idEnseignant, idSalle, idEc, idType, idPromo, date, horaire, duree);
 						} else 
 							if(action.equals("supprimerCreneau")){
-								Integer idEnseignant  = Integer.parseInt(req.getParameter("nom_enseignant"));
-								String idSalle       = req.getParameter("salle");
+								Integer idEnseignant  = Integer.parseInt(req.getParameter(nomEnseignant));
+								String idSalle       = req.getParameter(salle);
 								Integer idEc          = Integer.parseInt(req.getParameter("EC"));
-								Integer idType        = Integer.parseInt(req.getParameter("type"));
-								String date           = req.getParameter("date");
+								Integer idType        = Integer.parseInt(req.getParameter(type));
+								String date           = req.getParameter(d);
 								
 								ModeleCreneau.suppression(idEnseignant, idSalle, idEc, idType, date);
 							} else 
 								if(action.equals("MAJCreneau")){
-									Integer idEnseignant  = Integer.parseInt(req.getParameter("nom_enseignant"));
-									String idSalle       = req.getParameter("salle");
+									Integer idEnseignant  = Integer.parseInt(req.getParameter(nomEnseignant));
+									String idSalle       = req.getParameter(salle);
 									Integer idEc          = Integer.parseInt(req.getParameter("EC"));
-									Integer idType        = Integer.parseInt(req.getParameter("type"));
+									Integer idType        = Integer.parseInt(req.getParameter(type));
 									Integer idPromo       = 1;
-									String date           = req.getParameter("date");
+									String date           = req.getParameter(d);
 									String horaire        = req.getParameter("horaire");
 									String duree          = req.getParameter("duree");
 									
