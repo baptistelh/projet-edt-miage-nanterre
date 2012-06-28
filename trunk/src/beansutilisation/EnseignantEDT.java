@@ -2,11 +2,7 @@ package beansutilisation;
 
 import beans.*;
 
-import java.sql.Connection;
 import java.util.ArrayList;
-import java.util.Enumeration;
-import java.util.GregorianCalendar;
-import java.util.Hashtable;
 import java.util.List;
 
 public final class EnseignantEDT {
