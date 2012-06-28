@@ -10,17 +10,19 @@
 <h1>Bienvenue sur la modification de l'EDT</h1>
 <%@ page import="java.util.*"%> 
 <%@ page import="java.util.ArrayList"%>
-<%@ page import="beans.Enseignant"%>;
-<%@ page import="beans.EC"%>;
-<%@ page import="beans.Salle"%>;
-<%@ page import="beans.Formation"%>;
-<%@ page import="beans.UE"%>;
-<%@ page import="beans.Creneau"%>;
+<%@ page import="beans.Enseignant"%>
+<%@ page import="beans.EC"%>
+<%@ page import="beans.Salle"%>
+<%@ page import="beans.Formation"%>
+<%@ page import="beans.UE"%>
+<%@ page import="beans.Creneau"%>
+<%@ page import="beans.Type"%>
 <%
 List<Enseignant> es=(ArrayList<Enseignant>)(request.getAttribute("listEnseignants"));
 List<EC> ecs=(ArrayList<EC>)(request.getAttribute("listEC"));
 List<Salle> salles=(ArrayList<Salle>)(request.getAttribute("listSalles"));
 List<Formation> fs=(ArrayList<Formation>)(request.getAttribute("listFormations"));
+List<Type> ts=(ArrayList<Type>)(request.getAttribute("listTypes"));
 Creneau c=(Creneau)(request.getAttribute("monCreneau"));
 
 
@@ -70,6 +72,11 @@ for (i=0;i<es.size();i++){ %>
   </TR>
   <TR>
  <TH> Type </TH>
+ <TD> <SELECT name="Type">
+ <%for (i=0;i<ts.size();i++){ %>
+<OPTION <% if (c.getMonType().equals(ts.get(i)))%> selected="selected"<%; %> Value= "<%=ts.get(i).getNumeroType()%>"> <%=ts.get(i).getLibelle()%>
+<%} %>
+</SELECT>  </TD>
  <TD> <INPUT type='text' value='<%=c.getMonType().getLibelle() %>' name='type'> </TD>
   </TR>
   <TR>
