@@ -21,7 +21,6 @@ public class ControllerPrincipal extends HttpServlet {
 	
 	public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {   
 		String action =(String) req.getParameter("action");
-		System.out.println(action);
 		if(action == null) req.getRequestDispatcher("jsp/index.jsp").forward(req, res);
 
 		if(action.equals("Creation de creneau")){
@@ -76,7 +75,7 @@ public class ControllerPrincipal extends HttpServlet {
 							String idSalle       = req.getParameter("salle");
 							Integer idEc          = Integer.parseInt(req.getParameter("EC"));
 							Integer idType        = Integer.parseInt(req.getParameter("type"));
-							Integer idPromo       = Integer.parseInt(req.getParameter("promo"));
+							Integer idPromo       = 1;
 							String date           = req.getParameter("date");
 							String horaire        = req.getParameter("horaire");
 							String duree          = req.getParameter("duree");
@@ -97,7 +96,7 @@ public class ControllerPrincipal extends HttpServlet {
 									String idSalle       = req.getParameter("salle");
 									Integer idEc          = Integer.parseInt(req.getParameter("EC"));
 									Integer idType        = Integer.parseInt(req.getParameter("type"));
-									Integer idPromo       = Integer.parseInt(req.getParameter("promo"));
+									Integer idPromo       = 1;
 									String date           = req.getParameter("date");
 									String horaire        = req.getParameter("horaire");
 									String duree          = req.getParameter("duree");
