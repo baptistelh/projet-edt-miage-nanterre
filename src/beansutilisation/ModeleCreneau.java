@@ -201,11 +201,23 @@ public class ModeleCreneau {
 	}
 
 	public static Creneau getCreneau(int noEnseignant, String noSalle,
-			int noEc, int noUe, int noFormation, int noType,
-			GregorianCalendar dateCreneau) {
+			int noEc, int noType,
+			String date) {
+		
+		ECDAO.loadMesEC();
+		
+		int d = Integer.parseInt(date.substring(0, 2));
+		int m = Integer.parseInt(date.substring(3, 5));
+		int y = Integer.parseInt(date.substring(6));
+		GregorianCalendar gcDate = new GregorianCalendar(y, m, d);
+		
+		ECDAO EcDAO = new ECDAO();
+		EC ec = EcDAO.find(noEc);
+		
+		
 		CreneauDAO creDao = new CreneauDAO();
-		return creDao.find(noEnseignant, noSalle, noEc, noUe, noFormation,
-				noType, dateCreneau);
+		return creDao.find(noEnseignant, noSalle, noEc, ec.getMonUE().getNumeroUE(), ec.getMonUE().getMaFormation().getNumeroFormation(),
+				noType, gcDate);
 
 	}
 
