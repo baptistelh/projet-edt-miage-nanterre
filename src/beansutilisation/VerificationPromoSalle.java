@@ -1,12 +1,17 @@
 package beansutilisation;
 
 import java.util.ArrayList;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 import beans.Creneau;
 import beans.EC;
+import beans.Enseignant;
+import beans.Formation;
+import beans.Jours;
 import beans.Promotion;
 import beans.Salle;
+import beans.Type;
 import beans.UE;
 
 public class VerificationPromoSalle {
@@ -34,5 +39,32 @@ public class VerificationPromoSalle {
 		}
 		
 		return VerificationCreneaux.chevauchementCreneaux(c1, l1);
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		//Lundi
+		Enseignant e1=new Enseignant(1,"Aragou", "muriel", "1 avenue du meilleur des tuteurs" , "0143855907",new GregorianCalendar(1960,10, 10), "logAragou", "pwdAragou");	
+		
+		List <Creneau> l1= new ArrayList<Creneau>();
+		List <Creneau> l2= new ArrayList<Creneau>();
+		Salle s1=new Salle("210A", 50, "enferNum1");
+		Salle s2=new Salle("210A", 50, "enferNum1");
+		Formation f1=new Formation();
+		UE ue1=new UE(1,f1);
+		EC ec1= new EC(1, ue1);
+		Type type1 = new Type(1, "TD"); 
+		Jours j1 = new Jours(new GregorianCalendar(2012, 05, 27));
+		Creneau cLundi = new Creneau(e1, s1, ec1,type1, j1 , "09:00", 120);
+		cLundi.setDateCreneau(j1);
+		l1.add(cLundi);
+		s1.setMesCreneaux(l1);
+		s2.setMesCreneaux(l2);
+		System.out.println(verifSalle(l1, s1));
+		System.out.println(verifSalle(l1, s2));
+		
+		Promotion p1= new Promotion(1);
+		Formation f1 = new Formation(1, "MIAGE", "1", "Master", grade, "Apprentissage")
 	}
 }

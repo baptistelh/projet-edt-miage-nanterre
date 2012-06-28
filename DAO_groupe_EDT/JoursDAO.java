@@ -67,7 +67,7 @@ public class JoursDAO extends DAO<Jours> {
 			Statement request = this.connect.createStatement();
 			String requete = "DELETE FROM " + CreneauDAO.TABLE
 					+ " WHERE DATE_JOUR = "
-					+ DAO.dateFromJavaToOracle(obj.getDateDuJour()) + ";";
+					+ DAO.dateFromJavaToOracle(obj.getDateDuJour());
 			request.executeUpdate(requete);
 			request.close();
 		} catch (SQLException e) {
