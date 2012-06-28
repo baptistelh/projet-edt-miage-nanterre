@@ -10,7 +10,7 @@
 <center>
 <h1>Bienvenue sur la modification de l'EDT</h1>
 
-<a href="http://localhost:8080/fr.p10.miage.m1.projetedt/ControllerPrincipal&action=pageCreationCreneau">Ajouter un créneau</a>
+<a href="http://localhost:8080/fr.p10.miage.m1.projetedt/controller/ControllerPrincipal&action=pageCreationCreneau">Ajouter un créneau</a>
 <a href="http://localhost:8080/fr.p10.miage.m1.projetedt/ControllerPrincipal&action=pageSuppressionCreneau">Supprimer un créneau</a>
 <a href="http://localhost:8080/fr.p10.miage.m1.projetedt/ControllerPrincipal&action=pageModificationCreneau">Modificer un créneau</a>
 <a href="../index.html">Visualiser l'emploi du temps</a>
