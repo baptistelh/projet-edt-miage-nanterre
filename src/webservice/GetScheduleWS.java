@@ -45,30 +45,30 @@ public class GetScheduleWS {
 		
 		Calendar c = new Calendar();
 		
-		Enseignant e1=new Enseignant(1,"Aragou", "muriel", "1 avenue du meilleur des tuteurs" , "0143855907",new GregorianCalendar(1960,10, 10), "logAragou", "pwdAragou");	
+		Enseignant e1=new Enseignant(1,"Marcos", "Almeida", "test addresse" , "0143855907",new GregorianCalendar(1960,10, 10), "logAragou", "pwdAragou");	
 		Salle s1=new Salle("210A", 50, "enferNum1");
 		Formation f1=new Formation();
 		UE ue1=new UE(1,f1);
 		EC ec1= new EC(1, ue1);
-		ec1.setLibelle("Genie logiciel");
+		ec1.setLibelle("Soutenance Projet 2");
 		Type type1 = new Type(1, "TD");
 		Jours j1=new Jours();
-		j1.setDateDuJour(new GregorianCalendar(2012, 05, 19));
-		Creneau cLundi = new Creneau(e1, s1, ec1, type1, j1, "09:00", 90);
+		j1.setDateDuJour(new GregorianCalendar(2012, 05, 28));
+		Creneau cLundi = new Creneau(e1, s1, ec1, type1, j1, "10:45", 120);
 		
 		Event e = new Event(cLundi);
 		c.addEvt(e);
 		
-		Enseignant e2=new Enseignant(1,"Giroud", "Olivier", "1 avenue des coupeurs d'orange" , "0143855908",new GregorianCalendar(1960,10, 10), "logGiroud", "pwdGiroud");	
+		Enseignant e2=new Enseignant(1,"Legond-Aubry", "Fabrice", "test addresse" , "0143855908",new GregorianCalendar(1960,10, 10), "logGiroud", "pwdGiroud");	
 		Salle s2=new Salle("210A", 50, "enferNum2");
 		Formation f2=new Formation();
 		UE ue2=new UE(1,f2);
 		EC ec2= new EC(1, ue2);
-		ec2.setLibelle("Chauffage de banc");
+		ec2.setLibelle("Partiel de RMI");
 		Type type2 = new Type(1, "TD"); 
 		Jours j2=new Jours();
-		j2.setDateDuJour(new GregorianCalendar(2012, 05, 20));
-		Creneau cMardi = new Creneau(e2, s2, ec2, type2, j2, "11:00", 180);
+		j2.setDateDuJour(new GregorianCalendar(2012, 05, 28));
+		Creneau cMardi = new Creneau(e2, s2, ec2, type2, j2, "14:00", 180);
 	
 		e = new Event(cMardi);
 		c.addEvt(e);
