@@ -1,9 +1,8 @@
 package testdao;
 import java.util.ArrayList;
-import java.util.GregorianCalendar;
 import java.util.List;
 
-import beans.*;
+import beans.Salle;
 
 public class SalleDAO {
 	private static List<Salle> list = new ArrayList<Salle>();

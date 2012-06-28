@@ -19,9 +19,8 @@ public class Test {
 		}
 		
 		ECDAO ecd = new ECDAO();
-		for(EC ec : ecd.findAll())
+		for(EC ec : ecd.findAll()) {
 			System.out.println(ec.getLibelle());
-		
-
+		}
 	}
 }

@@ -3,7 +3,8 @@ package testdao;
 import java.util.ArrayList;
 import java.util.List;
 
-import beans.*;
+import beans.Formation;
+import beans.Promotion;
 
 public class PromotionDAO {
 
@@ -38,6 +39,23 @@ public class PromotionDAO {
 	public void delete(Promotion obj) {
 		PromotionDAO.list.remove(obj);
 	}
+	
+	public static void loadMesPromotions(){
+		Promotion p = new Promotion(1);
+		p.setMaFormation(new Formation(1, "Master 1 Miage apprentissage", 1,"Apprentissage", "Master", "Miage"));
+		PromotionDAO.list.add(p);
+		
+		p = new Promotion(2);
+		p.setMaFormation(new Formation(2, "Master 2 Miage apprentissage", 2,"Apprentissage", "Master", "Miage"));
+		PromotionDAO.list.add(p);
+		
+		p = new Promotion(3);
+		p.setMaFormation(new Formation(3, "Master 1 Miage classique", 1,"Classique", "Master", "Miage"));
+		PromotionDAO.list.add(p);
+		
+		p = new Promotion(4);
+		p.setMaFormation(new Formation(4, "Master 2 Miage classique", 2,"Classique", "Master", "Miage"));
+		PromotionDAO.list.add(p);
 
-
+	}
 }

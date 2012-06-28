@@ -3,7 +3,7 @@ package testdao;
 import java.util.ArrayList;
 import java.util.List;
 
-import beans.*;
+import beans.Type;
 
 public class TypeDAO {
 	

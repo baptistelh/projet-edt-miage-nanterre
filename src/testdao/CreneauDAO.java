@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.List;
 
-import beans.*;
+import beans.Creneau;
 
 public class CreneauDAO {
 
