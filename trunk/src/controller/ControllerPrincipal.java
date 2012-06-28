@@ -24,32 +24,18 @@ public class ControllerPrincipal extends HttpServlet {
 		if(action == null) req.getRequestDispatcher("jsp/index.jsp").forward(req, res);
 
 		if(action.equals("Creation de creneau")){
-			req.setAttribute("listEnseignants", ModeleCreneau.getAllEnseignants());
-			req.setAttribute("listEC", ModeleCreneau.getAllEC());
-			req.setAttribute("listSalles", ModeleCreneau.getAllSalle());
-			req.setAttribute("listFormations", ModeleCreneau.getAllFormation());
-			req.setAttribute("listTypes", ModeleCreneau.getAllTypes());
-			
+			envoyerListesJsp(req);			
 			req.getRequestDispatcher("jsp/creation.jsp").forward(req, res);
 		} else
 			if(action.equals("Afficher le calendrier")){
 				req.getRequestDispatcher("index.html").forward(req, res);
 			}
 			if(action.equals("Modificatio de Creneau")){
-				req.setAttribute("listEnseignants", ModeleCreneau.getAllEnseignants());
-				req.setAttribute("listEC", ModeleCreneau.getAllEC());
-				req.setAttribute("listSalles", ModeleCreneau.getAllSalle());
-				req.setAttribute("listFormations", ModeleCreneau.getAllFormation());
-				req.setAttribute("listTypes", ModeleCreneau.getAllTypes());
-				
+				envoyerListesJsp(req);				
 				req.getRequestDispatcher("jsp/modification.jsp").forward(req, res);
 			} else
 				if(action.equals("pageModificationSelectionCreneau")){
-					req.setAttribute("listEnseignants", ModeleCreneau.getAllEnseignants());
-					req.setAttribute("listEC", ModeleCreneau.getAllEC());
-					req.setAttribute("listSalles", ModeleCreneau.getAllSalle());
-					req.setAttribute("listFormations", ModeleCreneau.getAllFormation());
-					req.setAttribute("listTypes", ModeleCreneau.getAllTypes());
+					envoyerListesJsp(req);
 					
 					Integer idEnseignant  = Integer.parseInt(req.getParameter("nom_enseignant"));
 					String idSalle        = req.getParameter("salle");
@@ -62,12 +48,7 @@ public class ControllerPrincipal extends HttpServlet {
 					req.getRequestDispatcher("jsp/modificationSelection.jsp").forward(req, res);
 				} else
 					if(action.equals("Suppression de Creneau")){
-						req.setAttribute("listEnseignants", ModeleCreneau.getAllEnseignants());
-						req.setAttribute("listEC", ModeleCreneau.getAllEC());
-						req.setAttribute("listSalles", ModeleCreneau.getAllSalle());
-						req.setAttribute("listFormations", ModeleCreneau.getAllFormation());
-						req.setAttribute("listTypes", ModeleCreneau.getAllTypes());
-						
+						envoyerListesJsp(req);						
 						req.getRequestDispatcher("jsp/suppression.jsp").forward(req, res);
 					} else
 						if(action.equals("ajouterCreneau")){
@@ -103,5 +84,13 @@ public class ControllerPrincipal extends HttpServlet {
 									
 									ModeleCreneau.modification(idEnseignant, idSalle, idEc, idType, idPromo, date, horaire, duree);
 								} 
+	}
+	
+	public void envoyerListesJsp(HttpServletRequest req){
+		req.setAttribute("listEnseignants", ModeleCreneau.getAllEnseignants());
+		req.setAttribute("listEC", ModeleCreneau.getAllEC());
+		req.setAttribute("listSalles", ModeleCreneau.getAllSalle());
+		req.setAttribute("listFormations", ModeleCreneau.getAllFormation());
+		req.setAttribute("listTypes", ModeleCreneau.getAllTypes());
 	}
 }
