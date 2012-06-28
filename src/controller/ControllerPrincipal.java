@@ -7,23 +7,91 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import beansutilisation.ModeleCreneau;
+
 public class ControllerPrincipal extends HttpServlet {
-	public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {    
-		doAction(req,res);
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 224621653755442533L;
+
+	public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {    
+		doGet(req,res);
 	}
 	
-	public void doAction(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {   
+	public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {   
 		String action = req.getParameter("action");
-		
-		if(action.equals("ajouterCreneau")){
-			req.getParameter("");
-			//creation(int idEns, int idSalle, int idEc, int typearg,int idPromo, String date, String horaire, String duree)
-		} else 
-			if(action.equals("supprimerCreneau")){
+
+		if(action.equals("pageCreationCreneau")){
+			req.setAttribute("listEnseignants", ModeleCreneau.getAllEnseignants());
+			req.setAttribute("listEC", ModeleCreneau.getAllEC());
+			req.setAttribute("listSalles", ModeleCreneau.getAllSalle());
+			req.setAttribute("listFormations", ModeleCreneau.getAllFormation());
+			req.setAttribute("listTypes", ModeleCreneau.getAllType());
+			
+			req.getRequestDispatcher("creation.jsp").forward(req, res);
+		} else
+			if(action.equals("pageModificationCreneau")){
+				req.setAttribute("listEnseignants", ModeleCreneau.getAllEnseignants());
+				req.setAttribute("listEC", ModeleCreneau.getAllEC());
+				req.setAttribute("listSalles", ModeleCreneau.getAllSalle());
+				req.setAttribute("listFormations", ModeleCreneau.getAllFormation());
+				req.setAttribute("listTypes", ModeleCreneau.getAllType());
 				
-			} else 
-				if(action.equals("MAJCreneau")){
+				req.getRequestDispatcher("modification.jsp").forward(req, res);
+			} else
+				if(action.equals("pageModificationSelectionCreneau")){
+					req.setAttribute("listEnseignants", ModeleCreneau.getAllEnseignants());
+					req.setAttribute("listEC", ModeleCreneau.getAllEC());
+					req.setAttribute("listSalles", ModeleCreneau.getAllSalle());
+					req.setAttribute("listFormations", ModeleCreneau.getAllFormation());
+					req.setAttribute("listTypes", ModeleCreneau.getAllType());
 					
-				}
+					req.getRequestDispatcher("modificationSelection.jsp").forward(req, res);
+				} else
+					if(action.equals("pageSuppressionCreneau")){
+						req.setAttribute("listEnseignants", ModeleCreneau.getAllEnseignants());
+						req.setAttribute("listEC", ModeleCreneau.getAllEC());
+						req.setAttribute("listSalles", ModeleCreneau.getAllSalle());
+						req.setAttribute("listFormations", ModeleCreneau.getAllFormation());
+						req.setAttribute("listTypes", ModeleCreneau.getAllType());
+						
+						req.getRequestDispatcher("suppression.jsp").forward(req, res);
+					} else
+						if(action.equals("ajouterCreneau")){
+							Integer idEnseignant  = Integer.parseInt(req.getParameter("nom_enseignant"));
+							Integer idSalle       = Integer.parseInt(req.getParameter("salle"));
+							Integer idEc          = Integer.parseInt(req.getParameter("EC"));
+							Integer idType        = Integer.parseInt(req.getParameter("type"));
+							Integer idPromo       = Integer.parseInt(req.getParameter("promo"));
+							String date           = req.getParameter("date");
+							String horaire        = req.getParameter("horaire");
+							String duree          = req.getParameter("duree");
+							
+							ModeleCreneau.creation(idEnseignant, idSalle, idEc, idType, idPromo, date, horaire, duree);
+						} else 
+							if(action.equals("supprimerCreneau")){
+								Integer idEnseignant  = Integer.parseInt(req.getParameter("nom_enseignant"));
+								Integer idSalle       = Integer.parseInt(req.getParameter("salle"));
+								Integer idEc          = Integer.parseInt(req.getParameter("EC"));
+								Integer idType        = Integer.parseInt(req.getParameter("type"));
+								String date           = req.getParameter("date");
+								String horaire        = req.getParameter("horaire");
+								String duree          = req.getParameter("duree");
+								
+								ModeleCreneau.suppression(idEnseignant, idSalle, idEc, idType, date, horaire, duree);
+							} else 
+								if(action.equals("MAJCreneau")){
+									Integer idEnseignant  = Integer.parseInt(req.getParameter("nom_enseignant"));
+									Integer idSalle       = Integer.parseInt(req.getParameter("salle"));
+									Integer idEc          = Integer.parseInt(req.getParameter("EC"));
+									Integer idType        = Integer.parseInt(req.getParameter("type"));
+									Integer idPromo       = Integer.parseInt(req.getParameter("promo"));
+									String date           = req.getParameter("date");
+									String horaire        = req.getParameter("horaire");
+									String duree          = req.getParameter("duree");
+									
+									ModeleCreneau.miseAJour(idEnseignant, idSalle, idEc, idType, idPromo, date, horaire, duree);
+								}
 	}
 }
