@@ -50,8 +50,7 @@ for (i=0;i<es.size();i++){ %>
   <TR>
  <TH> Date JJ/MM/AAAA </TH>
  <TD> 
- <script type="text/javascript" src="calendrier.js"></script>
- <input type="text" name="date" onclick="ds_sh(this);" /> </TD>
+ <input type="text" value='' name="date" /> </TD>
   </TR>
   <TR>
  <TH> Duree en minutes </TH>
