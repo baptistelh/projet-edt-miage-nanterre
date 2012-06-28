@@ -159,8 +159,7 @@ public class ModeleCreneau {
 	public static boolean suppression(int idEns, String idSalle, int idEc,
 			int typearg, String date) {
 		
-		// utilisation des bouchons pour les DAO - Y A CEUX QUI GERENT ET CEUX
-		// QUI GERENT PAS. NOUS, ON GERE!
+		// utilisation des bouchons pour les DAO
 		SalleDAO.loadMesSalles();
 		ECDAO.loadMesEC();
 		FormationDAO.loadMesFormations();
