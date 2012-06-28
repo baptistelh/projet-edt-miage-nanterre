@@ -10,13 +10,11 @@
 <center>
 <h1>Bienvenue sur la modification de l'EDT</h1>
 
-<form action="ControllerPrincipal">
-	<INPUT type='submit' value='pageCreationCreneau'>
+<form action="../ControllerPrincipal">
+	<INPUT type='submit' name='action' value='Creation de creneau'>
+	<INPUT type='submit' name='action' value='Modification de creneau'>
+	<INPUT type='submit' name='action' value='Suppression de creneau'>
 </form>
-<a href="../controller/ControllerPrincipal">Ajouter un créneau</a>
-<a href="/ControllerPrincipal&action=pageSuppressionCreneau">Supprimer un créneau</a>
-<a href="/ControllerPrincipal&action=pageModificationCreneau">Modificer un créneau</a>
-<a href="../index.html">Visualiser l'emploi du temps</a>
 </center>
 </body>
 </html>
