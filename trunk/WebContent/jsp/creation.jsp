@@ -56,7 +56,7 @@ List<Type> ts=(List<Type>)(request.getAttribute("listTypes"));
 
 <TABLE BORDER="1">
   <CAPTION> Formulaire d'ajout de créneau </CAPTION>
-  <FORM METHOD=GET ACTION='http://localhost:8080/fr.p10.miage.m1.projetedt/nom_de_la_servlet'>
+  <FORM METHOD=GET ACTION='http://localhost:8080/fr.p10.miage.m1.projetedt/ControllerPrincipal'>
   <TR>
  <TH> Nom Enseignant  </TH>
  <TD> <SELECT name="nom_enseignant">
@@ -116,7 +116,7 @@ for (i=0;i<es.size();i++){ %>
   
   <TR>
   <TD>
-  <INPUT type='submit' value='creer'>
+  <INPUT type='submit' value='ajouterCreneau'>
   </TD>
   </TR>
 </FORM>
