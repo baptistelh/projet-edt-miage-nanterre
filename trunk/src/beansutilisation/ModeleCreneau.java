@@ -218,34 +218,27 @@ public final class ModeleCreneau {
 	}
 
 	public static List<Enseignant> getAllEnseignants() {
-
 		EnseignantDAO.loadMesEnseignants();
 		EnseignantDAO daoEns = new EnseignantDAO();
-		List<Enseignant> ens = (ArrayList<Enseignant>) daoEns.findAll();
-		return ens;
+		return daoEns.findAll();
 	}
 
 	public static List<Salle> getAllSalle() {
 		SalleDAO.loadMesSalles();
 		SalleDAO daoSalle = new SalleDAO();
-		List<Salle> salles = (ArrayList<Salle>) daoSalle.findAll();
-		return salles;
+		return daoSalle.findAll();
 	}
 
 	public static List<EC> getAllEC() {
 		ECDAO.loadMesEC();
 		ECDAO daoEc = new ECDAO();
-		List<EC> ecs = (ArrayList<EC>) daoEc.findAll();
-		return ecs;
+		return daoEc.findAll();
 	}
 
 	public static List<Type> getAllTypes() {
-
 		TypeDAO.loadMesTypes();
-
 		TypeDAO daoType = new TypeDAO();
-		List<Type> types = (ArrayList<Type>) daoType.findAll();
-		return types;
+		return daoType.findAll();
 	}
 
 	public static List<Formation> getAllFormation() {
