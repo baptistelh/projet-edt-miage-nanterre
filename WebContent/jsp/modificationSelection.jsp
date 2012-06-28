@@ -23,7 +23,7 @@ List<EC> ecs=(List<EC>)(request.getAttribute("listEC"));
 List<Salle> salles=(List<Salle>)(request.getAttribute("listSalles"));
 List<Formation> fs=(List<Formation>)(request.getAttribute("listFormations"));
 List<Type> ts=(List<Type>)(request.getAttribute("listTypes"));
-Creneau c=(Creneau)(request.getAttribute("monEC"));
+Creneau c=(Creneau)(request.getAttribute("monCreneau"));
 
 /*Attention :
 	- Java script utilisé pour le calendrier,
@@ -37,7 +37,7 @@ Creneau c=(Creneau)(request.getAttribute("monEC"));
 
 <TABLE BORDER="1">
   <CAPTION> Modifications à apporter </CAPTION>
-  <FORM METHOD=GET ACTION='http://localhost:8080/fr.p10.miage.m1.projetedt/nom_de_la_servlet'>
+  <FORM METHOD=GET ACTION='http://localhost:8080/http://localhost:8080/fr.p10.miage.m1.projetedt/ControllerPrincipal'>
   <TR>
  <TH> Nom Enseignant  </TH>
  <TD> <SELECT name="nom_enseignant">
@@ -99,7 +99,7 @@ for (i=0;i<es.size();i++){ %>
   
   <TR>
   <TD>
-  <INPUT type='submit' value='creer'>
+  <INPUT type='submit' value='pageModificationSelectionCreneau'>
   </TD>
   </TR>
 </FORM>
