@@ -30,7 +30,7 @@ public final class ModeleCreneau {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public static void creation(int idEns, String idSalle, int idEc, int typearg,
+	public static boolean creation(int idEns, String idSalle, int idEc, int typearg,
 			int idPromo, String date, String horaire, String duree) {
 
 		EnseignantDAO ensDAO = new EnseignantDAO();
@@ -70,7 +70,8 @@ public final class ModeleCreneau {
 //			VerificationPromoSalle.verifPromo(newCreneaux, prom);
 //			VerificationEC.verificationTempsEC(ec, type);
 //		} catch (VerificationException e) {
-//			e.printStackTrace();
+//			System.err.println(e.getMessage());
+//			return false;
 //		}
 
 		// cr�ation du cr�neau
@@ -92,10 +93,11 @@ public final class ModeleCreneau {
 //		newCreneauxsalle.addAll(newCreneaux);
 //		salle.setMesCreneaux(newCreneauxsalle);
 //		salleDAO.update(salle);
+		return true;
 
 	}
 
-	public static void modification(int idEns, String idSalle, int idEc,
+	public static boolean modification(int idEns, String idSalle, int idEc,
 			int typearg, int idPromo, String date, String horaire, String duree) {
 		// utilisation des bouchons pour les DAO - Y A CEUX QUI GERENT ET CEUX
 		// QUI GERENT PAS. NOUS, ON GERE!
@@ -148,13 +150,15 @@ public final class ModeleCreneau {
 //			VerificationPromoSalle.verifPromo(newCreneaux, prom);
 //			VerificationEC.verificationTempsEC(ec, type);
 //		} catch (VerificationException e) {
-//			e.printStackTrace();
+//			System.err.println(e.getMessage());
+//			return false;
 //		}
 
 		creDao.update(finded);
+		return true;
 	}
 
-	public static void suppression(int idEns, String idSalle, int idEc,
+	public static boolean suppression(int idEns, String idSalle, int idEc,
 			int typearg, String date) {
 
 		// utilisation des bouchons pour les DAO
@@ -193,7 +197,7 @@ public final class ModeleCreneau {
 				.getNumeroFormation(), type.getNumeroType(), gcDate);
 
 		creDao.delete(finded);
-
+		return true;
 	}
 
 	public static Creneau getCreneau(int noEnseignant, String noSalle,
