@@ -28,14 +28,6 @@ public class ModeleCreneau {
 	public static void creation(int idEns, String idSalle, int idEc, int typearg,
 			int idPromo, String date, String horaire, String duree) {
 
-		// utilisation des bouchons pour les DAO - Y A CEUX QUI GERENT ET CEUX
-		// QUI GERENT PAS. NOUS, ON GERE!
-		SalleDAO.loadMesSalles();
-		ECDAO.loadMesEC();
-		FormationDAO.loadMesFormations();
-		TypeDAO.loadMesTypes();
-		EnseignantDAO.loadMesEnseignants();
-
 		EnseignantDAO ensDAO = new EnseignantDAO();
 		Enseignant ens = ensDAO.find(idEns);
 
