@@ -52,7 +52,7 @@ public class EnseignantDAO {
 		list.add(new Enseignant(2,"Menez", "Jeremy", "2 avenue des croqueurs" , "0143855908",new GregorianCalendar(1970,9, 20), "logJeremy", "pwdMenez"));
 		list.add(new Enseignant(3,"Giroud", "Olivier", "3 avenue des coupeurs d'orange" , "0143855909",new GregorianCalendar(1980,8, 16), "logOlivier", "pwdGiroud"));
 		list.add(new Enseignant(4,"Benzema", "Karim", "4 avenue des pieds carrés" , "0143855906",new GregorianCalendar(1975,3, 23), "logKarim", "pwdBenzema"));
-		list.add(new Enseignant(5,"Giroud", "Olivier", "5 rue des greviste" , "0143855905",new GregorianCalendar(1965,2, 7), "logPatrice", "pwdEvra"));
+		list.add(new Enseignant(5,"Evra", "Patrice", "5 rue des greviste" , "0143855905",new GregorianCalendar(1965,2, 7), "logPatrice", "pwdEvra"));
 	}
 	
 
