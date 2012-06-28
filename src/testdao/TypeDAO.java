@@ -43,7 +43,7 @@ public class TypeDAO {
 		return TypeDAO.list;
 	}
 	
-	public static void loadMesFormations(){
+	public static void loadMesTypes(){
 		list.add(new Type(0,"TD"));
 		list.add(new Type(1,"CM"));
 	}
