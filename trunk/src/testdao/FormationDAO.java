@@ -2,7 +2,7 @@ package testdao;
 import java.util.ArrayList;
 import java.util.List;
 
-import beans.*;
+import beans.Formation;
 
 public class FormationDAO {
 	
@@ -52,8 +52,8 @@ public class FormationDAO {
 		list.add(new Formation(2, "Master 2 Miage apprentissage", 2,"Apprentissage", "Master", "Miage"));
 		list.add(new Formation(3, "Master 1 Miage classique", 1,"Classique", "Master", "Miage"));
 		list.add(new Formation(4, "Master 2 Miage classique", 2,"Classique", "Master", "Miage"));
-		list.add(new Formation(1, "Licence 3 Miage apprentissage", 3,"Apprentissage", "Licence", "Miage"));
-		list.add(new Formation(2, "Licence 3 Miage classique", 3,"Classique", "Licence", "Miage"));
+		list.add(new Formation(5, "Licence 3 Miage apprentissage", 3,"Apprentissage", "Licence", "Miage"));
+		list.add(new Formation(6, "Licence 3 Miage classique", 3,"Classique", "Licence", "Miage"));
 	}
 
 }

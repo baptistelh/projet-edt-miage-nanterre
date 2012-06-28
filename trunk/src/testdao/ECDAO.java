@@ -2,7 +2,8 @@ package testdao;
 import java.util.ArrayList;
 import java.util.List;
 
-import beans.*;
+import beans.EC;
+import beans.UE;
 
 
 public class ECDAO {
