@@ -6,6 +6,7 @@ import java.util.GregorianCalendar;
 import beans.Creneau;
 import beans.EC;
 import beans.Enseignant;
+import beans.Formation;
 import beans.Jours;
 import beans.Promotion;
 import beans.Salle;
@@ -14,6 +15,7 @@ import dao.CreneauDAO;
 import dao.DAO;
 import dao.ECDAO;
 import dao.EnseignantDAO;
+import dao.FormationDAO;
 import dao.JoursDAO;
 import dao.PromotionDAO;
 import dao.SalleDAO;
@@ -89,19 +91,13 @@ public class ModeleCreneau {
 		
 	}
 	
-	public boolean modification(int idEns, int idSalle, int idEc, int typearg,int idPromo, String date, String horaire, String duree){
-		boolean result=false;
-		
-		
-		return result;
+	public static void modification(int idEns, int idSalle, int idEc, int typearg,int idPromo, String date, String horaire, String duree){
+
 	}
 	
 	
-	public boolean suppression(int idEns, int idSalle, int idEc, int typearg,String date){
-		boolean result=false;
-		
-		
-		return result;
+	public static void  suppression(int idEns, int idSalle, int idEc, int typearg,String date){
+
 	}
 
 	
@@ -125,7 +121,15 @@ public class ModeleCreneau {
 		return ecs;
 	}
 	
+	public static ArrayList<Type> getAllTypes(){
+		TypeDAO DAOType= new TypeDAO(); 
+		ArrayList<Type> types= (ArrayList<Type>) DAOType.findAll();
+		return types;
+	}
 	
-	
-
+	public static ArrayList<Formation> getAllFormation(){
+		FormationDAO DAOFormation= new FormationDAO(); 
+		ArrayList<Formation> formations= (ArrayList<Formation>) DAOFormation.findAll();
+		return formations;
+	}
 }
