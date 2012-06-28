@@ -20,8 +20,9 @@ public class JoursDAO {
 
 	public Jours update(Jours obj) {
 		for(Jours j : JoursDAO.list) {
-			if(j.getDateDuJour().equals(obj.getDateDuJour()))
+			if(j.getDateDuJour().equals(obj.getDateDuJour())) {
 				JoursDAO.list.remove(j);
+			}
 		}
 		JoursDAO.list.add(obj);
 		return obj;
@@ -37,8 +38,9 @@ public class JoursDAO {
 
 	public Jours find(GregorianCalendar date) {
 		for(Jours j : JoursDAO.list) {
-			if(j.getDateDuJour().equals(date))
+			if(j.getDateDuJour().equals(date)) {
 				return j;
+			}
 		}
 		return null;
 	}

@@ -18,13 +18,14 @@ public final class EnseignantEDT {
 	public static void TestEnseignant(List<Creneau> newCreneaux, Enseignant e)
 			throws VerificationException {
 
-		if (!EnseignantEDT.respectVoeuxEnseignant(newCreneaux, e))
+		if (!EnseignantEDT.respectVoeuxEnseignant(newCreneaux, e)) {
 			throw new VerificationException("voeux enseignants non respectes");
+		}
 
 		if (!VerificationCreneaux.chevauchementCreneaux(newCreneaux,
-				e.getMesCreneaux()))
+				e.getMesCreneaux())) {
 			throw new VerificationException("le nouveau creneau pour cet enseignant est deja alloue");
-		
+		}
 		
 		//Creation d'une liste mergeant les anciens crenaux et le nouveau recu
 		
@@ -32,9 +33,9 @@ public final class EnseignantEDT {
 		
 		crenToTest.addAll(newCreneaux);
 		crenToTest.addAll(e.getMesCreneaux());
-		if (!VerificationCreneaux.depassementJournee(crenToTest))
+		if (!VerificationCreneaux.depassementJournee(crenToTest)) {
 			throw new VerificationException("L'enseignant a déjà un nombre d'heure suffisant pour la semaine");
-
+		}
 	}
 
 	public static boolean respectVoeuxEnseignant(List<Creneau> creneaux,

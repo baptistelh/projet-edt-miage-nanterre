@@ -12,8 +12,9 @@ public final class VerificationEC {
 	}
 	
 	public static void verificationTempsEC (EC monEC, Type t) throws VerificationException{
-		if (monEC.getMesNecessites().get(getIndexOfNecessite(monEC,t)).getNb_maquette()!=getNbMinutesCreneaux(monEC,t))
+		if (monEC.getMesNecessites().get(getIndexOfNecessite(monEC,t)).getNb_maquette()!=getNbMinutesCreneaux(monEC,t)) {
 			throw new VerificationException("pb verification EC");
+		}
 	}
 	
 	private static int getNbMinutesCreneaux(EC monEC, Type t){

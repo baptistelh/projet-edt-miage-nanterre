@@ -21,7 +21,9 @@ public class ControllerPrincipal extends HttpServlet {
 	
 	public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {   
 		String action =(String) req.getParameter("action");
-		if(action == null) req.getRequestDispatcher("jsp/index.jsp").forward(req, res);
+		if(action == null) {
+			req.getRequestDispatcher("jsp/index.jsp").forward(req, res);
+		}
 
 		if(action.equals("Creation de creneau")){
 			envoyerListesJsp(req);			
