@@ -18,4 +18,13 @@
     <servlet-name>Jersey REST Service</servlet-name>
     <url-pattern>/rest/*</url-pattern>
   </servlet-mapping>
+  <servlet>
+      <servlet-name>ControllerPrincipal</servlet-name>
+	  <servlet-class>controller.ControllerPrincipal</servlet-class>
+  </servlet>
+    <servlet-mapping>
+    	<servlet-name>ControllerPrincipal</servlet-name>
+		<url-pattern>/ControllerPrincipal</url-pattern>
+  </servlet-mapping>
+  
 </web-app>
