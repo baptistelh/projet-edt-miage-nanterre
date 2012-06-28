@@ -27,7 +27,7 @@ public class ControllerPrincipal extends HttpServlet {
 			req.setAttribute("listEC", ModeleCreneau.getAllEC());
 			req.setAttribute("listSalles", ModeleCreneau.getAllSalle());
 			req.setAttribute("listFormations", ModeleCreneau.getAllFormation());
-			req.setAttribute("listTypes", ModeleCreneau.getAllType());
+			req.setAttribute("listTypes", ModeleCreneau.getAllTypes());
 			
 			req.getRequestDispatcher("creation.jsp").forward(req, res);
 		} else
@@ -36,7 +36,7 @@ public class ControllerPrincipal extends HttpServlet {
 				req.setAttribute("listEC", ModeleCreneau.getAllEC());
 				req.setAttribute("listSalles", ModeleCreneau.getAllSalle());
 				req.setAttribute("listFormations", ModeleCreneau.getAllFormation());
-				req.setAttribute("listTypes", ModeleCreneau.getAllType());
+				req.setAttribute("listTypes", ModeleCreneau.getAllTypes());
 				
 				req.getRequestDispatcher("modification.jsp").forward(req, res);
 			} else
@@ -45,7 +45,7 @@ public class ControllerPrincipal extends HttpServlet {
 					req.setAttribute("listEC", ModeleCreneau.getAllEC());
 					req.setAttribute("listSalles", ModeleCreneau.getAllSalle());
 					req.setAttribute("listFormations", ModeleCreneau.getAllFormation());
-					req.setAttribute("listTypes", ModeleCreneau.getAllType());
+					req.setAttribute("listTypes", ModeleCreneau.getAllTypes());
 					
 					req.getRequestDispatcher("modificationSelection.jsp").forward(req, res);
 				} else
@@ -54,7 +54,7 @@ public class ControllerPrincipal extends HttpServlet {
 						req.setAttribute("listEC", ModeleCreneau.getAllEC());
 						req.setAttribute("listSalles", ModeleCreneau.getAllSalle());
 						req.setAttribute("listFormations", ModeleCreneau.getAllFormation());
-						req.setAttribute("listTypes", ModeleCreneau.getAllType());
+						req.setAttribute("listTypes", ModeleCreneau.getAllTypes());
 						
 						req.getRequestDispatcher("suppression.jsp").forward(req, res);
 					} else
@@ -79,7 +79,7 @@ public class ControllerPrincipal extends HttpServlet {
 								String horaire        = req.getParameter("horaire");
 								String duree          = req.getParameter("duree");
 								
-								ModeleCreneau.suppression(idEnseignant, idSalle, idEc, idType, date, horaire, duree);
+								ModeleCreneau.suppression(idEnseignant, idSalle, idEc, idType, date);
 							} else 
 								if(action.equals("MAJCreneau")){
 									Integer idEnseignant  = Integer.parseInt(req.getParameter("nom_enseignant"));
@@ -91,7 +91,7 @@ public class ControllerPrincipal extends HttpServlet {
 									String horaire        = req.getParameter("horaire");
 									String duree          = req.getParameter("duree");
 									
-									ModeleCreneau.miseAJour(idEnseignant, idSalle, idEc, idType, idPromo, date, horaire, duree);
+									ModeleCreneau.modification(idEnseignant, idSalle, idEc, idType, idPromo, date, horaire, duree);
 								}
 	}
 }
