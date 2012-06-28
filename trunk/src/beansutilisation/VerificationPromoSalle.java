@@ -77,13 +77,13 @@ public final class VerificationPromoSalle {
 		try {
 			verifSalle(liste1, s1);
 		} catch(Exception e) { 
-			e.printStackTrace(); 
+			 
 		}
 		
 		try {
 			verifSalle(liste1, s2);
 		} catch(Exception e) { 
-			e.printStackTrace(); 
+			 
 		}
 		
 		Promotion p1= new Promotion(1);
@@ -97,7 +97,7 @@ public final class VerificationPromoSalle {
 		try {
 		verifPromo(liste1, p1);	
 		}catch(Exception e) { 
-			e.printStackTrace(); 
+			 
 		}
 	}
 }
