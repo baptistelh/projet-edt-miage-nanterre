@@ -54,7 +54,7 @@ public class ModeleCreneau {
 		int d = Integer.parseInt(date.substring(0, 2));
 		int m = Integer.parseInt(date.substring(3, 5));
 		int y = Integer.parseInt(date.substring(6));
-		GregorianCalendar gcDate = new GregorianCalendar(y, m, d);
+		GregorianCalendar gcDate = new GregorianCalendar(y, m-1, d);
 
 		JoursDAO jourDAO = new JoursDAO();
 		Jours jour = jourDAO.find(gcDate);
@@ -126,7 +126,7 @@ public class ModeleCreneau {
 		int d = Integer.parseInt(date.substring(0, 2));
 		int m = Integer.parseInt(date.substring(3, 5));
 		int y = Integer.parseInt(date.substring(6));
-		GregorianCalendar gcDate = new GregorianCalendar(y, m, d);
+		GregorianCalendar gcDate = new GregorianCalendar(y, m-1, d);
 
 		JoursDAO jourDAO = new JoursDAO();
 		Jours jour = jourDAO.find(gcDate);
@@ -183,7 +183,7 @@ public class ModeleCreneau {
 		int d = Integer.parseInt(date.substring(0, 2));
 		int m = Integer.parseInt(date.substring(3, 5));
 		int y = Integer.parseInt(date.substring(6));
-		GregorianCalendar gcDate = new GregorianCalendar(y, m, d);
+		GregorianCalendar gcDate = new GregorianCalendar(y, m-1, d);
 
 		JoursDAO jourDAO = new JoursDAO();
 		Jours jour = jourDAO.find(gcDate);
@@ -209,7 +209,7 @@ public class ModeleCreneau {
 		int d = Integer.parseInt(date.substring(0, 2));
 		int m = Integer.parseInt(date.substring(3, 5));
 		int y = Integer.parseInt(date.substring(6));
-		GregorianCalendar gcDate = new GregorianCalendar(y, m, d);
+		GregorianCalendar gcDate = new GregorianCalendar(y, m-1, d);
 		
 		ECDAO EcDAO = new ECDAO();
 		EC ec = EcDAO.find(noEc);
