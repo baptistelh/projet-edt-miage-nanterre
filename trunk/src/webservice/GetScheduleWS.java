@@ -53,7 +53,7 @@ public class GetScheduleWS {
 		ec1.setLibelle("Soutenance Projet 2");
 		Type type1 = new Type(1, "TD");
 		Jours j1=new Jours();
-		j1.setDateDuJour(new GregorianCalendar(2012, 05, 28));
+		j1.setDateDuJour(new GregorianCalendar(2012, 05, 29));
 		Creneau cLundi = new Creneau(e1, s1, ec1, type1, j1, "10:45", 120);
 		
 		Event e = new Event(cLundi);
@@ -67,7 +67,7 @@ public class GetScheduleWS {
 		ec2.setLibelle("Partiel de RMI");
 		Type type2 = new Type(1, "TD"); 
 		Jours j2=new Jours();
-		j2.setDateDuJour(new GregorianCalendar(2012, 05, 28));
+		j2.setDateDuJour(new GregorianCalendar(2012, 05, 29));
 		Creneau cMardi = new Creneau(e2, s2, ec2, type2, j2, "14:00", 180);
 	
 		e = new Event(cMardi);
