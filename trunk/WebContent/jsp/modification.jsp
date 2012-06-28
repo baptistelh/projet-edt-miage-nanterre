@@ -62,7 +62,7 @@ for (i=0;i<es.size();i++){ %>
   </TR>
   <TR>
  <TH> Type </TH>
-<TD> <SELECT name="Type">
+<TD> <SELECT name="type">
  <%for (i=0;i<ts.size();i++){ %>
 <OPTION  Value= "<%=ts.get(i).getNumeroType()%>"> <%=ts.get(i).getLibelle()%>
 <%} %>
