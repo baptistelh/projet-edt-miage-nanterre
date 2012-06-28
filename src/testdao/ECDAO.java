@@ -11,7 +11,11 @@ public class ECDAO {
 	private static List<EC> list = new ArrayList<EC>();
 
 	public EC find(int id) {
-		// TODO Auto-generated method stub
+		for(EC e : ECDAO.list) {
+			if(e.getNumeroEC() == id) {
+				return e;
+			}
+		}
 		return null;
 	}
 	
