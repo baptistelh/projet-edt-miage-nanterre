@@ -8,7 +8,7 @@ public class Test {
 		SalleDAO.loadMesSalles();
 		ECDAO.loadMesEC();
 		FormationDAO.loadMesFormations();
-		TypeDAO.loadMesFormations();
+		TypeDAO.loadMesTypes();
 		EnseignantDAO.loadMesEnseignants();
 		
 		EnseignantDAO ed = new EnseignantDAO();
