@@ -45,7 +45,7 @@ public class GetScheduleWS {
 		
 		Calendar c = new Calendar();
 		
-		Enseignant e1=new Enseignant(1,"Marcos", "Almeida", "test addresse" , "0143855907",new GregorianCalendar(1960,10, 10), "logAragou", "pwdAragou");	
+		Enseignant e1=new Enseignant(1,"Almeida", "Marcos", "test addresse" , "0143855907",new GregorianCalendar(1960,10, 10), "logAragou", "pwdAragou");	
 		Salle s1=new Salle("210A", 50, "enferNum1");
 		Formation f1=new Formation();
 		UE ue1=new UE(1,f1);
