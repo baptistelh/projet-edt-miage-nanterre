@@ -141,7 +141,7 @@ public class ModeleCreneau {
 				.getNumeroUE(), ec.getMonUE().getMaFormation()
 				.getNumeroFormation(), type.getNumeroType(), gcDate);
 		finded.setDuree(dureInt);
-		
+
 		ArrayList<Creneau> newCreneaux = new ArrayList<Creneau>();
 		newCreneaux.add(finded);
 
@@ -153,13 +153,13 @@ public class ModeleCreneau {
 		} catch (VerificationException e) {
 			e.printStackTrace();
 		}
-		
+
 		creDao.update(finded);
 	}
 
 	public static void suppression(int idEns, int idSalle, int idEc,
 			int typearg, String date) {
-		
+
 		// utilisation des bouchons pour les DAO - Y A CEUX QUI GERENT ET CEUX
 		// QUI GERENT PAS. NOUS, ON GERE!
 		SalleDAO.loadMesSalles();
@@ -180,8 +180,6 @@ public class ModeleCreneau {
 		TypeDAO typeDAO = new TypeDAO();
 		Type type = typeDAO.find(typearg);
 
-
-
 		int d = Integer.parseInt(date.substring(0, 2));
 		int m = Integer.parseInt(date.substring(3, 5));
 		int y = Integer.parseInt(date.substring(6));
@@ -190,7 +188,6 @@ public class ModeleCreneau {
 		JoursDAO jourDAO = new JoursDAO();
 		Jours jour = jourDAO.find(gcDate);
 
-
 		// Creation d'un bean creneau selon les arguments reçus
 
 		CreneauDAO creDao = new CreneauDAO();
@@ -198,40 +195,54 @@ public class ModeleCreneau {
 				.getNumeroSalle(), ec.getNumeroEC(), ec.getMonUE()
 				.getNumeroUE(), ec.getMonUE().getMaFormation()
 				.getNumeroFormation(), type.getNumeroType(), gcDate);
-		
-		 creDao.delete(finded);
 
+		creDao.delete(finded);
+
+	}
+
+	public static Creneau getCreneau(int noEnseignant, String noSalle,
+			int noEc, int noUe, int noFormation, int noType,
+			GregorianCalendar dateCreneau) {
+		CreneauDAO creDao = new CreneauDAO();
+		return creDao.find(noEnseignant, noSalle, noEc, noUe, noFormation,
+				noType, dateCreneau);
 
 	}
 
 	public static ArrayList<Enseignant> getAllEnseignants() {
 
+		EnseignantDAO.loadMesEnseignants();
 		EnseignantDAO DAOens = new EnseignantDAO();
 		ArrayList<Enseignant> ens = (ArrayList<Enseignant>) DAOens.findAll();
 		return ens;
 	}
 
 	public static ArrayList<Salle> getAllSalle() {
-
+		SalleDAO.loadMesSalles();
 		SalleDAO DAOsalle = new SalleDAO();
 		ArrayList<Salle> salles = (ArrayList<Salle>) DAOsalle.findAll();
 		return salles;
 	}
 
 	public static ArrayList<EC> getAllEC() {
-
+		ECDAO.loadMesEC();
 		ECDAO DAOEC = new ECDAO();
 		ArrayList<EC> ecs = (ArrayList<EC>) DAOEC.findAll();
 		return ecs;
 	}
 
 	public static ArrayList<Type> getAllTypes() {
+
+		TypeDAO.loadMesTypes();
+
 		TypeDAO DAOType = new TypeDAO();
 		ArrayList<Type> types = (ArrayList<Type>) DAOType.findAll();
 		return types;
 	}
 
 	public static ArrayList<Formation> getAllFormation() {
+		FormationDAO.loadMesFormations();
+
 		FormationDAO DAOFormation = new FormationDAO();
 		ArrayList<Formation> formations = (ArrayList<Formation>) DAOFormation
 				.findAll();
