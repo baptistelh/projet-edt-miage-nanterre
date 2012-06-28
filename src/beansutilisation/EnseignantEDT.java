@@ -11,7 +11,7 @@ public final class EnseignantEDT {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public static void TestEnseignant(List<Creneau> newCreneaux, Enseignant e)
+	public static void testEnseignant(List<Creneau> newCreneaux, Enseignant e)
 			throws VerificationException {
 
 		if (!EnseignantEDT.respectVoeuxEnseignant(newCreneaux, e)) {
