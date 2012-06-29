@@ -69,7 +69,10 @@ public class ControllerPrincipal extends HttpServlet {
 							String horaire        = req.getParameter("horaire");
 							String duree          = req.getParameter(d);
 							
-							ModeleCreneau.creation(idEnseignant, idSalle, idEc, idType, idPromo, date, horaire, duree);
+							if (ModeleCreneau.creation(idEnseignant, idSalle, idEc, idType, idPromo, date, horaire, duree))
+								req.getRequestDispatcher("jsp/actionReussie.jsp").forward(req, res);
+							else
+								req.getRequestDispatcher("jsp/actionEchouee.jsp").forward(req, res);
 						} else 
 							if(action.equals("supprimerCreneau")){
 								Integer idEnseignant  = Integer.parseInt(req.getParameter(nomEnseignant));
@@ -78,7 +81,11 @@ public class ControllerPrincipal extends HttpServlet {
 								Integer idType        = Integer.parseInt(req.getParameter(type));
 								String date           = req.getParameter(d);
 								
-								ModeleCreneau.suppression(idEnseignant, idSalle, idEc, idType, date);
+								if(ModeleCreneau.suppression(idEnseignant, idSalle, idEc, idType, date))
+									req.getRequestDispatcher("jsp/actionReussie.jsp").forward(req, res);
+								else
+									req.getRequestDispatcher("jsp/actionEchouee.jsp").forward(req, res);
+								
 							} else 
 								if(action.equals("MAJCreneau")){
 									Integer idEnseignant  = Integer.parseInt(req.getParameter(nomEnseignant));
@@ -90,7 +97,10 @@ public class ControllerPrincipal extends HttpServlet {
 									String horaire        = req.getParameter("horaire");
 									String duree          = req.getParameter("duree");
 									
-									ModeleCreneau.modification(idEnseignant, idSalle, idEc, idType, idPromo, date, horaire, duree);
+									if(ModeleCreneau.modification(idEnseignant, idSalle, idEc, idType, idPromo, date, horaire, duree))
+										req.getRequestDispatcher("jsp/actionReussie.jsp").forward(req, res);
+									else
+										req.getRequestDispatcher("jsp/actionEchouee.jsp").forward(req, res);
 								} 
 	}
 	
