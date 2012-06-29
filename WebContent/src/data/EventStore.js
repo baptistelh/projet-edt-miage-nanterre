@@ -5,7 +5,7 @@ Ext.define('Ext.calendar.data.EventStore', {
     remoteSort:true,
     proxy: {
       type: 'rest',
-      url: 'rest/GetSchedule/titi',
+      url: 'rest/GetSchedule/creneau',
       noCache: false,
       
       reader: {
