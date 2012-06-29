@@ -25,7 +25,7 @@ public final class EnseignantEDT {
 		
 		//Creation d'une liste mergeant les anciens crenaux et le nouveau recu
 		
-		ArrayList<Creneau> crenToTest = new ArrayList<Creneau>();
+		List<Creneau> crenToTest = new ArrayList<Creneau>();
 		
 		crenToTest.addAll(newCreneaux);
 		crenToTest.addAll(e.getMesCreneaux());
