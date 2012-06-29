@@ -128,7 +128,7 @@ public final class ModeleCreneau {
 		JoursDAO jourDAO = new JoursDAO();
 		Jours jour = jourDAO.find(gcDate);
 
-		// Creation d'un bean creneau selon les arguments re�us
+		// Creation d'un bean creneau selon les arguments recus
 
 		CreneauDAO creDao = new CreneauDAO();
 		Creneau finded = creDao.find(ens.getNumeroEnseignant(), salle
@@ -137,18 +137,18 @@ public final class ModeleCreneau {
 				.getNumeroFormation(), type.getNumeroType(), gcDate);
 		finded.setDuree(duree);
 
-		ArrayList<Creneau> newCreneaux = new ArrayList<Creneau>();
+		List<Creneau> newCreneaux = new ArrayList<Creneau>();
 		newCreneaux.add(finded);
 
-//		try {
-//			EnseignantEDT.TestEnseignant(newCreneaux, ens);
-//			VerificationPromoSalle.verifSalle(newCreneaux, salle);
-//			VerificationPromoSalle.verifPromo(newCreneaux, prom);
-//			VerificationEC.verificationTempsEC(ec, type);
-//		} catch (VerificationException e) {
-//			System.err.println(e.getMessage());
-//			return false;
-//		}
+		try {
+			EnseignantEDT.testEnseignant(newCreneaux, ens);
+			VerificationPromoSalle.verifSalle(newCreneaux, salle);
+			VerificationPromoSalle.verifPromo(newCreneaux, prom);
+			VerificationEC.verificationTempsEC(ec, type);
+		} catch (VerificationException e) {
+			System.err.println(e.getMessage());
+			return false;
+		}
 
 		creDao.update(finded);
 		return true;
