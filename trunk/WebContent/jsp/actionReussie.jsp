@@ -10,7 +10,7 @@
 <center>
 <h1>Bienvenue sur la modification de l'EDT</h1>
 Action réussie <br>
-<a href="index.jsp">Retour à l'index</a>
+<a href="jsp/index.jsp">Retour à l'index</a>
 </center>
 </body>
 </html>
