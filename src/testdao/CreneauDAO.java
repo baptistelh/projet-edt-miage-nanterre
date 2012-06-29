@@ -67,6 +67,7 @@ public class CreneauDAO {
 		Formation f1=new Formation();
 		UE ue1=new UE(1,f1);
 		EC ec1= new EC(1, ue1);
+		ec1.setLibelle("nom_cours");
 		Type type1 = new Type(1, "TD"); 
 		Jours j1 = new Jours(new GregorianCalendar(2012, 05, 29));
 		list.add(new Creneau (e,s1,ec1,type1,j1,"08:30",120));
