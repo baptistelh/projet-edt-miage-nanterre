@@ -111,5 +111,14 @@ public class Event {
 	public void setTeacher(String teacher) {
 		this.teacher = teacher;
 	}
+
+	@Override
+	public String toString() {
+		return "Event [id=" + id + ", cid=" + cid + ", title=" + title
+				+ ", time=" + time + ", start=" + start + ", end=" + end
+				+ ", room=" + room + ", teacher=" + teacher + "]";
+	}
+	
+	
 	
 }
