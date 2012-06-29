@@ -31,7 +31,7 @@ public final class ModeleCreneau {
 	}
 	
 	public static boolean creation(int idEns, String idSalle, int idEc, int typearg,
-			int idPromo, String date, String horaire, String duree) {
+			int idPromo, String date, String horaire, int duree) {
 
 		EnseignantDAO ensDAO = new EnseignantDAO();
 		Enseignant ens = ensDAO.find(idEns);
@@ -56,11 +56,9 @@ public final class ModeleCreneau {
 		JoursDAO jourDAO = new JoursDAO();
 		Jours jour = jourDAO.find(gcDate);
 
-		int dureInt = Integer.parseInt(duree);
-
 		// Creation d'un bean creneau selon les arguments re�us
 		Creneau newCreneau = new Creneau(ens, salle, ec, type, jour, horaire,
-				dureInt);
+				duree);
 		ArrayList<Creneau> newCreneaux = new ArrayList<Creneau>();
 		newCreneaux.add(newCreneau);
 
@@ -98,7 +96,7 @@ public final class ModeleCreneau {
 	}
 
 	public static boolean modification(int idEns, String idSalle, int idEc,
-			int typearg, int idPromo, String date, String horaire, String duree) {
+			int typearg, int idPromo, String date, String horaire, int duree) {
 		// utilisation des bouchons pour les DAO - Y A CEUX QUI GERENT ET CEUX
 		// QUI GERENT PAS. NOUS, ON GERE!
 		SalleDAO.loadMesSalles();
@@ -130,8 +128,6 @@ public final class ModeleCreneau {
 		JoursDAO jourDAO = new JoursDAO();
 		Jours jour = jourDAO.find(gcDate);
 
-		int dureInt = Integer.parseInt(duree);
-
 		// Creation d'un bean creneau selon les arguments re�us
 
 		CreneauDAO creDao = new CreneauDAO();
@@ -139,7 +135,7 @@ public final class ModeleCreneau {
 				.getNumeroSalle(), ec.getNumeroEC(), ec.getMonUE()
 				.getNumeroUE(), ec.getMonUE().getMaFormation()
 				.getNumeroFormation(), type.getNumeroType(), gcDate);
-		finded.setDuree(dureInt);
+		finded.setDuree(duree);
 
 		ArrayList<Creneau> newCreneaux = new ArrayList<Creneau>();
 		newCreneaux.add(finded);

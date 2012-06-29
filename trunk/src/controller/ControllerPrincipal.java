@@ -65,9 +65,9 @@ public class ControllerPrincipal extends HttpServlet {
 							Integer idEc          = Integer.parseInt(req.getParameter("EC"));
 							Integer idType        = Integer.parseInt(req.getParameter(type));
 							Integer idPromo       = 1;
-							String date           = req.getParameter("date");
+							String date           = req.getParameter(d);
 							String horaire        = req.getParameter("horaire");
-							String duree          = req.getParameter(d);
+							int duree          = Integer.parseInt(req.getParameter("duree"));
 							
 							if (ModeleCreneau.creation(idEnseignant, idSalle, idEc, idType, idPromo, date, horaire, duree))
 								req.getRequestDispatcher("jsp/actionReussie.jsp").forward(req, res);
@@ -95,7 +95,7 @@ public class ControllerPrincipal extends HttpServlet {
 									Integer idPromo       = 1;
 									String date           = req.getParameter(d);
 									String horaire        = req.getParameter("horaire");
-									String duree          = req.getParameter("duree");
+									int duree          = Integer.parseInt(req.getParameter("duree"));
 									
 									if(ModeleCreneau.modification(idEnseignant, idSalle, idEc, idType, idPromo, date, horaire, duree))
 										req.getRequestDispatcher("jsp/actionReussie.jsp").forward(req, res);
