@@ -53,8 +53,6 @@ public final class ModeleCreneau {
 		int y = Integer.parseInt(date.split("/")[2]);
 
 		GregorianCalendar gcDate = new GregorianCalendar(y, m - 1, d);
-
-		System.out.println(y+" "+ m+" "+ d);
 		
 //		JoursDAO jourDAO = new JoursDAO();
 //		Jours jour = jourDAO.find(gcDate);
