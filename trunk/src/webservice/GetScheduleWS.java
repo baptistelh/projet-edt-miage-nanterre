@@ -88,23 +88,9 @@ public class GetScheduleWS {
 		CreneauDAO cd = new CreneauDAO();
 		List<Creneau> lc =  cd.findAll();
 		
-		Enseignant e2=new Enseignant(1,"Legond-Aubry", "Fabrice", "test addresse" , "0143855908",new GregorianCalendar(1960,10, 10), "logGiroud", "pwdGiroud");	
-		Salle s2=new Salle("210A", 50, "enferNum2");
-		Formation f2=new Formation();
-		UE ue2=new UE(1,f2);
-		EC ec2= new EC(1, ue2);
-		ec2.setLibelle("Partiel de RMI");
-		Type type2 = new Type(1, "TD"); 
-		Jours j2=new Jours();
-		j2.setDateDuJour(new GregorianCalendar(2012, 05, 29));
-		Creneau cMardi = new Creneau(e2, s2, ec2, type2, j2, "14:00", 180);
-		
-		Event evt = new Event(cMardi);
-		
 		for(Creneau cr : lc) {
 			c.addEvt(new Event(cr));
 		}
-		c.addEvt(evt);
 		return c;
 	}
 	
