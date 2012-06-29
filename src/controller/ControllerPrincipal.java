@@ -38,7 +38,7 @@ public class ControllerPrincipal extends HttpServlet {
 			if(action.equals("Afficher le calendrier")){
 				req.getRequestDispatcher("index.html").forward(req, res);
 			}
-			if(action.equals("Modification de Creneau")){
+			if(action.equals("Modification de creneau")){
 				envoyerListesJsp(req);				
 				req.getRequestDispatcher("jsp/modification.jsp").forward(req, res);
 			} else
@@ -55,7 +55,7 @@ public class ControllerPrincipal extends HttpServlet {
 					
 					req.getRequestDispatcher("jsp/modificationSelection.jsp").forward(req, res);
 				} else
-					if(action.equals("Suppression de Creneau")){
+					if(action.equals("Suppression de creneau")){
 						envoyerListesJsp(req);						
 						req.getRequestDispatcher("jsp/suppression.jsp").forward(req, res);
 					} else
